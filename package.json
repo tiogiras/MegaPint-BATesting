@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "unity": "2022.3",
   "category": "Tools",
-  "description": "",
+  "description": "This package is required to perform the guided part of the ba testing tasks.",
   "repository": {
     "url": "https://github.com/tiogiras/MegaPint-BATesting.git"
   }
