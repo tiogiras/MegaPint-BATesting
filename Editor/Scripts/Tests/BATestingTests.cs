@@ -7,7 +7,7 @@ namespace MegaPint.Editor.Scripts.Tests
 {
 
 /// <summary> Unit tests specific for the alphaButton package </summary>
-internal class AlphaButtonTests
+internal class BaTestingTests
 {
 
 }

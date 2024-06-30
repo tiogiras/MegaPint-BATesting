@@ -7,7 +7,7 @@ namespace MegaPint.Editor.Scripts
 /// <summary> Partial class storing saveData values (AlphaButton) </summary>
 internal static partial class SaveValues
 {
-    public static class BATesting
+    public static class BaTesting
     {
         private static CacheValue <bool> s_applyPSTaskManager = new() {defaultValue = true};
 
