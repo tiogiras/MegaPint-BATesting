@@ -41,9 +41,10 @@ internal class PackageTests
     {
         var isValid = true;
 
-        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BATesting.UserInterface.Overview);
-        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BATesting.UserInterface.TaskManager);
-        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BATesting.UserInterface.Requirement);
+        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.Overview);
+        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.InvalidToken);
+        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.TaskManager);
+        TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.Requirement);
 
         Assert.IsTrue(isValid);
     }

@@ -13,7 +13,7 @@ internal static partial class DisplayContent
 
     // Called by reflection
     // ReSharper disable once UnusedMember.Local
-    private static void AlphaButton(DisplayContentReferences refs)
+    private static void BATesting(DisplayContentReferences refs)
     {
         InitializeDisplayContent(
             refs,
@@ -22,31 +22,11 @@ internal static partial class DisplayContent
             {
                 info = root =>
                 {
-                    root.ActivateLinks(
-                        evt =>
-                        {
-                            switch (evt.linkID)
-                            {
-                                case "integration":
-                                    Windows.PackageManager.OpenPerLink(PackageKey.AlphaButton);
-
-                                    break;
-                            }
-                        });
+                    
                 },
                 help = root =>
                 {
-                    root.ActivateLinks(
-                        evt =>
-                        {
-                            switch (evt.linkID)
-                            {
-                                case "packageManager":
-                                    EditorApplication.ExecuteMenuItem(Constants.BasePackage.Links.PackageManager);
 
-                                    break;
-                            }
-                        });
                 }
             });
     }
