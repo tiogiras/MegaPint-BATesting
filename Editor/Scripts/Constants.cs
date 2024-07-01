@@ -28,6 +28,9 @@ internal static partial class Constants
         }
 
         private static readonly string s_base = Path.Combine("MegaPint", "BATesting");
+        private static readonly string s_scriptableObjects = Path.Combine(s_base, "Scriptable Objects");
+        public static readonly string TaskManagerData = Path.Combine(s_scriptableObjects, "TaskManagerData");
+
         private static readonly string s_userInterface = Path.Combine(s_base, "User Interface");
     }
 }

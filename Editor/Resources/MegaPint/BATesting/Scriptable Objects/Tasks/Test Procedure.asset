@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: Test Procedure
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
+  taskName: Test Procedure
+  taskDescription: 'Some tasks may have requirements you need to know before you
+    can start them. It''s crucial that you <b>don''t skip</b> these requirements
+    unless you''re already aware of them.
+
+
+    MegaPint will show you the information
+    either in a new window or the base window if you click the Go To button of the
+    requirement. Once you have read the required information you may check the requirement.
+
+
+    The
+    test can be advanced once all requirements have been checked.'
+  taskRequirements:
+  - {fileID: 11400000, guid: 425658bae6e58f248b73b660ba53ac17, type: 2}
+  hasDoableTask: 0

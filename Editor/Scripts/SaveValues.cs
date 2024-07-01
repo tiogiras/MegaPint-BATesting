@@ -10,6 +10,7 @@ internal static partial class SaveValues
     public static class BaTesting
     {
         private static CacheValue <bool> s_applyPSTaskManager = new() {defaultValue = true};
+        private static CacheValue <int> s_currentTaskIndex = new() {defaultValue = 0};
 
         private static SettingsBase s_settings;
 
@@ -17,6 +18,12 @@ internal static partial class SaveValues
         {
             get => ValueProperty.Get("ApplyPSTaskManager", ref s_applyPSTaskManager, _Settings);
             set => ValueProperty.Set("ApplyPSTaskManager", value, ref s_applyPSTaskManager, _Settings);
+        }        
+        
+        public static int CurrentTaskIndex
+        {
+            get => ValueProperty.Get("CurrentTaskIndex", ref s_currentTaskIndex, _Settings);
+            set => ValueProperty.Set("CurrentTaskIndex", value, ref s_currentTaskIndex, _Settings);
         }
 
         private static SettingsBase _Settings
