@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: Test Procedure II
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
+  taskName: Test Procedure ||
+  taskDescription: 'Certain tasks require you to perform a certain action or do something
+    in order to reach the goal of the task.
+
+
+    When your task is inside a predefined
+    scene, unity will automatically load the needed scene once you press the start
+    button. A timer will appear to count your needed time in the task. <b>Please
+    always pause the timer when you need a break from your active task.</b>
+
+
+    The
+    task will automatically detect when the goal has been reached.
+
+
+    The test
+    can be advanced once all goals are met.'
+  taskRequirements: []
+  hasDoableTask: 1
+  scene: {fileID: 102900000, guid: 923b3bfede245584a919d3a6a9f90dc0, type: 3}

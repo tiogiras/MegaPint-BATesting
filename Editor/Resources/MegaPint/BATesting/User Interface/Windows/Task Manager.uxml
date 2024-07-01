@@ -23,10 +23,20 @@
                         <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-grow: 1; margin-top: 5px; margin-right: 10px; margin-bottom: 5px; margin-left: 10px;">
                             <ui:VisualElement style="flex-grow: 1;">
                                 <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" name="TaskInfo" enable-rich-text="true" text="This is some information about the upcoming task. We will do some stuff that is tracked in the background" style="white-space: normal; margin-bottom: 5px;" />
+                                <ui:VisualElement name="TimerContainer" style="flex-direction: row; justify-content: space-between; align-items: center;">
+                                    <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" name="Timer" text="00:00" />
+                                    <ui:Button text="Pause" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Pause" />
+                                    <ui:Button text="Resume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Resume" />
+                                </ui:VisualElement>
                                 <ui:VisualElement name="RequirementsParent" style="display: flex;">
                                     <MegaPint.Editor.Scripts.GUI.Factories.Structure.Separator style="flex-shrink: 0;" />
                                     <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingSecondary tabindex="-1" text="Requirements" style="margin-top: 5px; font-size: 16px; margin-bottom: 5px;" />
                                     <ui:ListView name="Requirements" virtualization-method="DynamicHeight" selection-type="None" style="margin-bottom: 5px;" />
+                                </ui:VisualElement>
+                                <ui:VisualElement name="GoalsParent" style="display: flex;">
+                                    <MegaPint.Editor.Scripts.GUI.Factories.Structure.Separator style="flex-shrink: 0;" />
+                                    <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingSecondary tabindex="-1" text="Goals" style="margin-top: 5px; font-size: 16px; margin-bottom: 5px;" />
+                                    <ui:ListView name="Goals" virtualization-method="DynamicHeight" selection-type="None" style="margin-bottom: 5px;" />
                                 </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:ScrollView>
@@ -34,6 +44,7 @@
                 </ui:VisualElement>
                 <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Continue" style="margin-top: 20px; margin-right: 25px; margin-bottom: 20px; margin-left: 25px;" />
                 <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Start" style="margin-top: 20px; margin-right: 25px; margin-bottom: 20px; margin-left: 25px;" />
+                <ui:Button text="Complete" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Complete" style="margin-top: 20px; margin-right: 25px; margin-bottom: 20px; margin-left: 25px;" />
             </MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary>
         </ui:VisualElement>
     </MegaPint.Editor.Scripts.GUI.Factories.RootElement>
