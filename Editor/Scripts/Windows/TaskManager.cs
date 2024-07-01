@@ -1,11 +1,14 @@
 ﻿// TODO commenting
 
 #if UNITY_EDITOR
-using System.Collections.Generic;
+using System.Linq;
 using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts;
+using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
@@ -17,21 +20,21 @@ namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows
 internal class TaskManager : EditorWindowBase
 {
     private VisualTreeAsset _baseWindow;
-    private VisualTreeAsset _requirementItem;
+
+    private Button _btnContinue;
+    private Button _btnStart;
+    private Label _chapter;
+    private Label _currentTaskIndex;
 
     private TaskManagerData _data;
 
     private Label _lastTaskIndex;
-    private Label _currentTaskIndex;
-    private Label _taskTitle;
-    private Label _taskInfo;
-    private Label _chapter;
-    
+    private VisualTreeAsset _requirementItem;
+
     private VisualElement _requirementsContainer;
     private ListView _requirementsList;
-
-    private Button _btnContinue;
-    private Button _btnStart;
+    private Label _taskInfo;
+    private Label _taskTitle;
 
     #region Public Methods
 
@@ -40,9 +43,9 @@ internal class TaskManager : EditorWindowBase
     public override EditorWindowBase ShowWindow()
     {
         titleContent.text = "Task Manager";
-        
+
         // TODO add minSize
-        
+
         if (!SaveValues.BaTesting.ApplyPSTaskManager)
             return this;
 
@@ -76,7 +79,7 @@ internal class TaskManager : EditorWindowBase
         _taskTitle = content.Q <Label>("TaskTitle");
         _taskInfo = content.Q <Label>("TaskInfo");
         _chapter = content.Q <Label>("Chapter");
-        
+
         _requirementsContainer = content.Q <VisualElement>("RequirementsParent");
         _requirementsList = content.Q <ListView>("Requirements");
 
@@ -86,6 +89,98 @@ internal class TaskManager : EditorWindowBase
         UpdateTaskManager();
 
         RegisterCallbacks();
+    }
+
+    protected override bool LoadResources()
+    {
+        _baseWindow = Resources.Load <VisualTreeAsset>(BasePath());
+        _requirementItem = Resources.Load <VisualTreeAsset>(Constants.BaTesting.UserInterface.Requirement);
+
+        _data = Resources.Load <TaskManagerData>(Constants.BaTesting.TaskManagerData);
+
+        return _baseWindow != null && _requirementItem != null && _data != null;
+    }
+
+    protected override void RegisterCallbacks()
+    {
+        _btnContinue.clicked += OnContinue;
+
+        _requirementsList.makeItem = () => GUIUtility.Instantiate(_requirementItem);
+
+        _requirementsList.bindItem = (element, i) =>
+        {
+            var requirement = _requirementsList.itemsSource[i] as Requirement;
+
+            if (requirement == null)
+                return;
+
+            element.Q <Label>("Title").text = requirement.requirementName;
+
+            var container = element.Q <VisualElement>("Container");
+            UpdateRequirementContainer(container, requirement.done);
+            
+            var toggle = element.Q <Toggle>("MarkReady");
+            toggle.SetValueWithoutNotify(requirement.done);
+
+            toggle.RegisterValueChangedCallback(
+                evt =>
+                {
+                    requirement.done = evt.newValue;
+                    UpdateRequirementContainer(container, evt.newValue);
+                    UpdateButtons();
+
+                    EditorUtility.SetDirty(requirement);
+                });
+
+            element.Q <Button>("BTN_GoTo").clickable = new Clickable(
+                () => {RequirementsLogic.ExecuteRequirement(requirement);});
+        };
+    }
+
+    private void UpdateButtons()
+    {
+        var missingRequirements = _data.CurrentTask().taskRequirements.Any(requirement => !requirement.done);
+
+        _btnStart.pickingMode = missingRequirements ? PickingMode.Ignore : PickingMode.Position;
+        _btnStart.style.opacity = missingRequirements ? .5f : 1f;
+        
+        _btnContinue.pickingMode = missingRequirements ? PickingMode.Ignore : PickingMode.Position;
+        _btnContinue.style.opacity = missingRequirements ? .5f : 1f;
+    }
+    
+    private static void UpdateRequirementContainer(VisualElement container, bool done)
+    {
+        if (done)
+        {
+            container.AddToClassList(StyleSheetClasses.Background.Color.Green);
+            container.RemoveFromClassList(StyleSheetClasses.Background.Color.Red);
+        }
+        else
+        {
+            container.AddToClassList(StyleSheetClasses.Background.Color.Red);
+            container.RemoveFromClassList(StyleSheetClasses.Background.Color.Green);
+        }
+    }
+
+    protected override void UnRegisterCallbacks()
+    {
+        _btnContinue.clicked -= OnContinue;
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private void OnContinue()
+    {
+        if (_data.currentTaskIndex >= _data.TasksCount - 1)
+        {
+            Debug.Log("No More Tasks");
+            return;
+        }
+
+        _data.currentTaskIndex++;
+        UpdateTaskManager();
     }
 
     private void UpdateTaskManager()
@@ -104,33 +199,11 @@ internal class TaskManager : EditorWindowBase
 
         _btnContinue.style.display = currentTask.hasDoableTask ? DisplayStyle.None : DisplayStyle.Flex;
         _btnStart.style.display = currentTask.hasDoableTask ? DisplayStyle.Flex : DisplayStyle.None;
-    }
-
-    protected override bool LoadResources()
-    {
-        _baseWindow = Resources.Load <VisualTreeAsset>(BasePath());
-        _requirementItem = Resources.Load <VisualTreeAsset>(Constants.BaTesting.UserInterface.Requirement);
-
-        _data = Resources.Load <TaskManagerData>(Constants.BaTesting.TaskManagerData);
-
-        return _baseWindow != null && _requirementItem != null && _data != null;
-    }
-
-    protected override void RegisterCallbacks()
-    {
-        _btnContinue.clicked += OnContinue;
-    }
-
-    protected override void UnRegisterCallbacks()
-    {
-        _btnContinue.clicked -= OnContinue;
-    }
-
-    private void OnContinue()
-    {
-        _data.currentTaskIndex++;
         
-        UpdateTaskManager();
+        UpdateButtons();
+
+        if (hasRequirements)
+            _requirementsList.itemsSource = currentTask.taskRequirements;
     }
 
     #endregion

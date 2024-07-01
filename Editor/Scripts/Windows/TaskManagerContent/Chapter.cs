@@ -1,5 +1,6 @@
 // TODO Commenting
 
+#if UNITY_EDITOR
 using UnityEngine;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
@@ -12,3 +13,4 @@ internal class Chapter : ScriptableObject
 }
 
 }
+#endif

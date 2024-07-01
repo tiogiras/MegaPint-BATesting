@@ -25,8 +25,8 @@
                                 <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" name="TaskInfo" enable-rich-text="true" text="This is some information about the upcoming task. We will do some stuff that is tracked in the background" style="white-space: normal; margin-bottom: 5px;" />
                                 <ui:VisualElement name="RequirementsParent" style="display: flex;">
                                     <MegaPint.Editor.Scripts.GUI.Factories.Structure.Separator style="flex-shrink: 0;" />
-                                    <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingSecondary tabindex="-1" text="Requirements" style="margin-top: 5px; font-size: 16px;" />
-                                    <ui:ListView focusable="true" name="Requirements" style="margin-bottom: 5px;" />
+                                    <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingSecondary tabindex="-1" text="Requirements" style="margin-top: 5px; font-size: 16px; margin-bottom: 5px;" />
+                                    <ui:ListView name="Requirements" virtualization-method="DynamicHeight" selection-type="None" style="margin-bottom: 5px;" />
                                 </ui:VisualElement>
                             </ui:VisualElement>
                         </ui:ScrollView>
