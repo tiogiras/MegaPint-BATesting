@@ -17,6 +17,12 @@ internal static partial class ContextMenu
         TryToOpenWithValidToken<TaskManager>(false);
     }
 
+    // TODO commenting
+    public static void OpenRequirementInformation()
+    {
+        TryToOpenWithValidToken<RequirementInformation>(false);
+    }
+
     /// <summary> Open the editor window when the tester token is valid if not open the invalid token window </summary>
     /// <param name="utility"> Targeted utility state of the window </param>
     /// <typeparam name="T"> Targeted window type </typeparam>

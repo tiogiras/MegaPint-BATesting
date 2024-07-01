@@ -20,11 +20,18 @@ internal static partial class Constants
 
         public static class UserInterface
         {
+            public static class Requirements
+            {
+                private static readonly string s_requirements = Path.Combine(TaskManager, "Requirements");
+                public static readonly string TestRequirement = Path.Combine(s_requirements, "Test Requirement");
+            }
+
             private static readonly string s_windows = Path.Combine(s_userInterface, "Windows");
             public static readonly string Overview = Path.Combine(s_windows, "Overview");
             public static readonly string InvalidToken = Path.Combine(s_windows, "Invalid Token");
             public static readonly string TaskManager = Path.Combine(s_windows, "Task Manager");
             public static readonly string Requirement = Path.Combine(TaskManager, "Requirement");
+            public static readonly string Goal = Path.Combine(TaskManager, "Goal");
         }
 
         private static readonly string s_base = Path.Combine("MegaPint", "BATesting");

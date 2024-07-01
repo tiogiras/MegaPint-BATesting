@@ -17,6 +17,11 @@ internal class Task : ScriptableObject
     [TextArea] public string taskDescription;
     public List <Requirement> taskRequirements;
     public bool hasDoableTask;
+    public SceneAsset scene;
+
+    public List <Goal> goals;
+
+    public float neededTime;
 
     #region Public Methods
 
