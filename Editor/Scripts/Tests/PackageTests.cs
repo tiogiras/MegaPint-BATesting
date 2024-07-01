@@ -46,6 +46,10 @@ internal class PackageTests
         TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.TaskManager);
         TestsUtility.ValidateResource <VisualTreeAsset>(ref isValid, Constants.BaTesting.UserInterface.Requirement);
 
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.TestRequirement);
+
         Assert.IsTrue(isValid);
     }
     

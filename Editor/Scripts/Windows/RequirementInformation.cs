@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,20 +12,30 @@ namespace MegaPint.Editor.Scripts.Windows
 ///     Window based on the <see cref="EditorWindowBase" /> to be displayed whenever an window tries to open but the
 ///     tester token is invalid
 /// </summary>
-internal class InvalidToken : EditorWindowBase
+internal class RequirementInformation : EditorWindowBase
 {
-    private VisualTreeAsset _baseWindow;
+    private static VisualElement s_root;
 
     #region Public Methods
+
+    public static void AfterGUICreation(VisualTreeAsset template, Action <VisualElement> action)
+    {
+        VisualElement content = GUIUtility.Instantiate(template, s_root);
+        content.style.flexGrow = 1f;
+        content.style.flexShrink = 1f;
+        
+        s_root.schedule.Execute(
+            () => {action?.Invoke(content);});
+    }
 
     /// <summary> Show the window </summary>
     /// <returns> Window instance </returns>
     public override EditorWindowBase ShowWindow()
     {
-        titleContent.text = "Invalid Token";
+        titleContent.text = "Requirement Information";
 
-        minSize = new Vector2(450, 260);
-        maxSize = new Vector2(450, 260);
+        // TODO preferred size
+        // TODO minSize
 
         this.CenterOnMainWin();
 
@@ -37,40 +48,21 @@ internal class InvalidToken : EditorWindowBase
 
     protected override string BasePath()
     {
-        return Constants.BaTesting.UserInterface.InvalidToken;
+        return null;
     }
 
     protected override void CreateGUI()
     {
         base.CreateGUI();
 
-        VisualElement root = rootVisualElement;
-
-        VisualElement content = GUIUtility.Instantiate(_baseWindow, root);
-        content.style.flexGrow = 1f;
-        content.style.flexShrink = 1f;
+        s_root = rootVisualElement;
 
         RegisterCallbacks();
-
-        root.ActivateLinks(
-            evt =>
-            {
-                switch (evt.linkID)
-                {
-                    case "BaseWindow":
-                        ContextMenu.Open();
-                        Close();
-
-                        break;
-                }
-            });
     }
 
     protected override bool LoadResources()
     {
-        _baseWindow = Resources.Load <VisualTreeAsset>(BasePath());
-
-        return _baseWindow != null;
+        return true;
     }
 
     protected override void RegisterCallbacks()
