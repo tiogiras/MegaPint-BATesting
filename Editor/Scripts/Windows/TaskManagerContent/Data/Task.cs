@@ -21,7 +21,6 @@ internal class Task : ScriptableObject
         {
             _neededTime = value;
             EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssetIfDirty(this);
         }
     }
 
@@ -60,6 +59,7 @@ internal class Task : ScriptableObject
         foreach (Goal goal in goals)
             goal.ResetValues();
 
+        NeededTime = 0;
         Done = false;
     }
 
