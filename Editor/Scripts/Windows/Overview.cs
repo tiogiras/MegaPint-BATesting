@@ -1,6 +1,7 @@
 ﻿// TODO commenting
 
 #if UNITY_EDITOR
+using System.Linq;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
@@ -14,14 +15,14 @@ namespace MegaPint.Editor.Scripts.Windows
 internal class Overview : EditorWindowBase
 {
     private VisualTreeAsset _baseWindow;
-    private VisualTreeAsset _taskItem;
-
-    private ListView _tasksView;
-    private ProgressBar _progress;
     private Button _btnResetAll;
     private Button _btnSend;
 
     private TaskManagerData _data;
+    private ProgressBar _progress;
+    private VisualTreeAsset _taskItem;
+
+    private ListView _tasksView;
 
     #region Public Methods
 
@@ -62,10 +63,12 @@ internal class Overview : EditorWindowBase
         _progress = content.Q <ProgressBar>("Progress");
         _btnResetAll = content.Q <Button>("BTN_ResetAll");
         _btnSend = content.Q <Button>("BTN_Send");
-        
+
         RegisterCallbacks();
 
         _tasksView.itemsSource = _data.Tasks;
+
+        Refresh(null);
     }
 
     protected override bool LoadResources()
@@ -79,28 +82,76 @@ internal class Overview : EditorWindowBase
 
     protected override void RegisterCallbacks()
     {
+        Task.onTaskDoneChange += Refresh;
+
+        _btnResetAll.clicked += OnResetAll;
+        _btnSend.clicked += OnSend;
+
         _tasksView.makeItem = () => GUIUtility.Instantiate(_taskItem);
-        
+
         _tasksView.bindItem = (element, i) =>
         {
             var task = _tasksView.itemsSource[i] as Task;
-            
+
             if (task == null)
                 return;
 
             var container = element.Q <VisualElement>("Container");
-            
+
             element.Q <Label>("Title").text = task.taskName;
 
-            element.Q <Button>("BTN_Reset").clickable = new Clickable(
-                () =>
-                {
-                    task.ResetValues();
-                    UpdateListElementContainer(container, task.Done);
-                });
+            var btnReset = element.Q <Button>("BTN_Reset");
+
+            if (task.Done)
+            {
+                btnReset.style.display = DisplayStyle.Flex;
+                
+                btnReset.clickable = new Clickable(
+                    () =>
+                    {
+                        var index = _data.Tasks.IndexOf(task);
+
+                        if (index < _data.CurrentTaskIndex)
+                            _data.CurrentTaskIndex = index;
+
+                        task.ResetValues();
+                        UpdateListElementContainer(container, task.Done);
+                    });
+            }
+            else 
+                btnReset.style.display = DisplayStyle.None;
             
             UpdateListElementContainer(container, task.Done);
         };
+    }
+
+    protected override void UnRegisterCallbacks()
+    {
+        Task.onTaskDoneChange -= Refresh;
+
+        _btnResetAll.clicked -= OnResetAll;
+        _btnSend.clicked -= OnSend;
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private void OnResetAll()
+    {
+        _data.ResetValues();
+    }
+
+    private void OnSend()
+    {
+        // TODO
+    }
+
+    private void Refresh(Task _)
+    {
+        _tasksView.RefreshItems();
+        UpdateProgressBar();
+        UpdateSendButton();
     }
 
     private void UpdateListElementContainer(VisualElement element, bool done)
@@ -117,8 +168,20 @@ internal class Overview : EditorWindowBase
         }
     }
 
-    protected override void UnRegisterCallbacks()
+    private void UpdateProgressBar()
     {
+        var completedTasks = _data.Tasks.Count(task => task.Done);
+        var progress = (float)completedTasks / _data.Tasks.Count;
+
+        _progress.value = progress;
+    }
+
+    private void UpdateSendButton()
+    {
+        var hasUncompletedTasks = _data.Tasks.Any(task => !task.Done);
+
+        _btnSend.pickingMode = hasUncompletedTasks ? PickingMode.Ignore : PickingMode.Position;
+        _btnSend.style.opacity = hasUncompletedTasks ? 0.5f : 1f;
     }
 
     #endregion

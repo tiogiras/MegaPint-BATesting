@@ -1,6 +1,7 @@
 ﻿// TODO commenting
 
 #if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 [CreateAssetMenu(fileName = "TaskData", menuName = "MegaPint/TaskData", order = 0)] // TODO remove this line
 internal class Task : ScriptableObject
 {
+    public static Action<Task> onTaskDoneChange;
+    
     public float NeededTime
     {
         get => _neededTime;
@@ -30,6 +33,8 @@ internal class Task : ScriptableObject
             _done = value;
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
+            
+            onTaskDoneChange?.Invoke(this);
         }
     }
 

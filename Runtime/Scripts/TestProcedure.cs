@@ -74,7 +74,7 @@ public class TestProcedure : MonoBehaviour
         _button.interactable = false;
         _background.color = new Color(0.09f, 0.51f, 0.09f);
 
-        GoalsLogic.MarkGoalAsDone(_goal);
+        Goal.MarkGoalAsDone(_goal);
     }
 
     #endregion

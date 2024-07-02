@@ -1,6 +1,7 @@
 // TODO Commenting
 
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 [CreateAssetMenu(fileName = "Goal", menuName = "MegaPint/Goal", order = 0)] // TODO remove this line
 internal class Goal : ScriptableObject
 {
+    public static Action <Goal> onGoalDone;
+
     public bool Done
     {
         get => _done;
@@ -27,6 +30,12 @@ internal class Goal : ScriptableObject
     [SerializeField] private bool _done;
 
     #region Public Methods
+
+    public static void MarkGoalAsDone(Goal goal)
+    {
+        goal.Done = true;
+        onGoalDone?.Invoke(goal);
+    }
 
     public void ResetValues()
     {

@@ -35,3 +35,5 @@ MonoBehaviour:
   scene: {fileID: 102900000, guid: 923b3bfede245584a919d3a6a9f90dc0, type: 3}
   startInPlayMode: 1
   goals: []
+  _done: 1
+  _neededTime: 0

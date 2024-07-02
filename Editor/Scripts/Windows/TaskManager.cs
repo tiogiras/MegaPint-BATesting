@@ -8,7 +8,6 @@ using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -131,9 +130,10 @@ internal class TaskManager : EditorWindowBase
 
     protected override void RegisterCallbacks()
     {
-        GoalsLogic.onGoalDone += OnGoalDone;
+        Goal.onGoalDone += OnGoalDone;
 
         _btnContinue.clicked += OnContinue;
+        _btnComplete.clicked += OnContinue;
         _btnStart.clicked += OnStart;
 
         _btnPause.clicked += PauseTimer;
@@ -165,7 +165,7 @@ internal class TaskManager : EditorWindowBase
                 });
 
             element.Q <Button>("BTN_GoTo").clickable = new Clickable(
-                () => {RequirementsLogic.ExecuteRequirement(requirement);});
+                () => {Requirement.ExecuteRequirement(requirement);});
         };
 
         _goalsList.makeItem = () => GUIUtility.Instantiate(_goalItem);
@@ -179,7 +179,6 @@ internal class TaskManager : EditorWindowBase
 
             element.Q <Label>("Title").text = goal.title;
             element.Q <Label>("Hint").tooltip = goal.hint;
-            Debug.Log($"set tooltip to: {goal.hint}");
 
             UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.Done);
         };
@@ -187,7 +186,10 @@ internal class TaskManager : EditorWindowBase
 
     protected override void UnRegisterCallbacks()
     {
+        Goal.onGoalDone -= OnGoalDone;
+
         _btnContinue.clicked -= OnContinue;
+        _btnComplete.clicked -= OnContinue;
         _btnStart.clicked -= OnStart;
 
         _btnPause.clicked -= PauseTimer;
@@ -243,8 +245,10 @@ internal class TaskManager : EditorWindowBase
         if (scene != null)
         {
             EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene));
-
-            if (currentTask.startInPlayMode)
+            
+            Task nextTask = _data.Tasks[_data.CurrentTaskIndex + 1];
+            
+            if (currentTask.startInPlayMode && !nextTask.Done)
                 EditorApplication.EnterPlaymode();
         }
 
@@ -360,9 +364,16 @@ internal class TaskManager : EditorWindowBase
             _requirementsList.itemsSource = currentTask.taskRequirements;
 
         if (!hasGoals)
+        {
+            PauseTimer();
+
             return;
+        }
 
         _goalsList.itemsSource = currentTask.goals;
+
+        if (currentTask.goals.All(goal => goal.Done))
+            PauseTimer();
 
         UpdateTimerText();
         StartTimer();

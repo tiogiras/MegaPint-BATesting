@@ -32,6 +32,14 @@ internal class TaskManagerData : ScriptableObject
     [SerializeField] private List <Task> _tasks;
     [SerializeField] private int _currentTaskIndex;
 
+    public void ResetValues()
+    {
+        CurrentTaskIndex = 0;
+        
+        foreach (Task task in _tasks)
+            task.ResetValues();
+    }
+
     #region Public Methods
 
     public Task CurrentTask()

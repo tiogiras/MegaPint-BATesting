@@ -16,3 +16,4 @@ MonoBehaviour:
   hint: '1. Enter PlayMode
 
     2. Hold spacebar for the button to work.'
+  _done: 1

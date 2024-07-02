@@ -17,4 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2f38eb839ee44142a2a5c6ac616bc61, type: 2}
   - {fileID: 11400000, guid: 7540dc91f58eeff4989c45daa97c54bd, type: 2}
   - {fileID: 11400000, guid: 882162bc762b7464da0dc12ac5ddcaa9, type: 2}
-  _currentTaskIndex: 2
+  - {fileID: 11400000, guid: 19589c9956fbee5438bf59698eee03d0, type: 2}
+  _currentTaskIndex: 3
