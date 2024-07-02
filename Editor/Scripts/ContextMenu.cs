@@ -11,10 +11,16 @@ internal static partial class ContextMenu
 {
     #region Private Methods
 
-    [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Manager", false, 100)]
+    [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Manager &t", false, 101)]
     private static void OpenTaskManager()
     {
         TryToOpenWithValidToken<TaskManager>(false);
+    }
+    
+    [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
+    private static void OpenOverview()
+    {
+        TryToOpenWithValidToken<Overview>(false);
     }
 
     // TODO commenting

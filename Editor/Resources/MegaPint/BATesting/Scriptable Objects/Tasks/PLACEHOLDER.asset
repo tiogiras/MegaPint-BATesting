@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: Test Procedure II (Active)
+  m_Name: PLACEHOLDER
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: Test Procedure II (Active)
-  taskDescription: 
+  taskName: PLACEHOLDER
+  taskDescription: PLACEHOLDER
   taskRequirements: []
   hasDoableTask: 0
   scene: {fileID: 0}
   startInPlayMode: 0
-  goals:
-  - {fileID: 11400000, guid: d717d19fe90f61e4db781230a0d1dce4, type: 2}
-  _done: 1
-  _neededTime: 25
+  goals: []
+  _done: 0
+  _neededTime: 0

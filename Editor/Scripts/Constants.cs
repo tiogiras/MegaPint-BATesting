@@ -14,7 +14,7 @@ internal static partial class Constants
             private static readonly string s_baTestingItems =
                 Utility.CombineMenuItemPath(ContextMenu.MenuItemPackages, "BA Testing");
 
-            public static readonly string Overview = Utility.CombineMenuItemPath(s_baTestingItems, "Overview");
+            public static readonly string Overview = Utility.CombineMenuItemPath(s_baTestingItems, "Test Overview");
             public static readonly string TaskManager = Utility.CombineMenuItemPath(s_baTestingItems, "Task Manager");
         }
 
@@ -28,6 +28,7 @@ internal static partial class Constants
 
             private static readonly string s_windows = Path.Combine(s_userInterface, "Windows");
             public static readonly string Overview = Path.Combine(s_windows, "Overview");
+            public static readonly string Task = Path.Combine(Overview, "Task");
             public static readonly string InvalidToken = Path.Combine(s_windows, "Invalid Token");
             public static readonly string TaskManager = Path.Combine(s_windows, "Task Manager");
             public static readonly string Requirement = Path.Combine(TaskManager, "Requirement");

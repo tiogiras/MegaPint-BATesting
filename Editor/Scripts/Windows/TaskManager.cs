@@ -4,18 +4,17 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
-using Task = System.Threading.Tasks.Task;
+using Task = MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data.Task;
 
 namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows
 {
@@ -131,9 +130,10 @@ internal class TaskManager : EditorWindowBase
 
     protected override void RegisterCallbacks()
     {
-        GoalsLogic.onGoalDone += OnGoalDone;
-        
+        Goal.onGoalDone += OnGoalDone;
+
         _btnContinue.clicked += OnContinue;
+        _btnComplete.clicked += OnContinue;
         _btnStart.clicked += OnStart;
 
         _btnPause.clicked += PauseTimer;
@@ -151,23 +151,21 @@ internal class TaskManager : EditorWindowBase
             element.Q <Label>("Title").text = requirement.requirementName;
 
             var container = element.Q <VisualElement>("Container");
-            UpdateRequirementContainer(container, requirement.done);
+            UpdateRequirementContainer(container, requirement.Done);
 
             var toggle = element.Q <Toggle>("MarkReady");
-            toggle.SetValueWithoutNotify(requirement.done);
+            toggle.SetValueWithoutNotify(requirement.Done);
 
             toggle.RegisterValueChangedCallback(
                 evt =>
                 {
-                    requirement.done = evt.newValue;
+                    requirement.Done = evt.newValue;
                     UpdateRequirementContainer(container, evt.newValue);
                     UpdateButtons();
-
-                    EditorUtility.SetDirty(requirement);
                 });
 
             element.Q <Button>("BTN_GoTo").clickable = new Clickable(
-                () => {RequirementsLogic.ExecuteRequirement(requirement);});
+                () => {Requirement.ExecuteRequirement(requirement);});
         };
 
         _goalsList.makeItem = () => GUIUtility.Instantiate(_goalItem);
@@ -182,22 +180,16 @@ internal class TaskManager : EditorWindowBase
             element.Q <Label>("Title").text = goal.title;
             element.Q <Label>("Hint").tooltip = goal.hint;
 
-            UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.done);
+            UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.Done);
         };
-    }
-
-    private void OnGoalDone(Goal _)
-    {
-        _goalsList.RefreshItems();
-        UpdateGoalButton();
-        
-        if (_data.CurrentTask().goals.All(goal => goal.done))
-            PauseTimer();
     }
 
     protected override void UnRegisterCallbacks()
     {
+        Goal.onGoalDone -= OnGoalDone;
+
         _btnContinue.clicked -= OnContinue;
+        _btnComplete.clicked -= OnContinue;
         _btnStart.clicked -= OnStart;
 
         _btnPause.clicked -= PauseTimer;
@@ -224,23 +216,41 @@ internal class TaskManager : EditorWindowBase
 
     private void OnContinue()
     {
-        if (_data.currentTaskIndex >= _data.TasksCount - 1)
+        if (_data.CurrentTaskIndex >= _data.TasksCount - 1)
         {
-            Debug.Log("No More Tasks");
+            Debug.Log("No More Tasks"); // TODO remove
 
             return;
         }
 
-        _data.currentTaskIndex++;
+        _data.CurrentTask().Done = true;
+        _data.CurrentTaskIndex++;
         UpdateTaskManager();
+    }
+
+    private void OnGoalDone(Goal _)
+    {
+        _goalsList.RefreshItems();
+        UpdateGoalButton();
+
+        if (_data.CurrentTask().goals.All(goal => goal.Done))
+            PauseTimer();
     }
 
     private void OnStart()
     {
-        SceneAsset scene = _data.CurrentTask().scene;
+        Task currentTask = _data.CurrentTask();
+        SceneAsset scene = currentTask.scene;
 
         if (scene != null)
+        {
             EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene));
+            
+            Task nextTask = _data.Tasks[_data.CurrentTaskIndex + 1];
+            
+            if (currentTask.startInPlayMode && !nextTask.Done)
+                EditorApplication.EnterPlaymode();
+        }
 
         OnContinue();
     }
@@ -252,14 +262,16 @@ internal class TaskManager : EditorWindowBase
         _timer.style.opacity = .5f;
 
         _btnPause.style.display = DisplayStyle.None;
-        _btnResume.style.display = DisplayStyle.Flex;
+
+        _btnResume.style.display =
+            _data.CurrentTask().goals.All(goal => goal.Done) ? DisplayStyle.None : DisplayStyle.Flex;
     }
 
     private void StartTimer()
     {
-        if (_data.CurrentTask().goals.All(goal => goal.done))
+        if (_data.CurrentTask().goals.All(goal => goal.Done))
             return;
-        
+
         _pauseTimer = false;
 
         _timer.style.opacity = 1f;
@@ -274,12 +286,10 @@ internal class TaskManager : EditorWindowBase
     {
         while (this != null)
         {
-            Debug.Log("Timer");
-
             if (!await TryWaitOneSecond())
                 break;
 
-            _data.CurrentTask().neededTime++;
+            _data.CurrentTask().NeededTime++;
 
             UpdateTimerText();
         }
@@ -292,7 +302,7 @@ internal class TaskManager : EditorWindowBase
             if (_pauseTimer)
                 return false;
 
-            await Task.Delay(100);
+            await System.Threading.Tasks.Task.Delay(100);
         }
 
         return true;
@@ -300,7 +310,7 @@ internal class TaskManager : EditorWindowBase
 
     private void UpdateButtons()
     {
-        var missingRequirements = _data.CurrentTask().taskRequirements.Any(requirement => !requirement.done);
+        var missingRequirements = _data.CurrentTask().taskRequirements.Any(requirement => !requirement.Done);
 
         _btnStart.pickingMode = missingRequirements ? PickingMode.Ignore : PickingMode.Position;
         _btnStart.style.opacity = missingRequirements ? .5f : 1f;
@@ -311,7 +321,7 @@ internal class TaskManager : EditorWindowBase
 
     private void UpdateGoalButton()
     {
-        var unCompletedGoals = _data.CurrentTask().goals.Any(goal => !goal.done);
+        var unCompletedGoals = _data.CurrentTask().goals.Any(goal => !goal.Done);
 
         _btnComplete.pickingMode = unCompletedGoals ? PickingMode.Ignore : PickingMode.Position;
         _btnComplete.style.opacity = unCompletedGoals ? .5f : 1f;
@@ -320,9 +330,9 @@ internal class TaskManager : EditorWindowBase
     private void UpdateTaskManager()
     {
         _lastTaskIndex.text = $"/{_data.TasksCount}";
-        _currentTaskIndex.text = (_data.currentTaskIndex + 1).ToString();
+        _currentTaskIndex.text = (_data.CurrentTaskIndex + 1).ToString();
 
-        TaskManagerContent.Task currentTask = _data.CurrentTask();
+        Task currentTask = _data.CurrentTask();
         _taskTitle.text = currentTask.taskName;
         _taskInfo.text = currentTask.taskDescription;
 
@@ -354,9 +364,16 @@ internal class TaskManager : EditorWindowBase
             _requirementsList.itemsSource = currentTask.taskRequirements;
 
         if (!hasGoals)
+        {
+            PauseTimer();
+
             return;
+        }
 
         _goalsList.itemsSource = currentTask.goals;
+
+        if (currentTask.goals.All(goal => goal.Done))
+            PauseTimer();
 
         UpdateTimerText();
         StartTimer();
@@ -364,7 +381,7 @@ internal class TaskManager : EditorWindowBase
 
     private void UpdateTimerText()
     {
-        _timer.text = TimeSpan.FromSeconds(_data.CurrentTask().neededTime).ToString();
+        _timer.text = TimeSpan.FromSeconds(_data.CurrentTask().NeededTime).ToString();
     }
 
     #endregion

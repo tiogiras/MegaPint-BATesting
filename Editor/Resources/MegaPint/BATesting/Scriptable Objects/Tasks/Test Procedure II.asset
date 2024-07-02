@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Procedure II
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: Test Procedure ||
+  taskName: Test Procedure II
   taskDescription: 'Certain tasks require you to perform a certain action or do something
     in order to reach the goal of the task.
 
@@ -33,3 +33,7 @@ MonoBehaviour:
   taskRequirements: []
   hasDoableTask: 1
   scene: {fileID: 102900000, guid: 923b3bfede245584a919d3a6a9f90dc0, type: 3}
+  startInPlayMode: 1
+  goals: []
+  _done: 1
+  _neededTime: 0

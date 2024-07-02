@@ -1,15 +1,30 @@
-﻿// TODO Commenting
+﻿// TODO commenting
 
 #if UNITY_EDITOR
-using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows.TaskManagerContent;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
+namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
-internal static class RequirementsLogic
+[CreateAssetMenu(fileName = "Requirement", menuName = "MegaPint/Requirement", order = 0)] // TODO remove this line
+internal class Requirement : ScriptableObject
 {
+    public bool Done
+    {
+        get => _done;
+        set
+        {
+            _done = value;
+            EditorUtility.SetDirty(this);
+            AssetDatabase.SaveAssetIfDirty(this);
+        }
+    }
+
+    public string requirementName;
+    [SerializeField] private bool _done;
+
     #region Public Methods
 
     public static void ExecuteRequirement(Requirement requirement)
@@ -26,6 +41,11 @@ internal static class RequirementsLogic
         }
         else
             logic.action?.Invoke(null);
+    }
+
+    public void ResetValues()
+    {
+        Done = false;
     }
 
     #endregion
