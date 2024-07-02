@@ -18,6 +18,7 @@ internal class Task : ScriptableObject
     public List <Requirement> taskRequirements;
     public bool hasDoableTask;
     public SceneAsset scene;
+    public bool startInPlayMode;
 
     public List <Goal> goals;
 

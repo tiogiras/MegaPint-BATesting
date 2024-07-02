@@ -15,7 +15,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
-using Task = System.Threading.Tasks.Task;
+using Task = MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows.TaskManagerContent.Task;
 
 namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows
 {
@@ -132,7 +132,7 @@ internal class TaskManager : EditorWindowBase
     protected override void RegisterCallbacks()
     {
         GoalsLogic.onGoalDone += OnGoalDone;
-        
+
         _btnContinue.clicked += OnContinue;
         _btnStart.clicked += OnStart;
 
@@ -181,18 +181,10 @@ internal class TaskManager : EditorWindowBase
 
             element.Q <Label>("Title").text = goal.title;
             element.Q <Label>("Hint").tooltip = goal.hint;
+            Debug.Log($"set tooltip to: {goal.hint}");
 
             UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.done);
         };
-    }
-
-    private void OnGoalDone(Goal _)
-    {
-        _goalsList.RefreshItems();
-        UpdateGoalButton();
-        
-        if (_data.CurrentTask().goals.All(goal => goal.done))
-            PauseTimer();
     }
 
     protected override void UnRegisterCallbacks()
@@ -226,7 +218,7 @@ internal class TaskManager : EditorWindowBase
     {
         if (_data.currentTaskIndex >= _data.TasksCount - 1)
         {
-            Debug.Log("No More Tasks");
+            Debug.Log("No More Tasks"); // TODO remove
 
             return;
         }
@@ -235,12 +227,27 @@ internal class TaskManager : EditorWindowBase
         UpdateTaskManager();
     }
 
+    private void OnGoalDone(Goal _)
+    {
+        _goalsList.RefreshItems();
+        UpdateGoalButton();
+
+        if (_data.CurrentTask().goals.All(goal => goal.done))
+            PauseTimer();
+    }
+
     private void OnStart()
     {
-        SceneAsset scene = _data.CurrentTask().scene;
+        Task currentTask = _data.CurrentTask();
+        SceneAsset scene = currentTask.scene;
 
         if (scene != null)
+        {
             EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene));
+
+            if (currentTask.startInPlayMode)
+                EditorApplication.EnterPlaymode();
+        }
 
         OnContinue();
     }
@@ -252,14 +259,16 @@ internal class TaskManager : EditorWindowBase
         _timer.style.opacity = .5f;
 
         _btnPause.style.display = DisplayStyle.None;
-        _btnResume.style.display = DisplayStyle.Flex;
+
+        _btnResume.style.display =
+            _data.CurrentTask().goals.All(goal => goal.done) ? DisplayStyle.None : DisplayStyle.Flex;
     }
 
     private void StartTimer()
     {
         if (_data.CurrentTask().goals.All(goal => goal.done))
             return;
-        
+
         _pauseTimer = false;
 
         _timer.style.opacity = 1f;
@@ -274,8 +283,6 @@ internal class TaskManager : EditorWindowBase
     {
         while (this != null)
         {
-            Debug.Log("Timer");
-
             if (!await TryWaitOneSecond())
                 break;
 
@@ -292,7 +299,7 @@ internal class TaskManager : EditorWindowBase
             if (_pauseTimer)
                 return false;
 
-            await Task.Delay(100);
+            await System.Threading.Tasks.Task.Delay(100);
         }
 
         return true;
@@ -322,7 +329,7 @@ internal class TaskManager : EditorWindowBase
         _lastTaskIndex.text = $"/{_data.TasksCount}";
         _currentTaskIndex.text = (_data.currentTaskIndex + 1).ToString();
 
-        TaskManagerContent.Task currentTask = _data.CurrentTask();
+        Task currentTask = _data.CurrentTask();
         _taskTitle.text = currentTask.taskName;
         _taskInfo.text = currentTask.taskDescription;
 
