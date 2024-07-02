@@ -39,6 +39,8 @@ internal class TaskManager : EditorWindowBase
     private VisualElement _goalsContainer;
     private ListView _goalsList;
 
+    private ScrollView _infoField;
+
     private Label _lastTaskIndex;
 
     private bool _pauseTimer;
@@ -111,6 +113,8 @@ internal class TaskManager : EditorWindowBase
         _timer = _timerContainer.Q <Label>("Timer");
         _btnPause = _timerContainer.Q <Button>("BTN_Pause");
         _btnResume = _timerContainer.Q <Button>("BTN_Resume");
+
+        _infoField = content.Q <ScrollView>("InfoField");
 
         UpdateTaskManager();
 
@@ -245,9 +249,9 @@ internal class TaskManager : EditorWindowBase
         if (scene != null)
         {
             EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene));
-            
+
             Task nextTask = _data.Tasks[_data.CurrentTaskIndex + 1];
-            
+
             if (currentTask.startInPlayMode && !nextTask.Done)
                 EditorApplication.EnterPlaymode();
         }
@@ -257,6 +261,8 @@ internal class TaskManager : EditorWindowBase
 
     private void PauseTimer()
     {
+        AssetDatabase.SaveAssetIfDirty(_data.CurrentTask());
+
         _pauseTimer = true;
 
         _timer.style.opacity = .5f;
@@ -331,6 +337,8 @@ internal class TaskManager : EditorWindowBase
     {
         _lastTaskIndex.text = $"/{_data.TasksCount}";
         _currentTaskIndex.text = (_data.CurrentTaskIndex + 1).ToString();
+
+        _infoField.scrollOffset = Vector2.zero;
 
         Task currentTask = _data.CurrentTask();
         _taskTitle.text = currentTask.taskName;

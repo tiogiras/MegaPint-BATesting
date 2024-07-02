@@ -24,12 +24,17 @@ MonoBehaviour:
     always pause the timer when you need a break from your active task.</b>
 
 
+    Every
+    goal you need to reach provides you with a hint. You can always read this hint
+    by hovering over the hint label. Only use it when you cannot solve the goal by
+    yourself.
+
+
+    The task will automatically detect when the goal has been reached.
+
+
     The
-    task will automatically detect when the goal has been reached.
-
-
-    The test
-    can be advanced once all goals are met.'
+    test can be advanced once all goals are met.'
   taskRequirements: []
   hasDoableTask: 1
   scene: {fileID: 102900000, guid: 923b3bfede245584a919d3a6a9f90dc0, type: 3}

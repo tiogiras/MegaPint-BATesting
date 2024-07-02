@@ -20,12 +20,13 @@ MonoBehaviour:
 
 
     MegaPint will show you the information
-    either in a new window or the base window if you click the Go To button of the
-    requirement. Once you have read the required information you may check the requirement.
+    either in a new window or the base window, when you click the <b>Go To</b> button
+    of the requirement. Once you have read the required information you may check
+    the requirement.
 
 
-    The
-    test can be advanced once all requirements have been checked.'
+    The test can be advanced once all requirements have been
+    checked.'
   taskRequirements:
   - {fileID: 11400000, guid: 425658bae6e58f248b73b660ba53ac17, type: 2}
   hasDoableTask: 0
