@@ -20,7 +20,7 @@
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:VisualElement class="mp_background-color--quaternary mp_border-color--secondary" style="margin-right: 25px; margin-left: 25px; margin-top: 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;">
                         <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingPrimary tabindex="-1" name="TaskTitle" text="Task Title" style="-unity-font-style: bold; font-size: 16px; -unity-text-align: middle-center; margin-top: 5px; margin-bottom: 10px;" />
-                        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-grow: 1; margin-top: 5px; margin-right: 10px; margin-bottom: 5px; margin-left: 10px;">
+                        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="InfoField" style="flex-grow: 1; margin-top: 5px; margin-right: 10px; margin-bottom: 5px; margin-left: 10px;">
                             <ui:VisualElement style="flex-grow: 1;">
                                 <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" name="TaskInfo" enable-rich-text="true" text="This is some information about the upcoming task. We will do some stuff that is tracked in the background" style="white-space: normal; margin-bottom: 5px;" />
                                 <ui:VisualElement name="TimerContainer" style="flex-direction: row; justify-content: space-between; align-items: center;">

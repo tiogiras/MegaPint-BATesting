@@ -58,7 +58,7 @@ internal class InvalidToken : EditorWindowBase
                 switch (evt.linkID)
                 {
                     case "BaseWindow":
-                        ContextMenu.Open();
+                        ContextMenu.OpenBaseWindow();
                         Close();
 
                         break;
