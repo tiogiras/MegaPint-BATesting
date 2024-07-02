@@ -13,6 +13,10 @@ internal static class RequirementGUILookUp
         {
             "Test Requirement",
             Constants.BaTesting.UserInterface.Requirements.TestRequirement
+        },
+        {
+            "MenuItems",
+            Constants.BaTesting.UserInterface.Requirements.MenuItems
         }
     };
 }
