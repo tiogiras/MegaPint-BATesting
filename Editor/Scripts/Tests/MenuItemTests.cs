@@ -2,6 +2,7 @@
 #if UNITY_INCLUDE_TESTS
 using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows;
 using MegaPint.Editor.Scripts.Tests.Utility;
+using MegaPint.Editor.Scripts.Windows;
 using NUnit.Framework;
 
 namespace MegaPint.Editor.Scripts.Tests
@@ -12,11 +13,11 @@ internal class MenuItemTests
 {
     #region Tests
 
-    /*[Test]
+    [Test]
     public void Overview()
     {
-        TestsUtility.ValidateMenuItemLink(Constants.BaTesting.Links.Overview, typeof());
-    }*/
+        TestsUtility.ValidateMenuItemLink(Constants.BaTesting.Links.Overview, typeof(Overview));
+    }
 
     [Test]
     public void TaskManager()

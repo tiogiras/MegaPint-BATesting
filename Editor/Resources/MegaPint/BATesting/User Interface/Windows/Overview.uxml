@@ -5,9 +5,16 @@
     <MegaPint.Editor.Scripts.GUI.Factories.RootElement style="flex-grow: 1;">
         <ui:VisualElement focusable="true" style="flex-grow: 1;">
             <MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundSecondary class="mp_border-color--black" style="border-bottom-width: 1px;">
-                <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingPrimary tabindex="-1" text="Transparency Wizard" style="white-space: normal; -unity-text-align: middle-center; font-size: 16px; margin-top: 5px; margin-bottom: 5px;" />
+                <MegaPint.Editor.Scripts.GUI.Factories.Headings.HeadingPrimary tabindex="-1" text="Test Overview" style="white-space: normal; -unity-text-align: middle-center; font-size: 16px; margin-top: 5px; margin-bottom: 5px;" />
             </MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundSecondary>
-            <MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary style="flex-grow: 1;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary style="flex-grow: 1; padding-right: 25px; padding-left: 25px;">
+                <ui:VisualElement style="flex-direction: row; flex-shrink: 0; justify-content: space-between; margin-top: 10px; margin-bottom: 10px;">
+                    <ui:ProgressBar value="22" title="Overall Progress" name="Progress" />
+                    <ui:Button text="Reset All" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_ResetAll" />
+                </ui:VisualElement>
+                <ui:ListView focusable="true" selection-type="None" virtualization-method="DynamicHeight" name="Tasks" class="mp_border-color--secondary mp_background-color--quaternary" style="flex-grow: 1; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;" />
+                <ui:Button text="Send Results" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Send" style="margin-top: 10px; margin-bottom: 10px;" />
+            </MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary>
         </ui:VisualElement>
     </MegaPint.Editor.Scripts.GUI.Factories.RootElement>
 </ui:UXML>

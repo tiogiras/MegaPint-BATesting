@@ -1,7 +1,7 @@
 ﻿// TODO Commenting
 
 #if UNITY_EDITOR
-using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows.TaskManagerContent;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEngine;
 using UnityEngine.UIElements;
 

@@ -20,3 +20,8 @@ MonoBehaviour:
     of your tasks.\n\n<b>So please take your time and read carefully.</b>"
   taskRequirements: []
   hasDoableTask: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  _done: 1
+  _neededTime: 0

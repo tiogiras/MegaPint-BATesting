@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Procedure II (Active)
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: Test Procedure || (Active)
+  taskName: Test Procedure II (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
@@ -21,4 +21,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals:
   - {fileID: 11400000, guid: d717d19fe90f61e4db781230a0d1dce4, type: 2}
-  neededTime: 0
