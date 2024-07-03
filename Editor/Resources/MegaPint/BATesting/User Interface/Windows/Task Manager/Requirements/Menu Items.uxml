@@ -9,7 +9,9 @@
             </MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundSecondary>
             <MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary style="flex-grow: 1; flex-shrink: 1;">
                 <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-grow: 1; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
-                    <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="..." class="mp_link" style="white-space: normal;" />
+                    <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="MenuItems are clickable buttons in the main menu of unity. They are located in the header of the unity window.&#10;&#10;MenuItems are used to execute functions or to open editor windows." class="mp_link" style="white-space: normal; margin-bottom: 10px;" />
+                    <MegaPint.Editor.Scripts.GUI.Factories.Structure.Separator />
+                    <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="All MegaPint menu items can be found under the &quot;MegaPint&quot; menu.&#10;&#10;The MegaPint menu houses essential options like the built in &lt;b&gt;Package Manager&lt;/b&gt; or the function to &lt;b&gt;Open&lt;/b&gt; the base window.&#10;&#10;You can find the function of an installed package under the menu &lt;b&gt;MegaPint/Packages&lt;/b&gt; if you want to access it." style="white-space: normal; margin-top: 10px;" />
                 </ui:ScrollView>
             </MegaPint.Editor.Scripts.GUI.Factories.Backgrounds.BackgroundTertiary>
         </ui:VisualElement>

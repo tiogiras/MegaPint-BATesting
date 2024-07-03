@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using MegaPint.Editor.Scripts.GUI.Utility;
-using MegaPint.Editor.Scripts.PackageManager.Packages;
 using UnityEngine.UIElements;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
@@ -37,7 +36,7 @@ internal static class RequirementLogicLookUp
                             switch (evt.linkID)
                             {
                                 case "BaseWindow":
-                                    ContextMenu.OpenBaseWindow();
+                                    ContextMenu.BasePackage.OpenBaseWindow();
 
                                     break;
                             }
@@ -57,7 +56,7 @@ internal static class RequirementLogicLookUp
                 false,
                 _ =>
                 {
-                    ContextMenu.OpenBaseWindowPerLink($"Packages/{PackageKey.AlphaButton}/Help");
+                    ContextMenu.BasePackage.OpenBaseWindowPerLink("Info/Help/How To's/How To: Shortcuts");
                 })
         },
     };

@@ -19,4 +19,5 @@ MonoBehaviour:
     MenuItems are displayed
 
     3. MegaPint => Packages => AutoSave'
-  _done: 0
+  hasInitializationLogic: 1
+  _done: 1

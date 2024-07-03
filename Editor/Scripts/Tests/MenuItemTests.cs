@@ -1,6 +1,5 @@
 ﻿#if UNITY_EDITOR
 #if UNITY_INCLUDE_TESTS
-using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows;
 using MegaPint.Editor.Scripts.Tests.Utility;
 using MegaPint.Editor.Scripts.Windows;
 using NUnit.Framework;

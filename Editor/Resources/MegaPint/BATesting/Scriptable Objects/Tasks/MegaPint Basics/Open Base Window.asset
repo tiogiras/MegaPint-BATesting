@@ -16,4 +16,5 @@ MonoBehaviour:
   hint: '1. Use the Menu Items at the top of unity
 
     2. MegaPint => Open'
-  _done: 0
+  hasInitializationLogic: 1
+  _done: 1

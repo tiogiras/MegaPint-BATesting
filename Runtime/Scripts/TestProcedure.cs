@@ -1,12 +1,11 @@
 // TODO commenting
 
 using System.Collections.Generic;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Runtime.Scripts
+namespace MegaPint
 {
 
 [AddComponentMenu("")]
@@ -14,6 +13,7 @@ public class TestProcedure : MonoBehaviour
 {
     [SerializeField] private List <FadeGraphic> _loseGraphics;
     [SerializeField] private GameObject _winGraphic;
+    [SerializeField] private GameObject _hintGraphic;
     [SerializeField] private Button _button;
     [SerializeField] private Image _background;
     [SerializeField] private Goal _goal;
@@ -21,6 +21,7 @@ public class TestProcedure : MonoBehaviour
     private readonly List <FadeGraphic> _loseGraphicsPool = new();
 
     private bool _spaceIsPressed;
+    private int _tryCount;
 
     #region Unity Event Functions
 
@@ -39,6 +40,8 @@ public class TestProcedure : MonoBehaviour
 
     public void TryWin()
     {
+        _tryCount++;
+        
         if (_spaceIsPressed)
             Win();
         else
@@ -65,6 +68,9 @@ public class TestProcedure : MonoBehaviour
 
     private void Lose()
     {
+        if (_tryCount == 5)
+            _hintGraphic.SetActive(true);
+        
         GetFromPool().FadeIn();
     }
 
