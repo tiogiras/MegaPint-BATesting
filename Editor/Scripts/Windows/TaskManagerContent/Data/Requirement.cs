@@ -33,7 +33,7 @@ internal class Requirement : ScriptableObject
 
         if (logic.openRequirementInformation)
         {
-            ContextMenu.OpenRequirementInformation();
+            ContextMenu.BATesting.OpenRequirementInformation();
 
             RequirementInformation.AfterGUICreation(
                 Resources.Load <VisualTreeAsset>(RequirementGUILookUp.LookUp[requirement.requirementName]),

@@ -1,5 +1,5 @@
 ﻿#if UNITY_EDITOR
-using MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.PackageManager.Packages;
 using MegaPint.Editor.Scripts.Windows;
 using UnityEditor;
 
@@ -9,38 +9,70 @@ namespace MegaPint.Editor.Scripts
 /// <summary> Partial class used to store MenuItems </summary>
 internal static partial class ContextMenu
 {
-    #region Private Methods
-
-    [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Manager &t", false, 101)]
-    private static void OpenTaskManager()
+    public static class BATesting
     {
-        TryToOpenWithValidToken<TaskManager>(false);
-    }
-    
-    [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
-    private static void OpenOverview()
-    {
-        TryToOpenWithValidToken<Overview>(false);
-    }
+        private static readonly MenuItemSignature s_requirementInformationSignature = new()
+        {
+            package = PackageKey.BATesting, signature = "Requirement Information"
+        };
 
-    // TODO commenting
-    public static void OpenRequirementInformation()
-    {
-        TryToOpenWithValidToken<RequirementInformation>(false);
-    }
+        private static readonly MenuItemSignature s_overviewSignature = new()
+        {
+            package = PackageKey.BATesting, signature = "Task Overview"
+        };
 
-    /// <summary> Open the editor window when the tester token is valid if not open the invalid token window </summary>
-    /// <param name="utility"> Targeted utility state of the window </param>
-    /// <typeparam name="T"> Targeted window type </typeparam>
-    private static void TryToOpenWithValidToken <T>(bool utility) where T : EditorWindowBase
-    {
-        if (Utility.ValidateTesterToken())
-            TryOpen <T>(utility);
-        else
-            TryOpen <InvalidToken>(true);
-    }
+        private static readonly MenuItemSignature s_taskManagerSignature = new()
+        {
+            package = PackageKey.BATesting, signature = "Task Manager"
+        };
 
-    #endregion
+        private static readonly MenuItemSignature s_invalidTokenSignature = new()
+        {
+            package = PackageKey.BATesting, signature = "Invalid Token"
+        };
+
+        #region Public Methods
+
+        /// <summary> Open the requirement information window </summary>
+        public static void OpenRequirementInformation()
+        {
+            TryToOpenWithValidToken <RequirementInformation>(false, s_requirementInformationSignature);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
+        private static void OpenOverview()
+        {
+            TryToOpenWithValidToken <Overview>(false, s_overviewSignature);
+        }
+
+        [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Manager &t", false, 101)]
+        private static void OpenTaskManager()
+        {
+            TryToOpenWithValidToken <TaskManager>(false, s_taskManagerSignature);
+        }
+
+        /// <summary> Open the editor window when the tester token is valid if not open the invalid token window </summary>
+        /// <param name="utility"> Targeted utility state of the window </param>
+        /// <param name="menuItemSignature"> Signature to identify this menuItem </param>
+        /// <param name="title"> Title of the window </param>
+        /// <typeparam name="T"> Targeted window type </typeparam>
+        private static void TryToOpenWithValidToken <T>(
+            bool utility,
+            MenuItemSignature menuItemSignature,
+            string title = "") where T : EditorWindowBase
+        {
+            if (Utility.ValidateTesterToken())
+                TryOpen <T>(utility, menuItemSignature, title);
+            else
+                TryOpen <InvalidToken>(true, s_invalidTokenSignature);
+        }
+
+        #endregion
+    }
 }
 
 }

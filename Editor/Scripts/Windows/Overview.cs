@@ -102,10 +102,10 @@ internal class Overview : EditorWindowBase
 
             var btnReset = element.Q <Button>("BTN_Reset");
 
-            if (task.Done)
+            if (task.Done || _data.CurrentTaskIndex == i)
             {
                 btnReset.style.display = DisplayStyle.Flex;
-                
+
                 btnReset.clickable = new Clickable(
                     () =>
                     {
@@ -115,13 +115,13 @@ internal class Overview : EditorWindowBase
                             _data.CurrentTaskIndex = index;
 
                         task.ResetValues();
-                        UpdateListElementContainer(container, task.Done);
+                        UpdateListElementContainer(container, task.Done, i);
                     });
             }
-            else 
+            else
                 btnReset.style.display = DisplayStyle.None;
             
-            UpdateListElementContainer(container, task.Done);
+            UpdateListElementContainer(container, task.Done, i);
         };
     }
 
@@ -150,20 +150,29 @@ internal class Overview : EditorWindowBase
     private void Refresh(Task _)
     {
         _tasksView.RefreshItems();
+        
         UpdateProgressBar();
         UpdateSendButton();
     }
 
-    private void UpdateListElementContainer(VisualElement element, bool done)
+    private void UpdateListElementContainer(VisualElement element, bool done, int index)
     {
         if (done)
         {
             element.AddToClassList(StyleSheetClasses.Background.Color.Green);
             element.RemoveFromClassList(StyleSheetClasses.Background.Color.Red);
+            element.RemoveFromClassList(StyleSheetClasses.Background.Color.Orange);
+        }
+        else if (index == _data.CurrentTaskIndex)
+        {
+            element.AddToClassList(StyleSheetClasses.Background.Color.Orange);
+            element.RemoveFromClassList(StyleSheetClasses.Background.Color.Red);
+            element.RemoveFromClassList(StyleSheetClasses.Background.Color.Green);
         }
         else
         {
             element.AddToClassList(StyleSheetClasses.Background.Color.Red);
+            element.RemoveFromClassList(StyleSheetClasses.Background.Color.Orange);
             element.RemoveFromClassList(StyleSheetClasses.Background.Color.Green);
         }
     }

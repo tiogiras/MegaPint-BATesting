@@ -19,6 +19,8 @@ MonoBehaviour:
   hasDoableTask: 0
   scene: {fileID: 0}
   startInPlayMode: 0
-  goals: []
-  _done: 0
-  _neededTime: 0
+  goals:
+  - {fileID: 11400000, guid: 704089278cbe6354ea6123edb6fd2e07, type: 2}
+  - {fileID: 11400000, guid: 920067ce98af3354da64a4facb32174c, type: 2}
+  _done: 1
+  _neededTime: 2

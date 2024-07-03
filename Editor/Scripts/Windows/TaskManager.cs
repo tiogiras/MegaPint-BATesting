@@ -4,10 +4,9 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
-using MegaPint.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -16,7 +15,7 @@ using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
 using Task = MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data.Task;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Windows
+namespace MegaPint.Editor.Scripts.Windows
 {
 
 /// <summary> Window based on the <see cref="EditorWindowBase" /> to display the current ba testing tasks </summary>
@@ -181,6 +180,8 @@ internal class TaskManager : EditorWindowBase
             if (goal == null)
                 return;
 
+            goal.SetActive();
+
             element.Q <Label>("Title").text = goal.title;
             element.Q <Label>("Hint").tooltip = goal.hint;
 
@@ -203,6 +204,25 @@ internal class TaskManager : EditorWindowBase
     #endregion
 
     #region Private Methods
+
+    private static void TryInitializeGoals(Task task, bool initialize)
+    {
+        if (task.goals.Count == 0)
+            return;
+
+        Goal[] initializeGoals = task.goals.Where(goal => goal.hasInitializationLogic).ToArray();
+
+        if (!initializeGoals.Any())
+            return;
+
+        foreach (Goal goal in initializeGoals)
+        {
+            if (initialize)
+                GoalInitializationLogicLookUp.InitializationLookUp[goal.title]?.Invoke();
+            else
+                GoalInitializationLogicLookUp.DeInitializationLookUp[goal.title]?.Invoke();
+        }
+    }
 
     private static void UpdateRequirementContainer(VisualElement container, bool done)
     {
@@ -227,8 +247,10 @@ internal class TaskManager : EditorWindowBase
             return;
         }
 
-        _data.CurrentTask().Done = true;
+        Task task = _data.CurrentTask();
+
         _data.CurrentTaskIndex++;
+        task.Done = true;
         UpdateTaskManager();
     }
 
@@ -261,7 +283,11 @@ internal class TaskManager : EditorWindowBase
 
     private void PauseTimer()
     {
-        AssetDatabase.SaveAssetIfDirty(_data.CurrentTask());
+        Task task = _data.CurrentTask();
+
+        AssetDatabase.SaveAssetIfDirty(task);
+
+        TryInitializeGoals(task, false);
 
         _pauseTimer = true;
 
@@ -275,8 +301,12 @@ internal class TaskManager : EditorWindowBase
 
     private void StartTimer()
     {
-        if (_data.CurrentTask().goals.All(goal => goal.Done))
+        Task task = _data.CurrentTask();
+
+        if (task.goals.All(goal => goal.Done))
             return;
+
+        TryInitializeGoals(task, true);
 
         _pauseTimer = false;
 
