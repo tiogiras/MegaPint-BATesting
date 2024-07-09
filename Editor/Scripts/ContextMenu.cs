@@ -60,12 +60,12 @@ internal static partial class ContextMenu
         /// <param name="menuItemSignature"> Signature to identify this menuItem </param>
         /// <param name="title"> Title of the window </param>
         /// <typeparam name="T"> Targeted window type </typeparam>
-        private static void TryToOpenWithValidToken <T>(
+        private static async void TryToOpenWithValidToken <T>(
             bool utility,
             MenuItemSignature menuItemSignature,
             string title = "") where T : EditorWindowBase
         {
-            if (Utility.ValidateTesterToken())
+            if (await Utility.IsValidTesterToken())
                 TryOpen <T>(utility, menuItemSignature, title);
             else
                 TryOpen <InvalidToken>(true, s_invalidTokenSignature);
