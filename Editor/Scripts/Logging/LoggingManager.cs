@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using MegaPint.Editor.Scripts.DevMode;
 using UnityEditor;
 using UnityEngine;
 using Application = UnityEngine.Device.Application;
@@ -18,16 +19,36 @@ internal static class LoggingManager
 
     private static SessionLog s_currentLog;
 
+    private static int s_currentLogSaveInterval;
+
     static LoggingManager()
     {
         if (!SaveValues.BaTesting.AgreedToTerms)
             ContextMenu.BATesting.OpenTermsAgreement();
-        
+
         GetSessionLogFile();
         GetSessionLog();
 
         EditorApplication.wantsToQuit += OnWantsToQuit;
     }
+
+    #region Public Methods
+
+    public static void LogToCurrentSession(string categoryName, string logText)
+    {
+        if (s_currentLogSaveInterval >= SaveValues.BaTesting.LogSaveInterval)
+        {
+            s_currentLogSaveInterval = 0;
+
+            SaveCurrentLog();
+        }
+        else
+            s_currentLogSaveInterval++;
+
+        s_currentLog.Log(categoryName, logText);
+    }
+
+    #endregion
 
     #region Private Methods
 
@@ -107,6 +128,8 @@ internal static class LoggingManager
 
     private static void SaveCurrentLog()
     {
+        DevLog.Log("Saving current log");
+
         var json = JsonUtility.ToJson(s_currentLog, true);
         File.WriteAllText(GetCurrentLogFilePath(), json);
     }

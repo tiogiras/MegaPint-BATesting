@@ -13,6 +13,7 @@ internal static partial class SaveValues
         private static CacheValue <int> s_currentTaskIndex = new() {defaultValue = 0};
         
         private static CacheValue <bool> s_termsAgreement = new() {defaultValue = false};
+        private static CacheValue <int> s_logSaveInterval = new() {defaultValue = 10};
 
         private static SettingsBase s_settings;
 
@@ -32,6 +33,12 @@ internal static partial class SaveValues
         {
             get => ValueProperty.Get("AgreedToTerms", ref s_termsAgreement, _Settings);
             set => ValueProperty.Set("AgreedToTerms", value, ref s_termsAgreement, _Settings);
+        }        
+        
+        public static int LogSaveInterval
+        {
+            get => ValueProperty.Get("LogSaveInterval", ref s_logSaveInterval, _Settings);
+            set => ValueProperty.Set("LogSaveInterval", value, ref s_logSaveInterval, _Settings);
         }
 
         private static SettingsBase _Settings
