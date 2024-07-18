@@ -55,6 +55,12 @@ internal static partial class ContextMenu
             TryToOpenWithValidToken <TaskManager>(false, s_taskManagerSignature);
         }
 
+        /// <summary> Opens the TermsAgreement editor window </summary>
+        public static void OpenTermsAgreement()
+        {
+            EditorWindow.GetWindow <TermsAgreement>(true, "").ShowWindow();
+        }
+
         /// <summary> Open the editor window when the tester token is valid if not open the invalid token window </summary>
         /// <param name="utility"> Targeted utility state of the window </param>
         /// <param name="menuItemSignature"> Signature to identify this menuItem </param>
@@ -65,6 +71,20 @@ internal static partial class ContextMenu
             MenuItemSignature menuItemSignature,
             string title = "") where T : EditorWindowBase
         {
+            if (!Settings.MegaPintSettings.Exists())
+            {
+                EditorWindow.GetWindow <FirstSteps>(true, title).ShowWindow();
+                
+                return;
+            }
+
+            if (!SaveValues.BaTesting.AgreedToTerms)
+            {
+                OpenTermsAgreement();
+                
+                return;
+            }
+            
             if (await Utility.IsValidTesterToken())
                 TryOpen <T>(utility, menuItemSignature, title);
             else

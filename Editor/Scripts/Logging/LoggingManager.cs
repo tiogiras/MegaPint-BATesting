@@ -20,6 +20,9 @@ internal static class LoggingManager
 
     static LoggingManager()
     {
+        if (!SaveValues.BaTesting.AgreedToTerms)
+            ContextMenu.BATesting.OpenTermsAgreement();
+        
         GetSessionLogFile();
         GetSessionLog();
 

@@ -11,6 +11,8 @@ internal static partial class SaveValues
     {
         private static CacheValue <bool> s_applyPSTaskManager = new() {defaultValue = true};
         private static CacheValue <int> s_currentTaskIndex = new() {defaultValue = 0};
+        
+        private static CacheValue <bool> s_termsAgreement = new() {defaultValue = false};
 
         private static SettingsBase s_settings;
 
@@ -24,6 +26,12 @@ internal static partial class SaveValues
         {
             get => ValueProperty.Get("CurrentTaskIndex", ref s_currentTaskIndex, _Settings);
             set => ValueProperty.Set("CurrentTaskIndex", value, ref s_currentTaskIndex, _Settings);
+        }
+        
+        public static bool AgreedToTerms
+        {
+            get => ValueProperty.Get("AgreedToTerms", ref s_termsAgreement, _Settings);
+            set => ValueProperty.Set("AgreedToTerms", value, ref s_termsAgreement, _Settings);
         }
 
         private static SettingsBase _Settings

@@ -29,6 +29,7 @@ internal static partial class Constants
 
             private static readonly string s_windows = Path.Combine(s_userInterface, "Windows");
             public static readonly string Overview = Path.Combine(s_windows, "Overview");
+            public static readonly string TermsAgreement = Path.Combine(s_windows, "Terms Agreement");
             public static readonly string Task = Path.Combine(Overview, "Task");
             public static readonly string InvalidToken = Path.Combine(s_windows, "Invalid Token");
             public static readonly string TaskManager = Path.Combine(s_windows, "Task Manager");
