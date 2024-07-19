@@ -1,5 +1,7 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using MegaPint.Editor.Scripts.Logic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 namespace MegaPint.Editor.Scripts.Logging
 {
@@ -12,12 +14,13 @@ internal static class LoggingEvents
         #region PlayModeStartScene
 
         SaveValues.PlayModeStartScene.onToggleChanged += PlayModeStartSceneToggle;
-        SaveValues.PlayModeStartScene.onStartSceneChanged += PlayModeStartSceneScene;
+        SaveValues.PlayModeStartScene.onStartSceneChanged += PlayModeStartSceneSceneChanged;
         SaveValues.PlayModeStartScene.onDisplayToolbarToggleChanged += PlayModeStartSceneToolbarToggle;
 
-        // TODO entered playmode with pmst
-        // TODO entered playmode (manually)
-        // TODO changed scene (manually)
+        PlayModeStartScene.onEnteredPlaymode += EnteredPlayMode;
+        PlayModeStartScene.onEnteredPlaymodeWithStartScene += PlayModeStartSceneEnteredPlayModeWith;
+
+        EditorSceneManager.sceneOpened += SceneChanged;
 
         #endregion
     }
@@ -31,14 +34,33 @@ internal static class LoggingEvents
 
     #endregion
 
+    #region General
+
+    private static void EnteredPlayMode()
+    {
+        AddLog("Entered PlayMode", "Entered PlayMode without PlayModeStartScene");
+    }
+
+    private static void SceneChanged(Scene scene, OpenSceneMode mode)
+    {
+        AddLog("Scene Changed", $"Changed to: {scene.name}");
+    }
+
+    #endregion
+
     #region PlayModeStartScene
+
+    private static void PlayModeStartSceneEnteredPlayModeWith()
+    {
+        AddLog("PlayModeStartScene / Entered PlayMode", "Entered PlayMode with PlayModeStartScene");
+    }
 
     private static void PlayModeStartSceneToggle(bool newValue)
     {
         AddLog("PlayModeStartScene / On/Off", newValue ? "Enabled" : "Disabled");
     }
 
-    private static void PlayModeStartSceneScene()
+    private static void PlayModeStartSceneSceneChanged()
     {
         AddLog(
             "PlayModeStartScene / Changed Scene",
