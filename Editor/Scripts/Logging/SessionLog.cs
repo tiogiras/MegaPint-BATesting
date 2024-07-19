@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using MegaPint.Editor.Scripts.DevMode;
+using MegaPint.Editor.Scripts.PackageManager.Cache;
+using MegaPint.Editor.Scripts.PackageManager.Packages;
 
 namespace MegaPint.Editor.Scripts.Logging
 {
@@ -27,12 +29,37 @@ internal class SessionLog
     public string sessionStartTime;
     public string sessionEndTime;
 
+    public bool usingPlayModeStartScene;
+    public bool usingAutoSave;
+    public bool usingScreenshot;
+    public bool usingValidators;
+    
     public List <LogCategory> categories;
 
     public SessionLog(string sessionID)
     {
         this.sessionID = sessionID;
         sessionStartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        GetUsedPackages();
+    }
+
+    private void GetUsedPackages()
+    {
+        if (!PackageCache.WasInitialized)
+        {
+            PackageCache.onCacheRefreshed += GetUsedPackages;
+            PackageCache.Refresh();
+            
+            return;
+        }
+        
+        PackageCache.onCacheRefreshed -= GetUsedPackages;
+
+        usingPlayModeStartScene = PackageCache.IsInstalled(PackageKey.PlayModeStartScene);
+        usingAutoSave = PackageCache.IsInstalled(PackageKey.AutoSave);
+        usingScreenshot = PackageCache.IsInstalled(PackageKey.Screenshot);
+        usingValidators = PackageCache.IsInstalled(PackageKey.Validators);
     }
 
     #region Public Methods
