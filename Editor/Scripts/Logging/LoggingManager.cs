@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using MegaPint.Editor.Scripts.DevMode;
 using UnityEditor;
 using UnityEngine;
 using Application = UnityEngine.Device.Application;
@@ -29,6 +28,7 @@ internal static class LoggingManager
         GetSessionLogFile();
         GetSessionLog();
 
+        AssemblyReloadEvents.beforeAssemblyReload += SaveCurrentLog;
         EditorApplication.wantsToQuit += OnWantsToQuit;
     }
 
@@ -128,8 +128,9 @@ internal static class LoggingManager
 
     private static void SaveCurrentLog()
     {
-        DevLog.Log("Saving current log");
-
+        if (s_currentLog == null)
+            return;
+        
         var json = JsonUtility.ToJson(s_currentLog, true);
         File.WriteAllText(GetCurrentLogFilePath(), json);
     }
