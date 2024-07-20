@@ -29,7 +29,12 @@ internal static class LoggingManager
         GetSessionLogFile();
         GetSessionLog();
 
-        AssemblyReloadEvents.beforeAssemblyReload += SaveCurrentLog;
+        AssemblyReloadEvents.beforeAssemblyReload += () =>
+        {
+            LogToCurrentSession("General / DomainReload", "Domain reload detected");
+            
+            SaveCurrentLog();
+        };
         EditorApplication.wantsToQuit += OnWantsToQuit;
     }
     
