@@ -1,5 +1,10 @@
-﻿using MegaPint.Editor.Scripts.Logic;
+﻿using System;
+using MegaPint.Editor.Scripts.Drawer;
+using MegaPint.Editor.Scripts.Internal;
+using MegaPint.Editor.Scripts.Logic;
 using MegaPint.Editor.Scripts.Windows;
+using MegaPint.SerializeReferenceDropdown.Editor;
+using MegaPint.ValidationRequirement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
@@ -15,10 +20,9 @@ internal static class LoggingEvents
 #endif
     static LoggingEvents()
     {
-#if USING_PLAYMODESTARTSCENE
-
         #region PlayModeStartScene
 
+#if USING_PLAYMODESTARTSCENE
         SaveValues.PlayModeStartScene.onToggleChanged += PlayModeStartSceneToggle;
         SaveValues.PlayModeStartScene.onStartSceneChanged += PlayModeStartSceneSceneChanged;
         SaveValues.PlayModeStartScene.onDisplayToolbarToggleChanged += PlayModeStartSceneToolbarToggle;
@@ -27,15 +31,13 @@ internal static class LoggingEvents
         PlayModeStartScene.onEnteredPlaymodeWithStartScene += PlayModeStartSceneEnteredPlayModeWith;
 
         EditorSceneManager.sceneOpened += SceneChanged;
+#endif
 
         #endregion
 
-#endif
-
-#if USING_AUTOSAVE
-
         #region AutoSave
 
+#if USING_AUTOSAVE
         SaveValues.AutoSave.onIsActiveChanged += AutoSaveToggle;
         SaveValues.AutoSave.onDisplayToolbarToggleChanged += AutoSaveToolbarToggle;
 
@@ -51,10 +53,153 @@ internal static class LoggingEvents
 
         AutoSaveTimer.onTimerSaving += AutoSaveSaving;
         AutoSaveTimer.onTimerSaved += AutoSaveSaved;
+#endif
 
         #endregion
 
+        #region Screenshot
+
+#if USING_SCREENSHOT
+        WindowCapture.onOpen += ScreenshotWindowCaptureOpen;
+        WindowCapture.onClose += ScreenshotWindowCaptureClose;
+        WindowCapture.onRefresh += ScreenshotWindowCaptureRefresh;
+        WindowCapture.onRender += ScreenshotWindowCaptureRender;
+        WindowCapture.onExport += ScreenshotWindowCaptureExport;
+
+        ShortcutCapture.onOpen += ScreenshotShortcutCaptureOpen;
+        ShortcutCapture.onClose += ScreenshotShortcutCaptureClose;
+        ShortcutCapture.onRefresh += ScreenshotShortcutCaptureRefresh;
+        ShortcutCapture.onChangeState += ScreenshotShortcutCaptureChangeState;
+
+        ContextMenu.Screenshot.onCaptureNow += ScreenshotCaptureNow;
+        CameraCaptureDrawer.onCameraCaptureRendered += ScreenshotCameraCaptureRendered;
+        CameraCaptureDrawer.onCameraCaptureExported += ScreenshotCameraCaptureExported;
 #endif
+
+        #endregion
+
+        #region Validators
+
+#if USING_VALIDATORS
+        ValidatorView.onOpen += ValidatorsValidatorViewOpen;
+        ValidatorView.onClose += ValidatorsValidatorViewClose;
+        ValidatorView.onRefreshed += ValidatorsValidatorViewRefresh;
+        ValidatorView.onTabChange += ValidatorsValidatorViewTabChange;
+        ValidatorView.onItemSelected += ValidatorsValidatorViewItemSelected;
+        ValidatorView.onIssueFixed += ValidatorsValidatorViewIssueFixed;
+        ValidatorView.onAllIssueFixed += ValidatorsValidatorViewAllIssuesFixed;
+        ValidatorView.onFixAll += ValidatorsValidatorViewFixAll;
+
+        ValidationDrawer.onValidateButton += ValidatorsStatusValidateButton;
+        ValidationDrawer.onFixAll += ValidatorsStatusFixAll;
+        ValidationDrawer.onIssueFixed += ValidatorsStatusIssueFixed;
+
+        ValidatableMonoBehaviour.onValidate += ValidatorsValidatableMonoBehaviourValidate;
+        ValidatableMonoBehaviour.onRequirementsChanged += ValidatorsValidatableMonoBehaviourRequirementsChanged;
+        ValidatableMonoBehaviour.onPrioritiesChanged += ValidatorsValidatableMonoBehaviourPrioritiesChanged;
+        
+        ValidatableMonoBehaviourDrawer.onImport += ValidatorsValidatableMonoBehaviourImport;
+        ValidatableMonoBehaviourDrawer.onExport += ValidatorsValidatableMonoBehaviourExport;
+
+        ValidatorSettings.onRequirementsChanged += ValidatorsValidatableMonoBehaviourRequirementsChanged;
+
+        SerializeReferenceDropdownAdvancedDropdown.onSelectedItem += ValidatorsChangedRequirement;
+
+        ScriptableValidationRequirement.onSeverityOverwrite += ValidatorsChangedRequirementSeverityOverwrite;
+#endif
+
+        #endregion
+    }
+
+    private static void ValidatorsChangedRequirementSeverityOverwrite(ValidationState state, Type type, string name)
+    {
+        AddLog("Validators / Requirement Severity Overwrite", $"Changed severity of {name}/{type.Name} to {state}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourPrioritiesChanged(string arg1, int arg2, string arg3, int arg4)
+    {
+        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg1} from {arg2} to {arg4}");
+        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg3} from {arg4} to {arg2}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourImport(string path)
+    {
+        AddLog("ValidatableMonoBehaviour / Import", path);
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourExport(string path)
+    {
+        AddLog("ValidatableMonoBehaviour / Export", path);
+    }
+
+    private static void ValidatorsChangedRequirement(string name)
+    {
+        AddLog("Validators / Requirement Changed", name);
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourRequirementsChanged(string name, bool addedRequirement)
+    {
+        AddLog("Validators / ValidatableMonoBehaviour RequirementsChanged", $"{(addedRequirement ? "Added" : "Removed")} requirement of {name}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourValidate(string name)
+    {
+        AddLog("Validators / ValidatableMonoBehaviour Validate", name);
+    }
+
+    private static void ValidatorsStatusFixAll(string name)
+    {
+        AddLog("Validators / Status FixAll", $"Fixed all issues of {name}");
+    }
+
+    private static void ValidatorsStatusIssueFixed(string name, string errorName)
+    {
+        AddLog("Validators / Status IssueFixed", $"Fixed error {errorName} of {name}");
+    }
+
+    private static void ValidatorsStatusValidateButton(string name)
+    {
+        AddLog("Validators / Status ValidateButton", name);
+    }
+
+    private static void ValidatorsValidatorViewIssueFixed(string name, string errorName)
+    {
+        AddLog("Validators / ValidatorView IssueFixed", $"Fixed error {errorName} of {name}");
+    }
+
+    private static void ValidatorsValidatorViewAllIssuesFixed(string name)
+    {
+        AddLog("Validators / ValidatorView AllIssuesFixed", $"Fixed all issues of {name}");
+    }
+
+    private static void ValidatorsValidatorViewFixAll()
+    {
+        AddLog("Validators / ValidatorView FixAll", "Fix All Button");
+    }
+
+    private static void ValidatorsValidatorViewItemSelected(string name)
+    {
+        AddLog("Validators / ValidatorView ItemSelected", name);
+    }
+
+    private static void ValidatorsValidatorViewTabChange(bool tab)
+    {
+        AddLog("Validators / ValidatorView TabChange", tab ? "Scene" : "Project");
+    }
+
+    private static void ValidatorsValidatorViewOpen()
+    {
+        AddLog("Validators / ValidatorView Open/Close", "Opened");
+    }
+
+    private static void ValidatorsValidatorViewClose()
+    {
+        AddLog("Validators / ValidatorView Open/Close", "Closed");
+    }
+
+    private static void ValidatorsValidatorViewRefresh()
+    {
+        AddLog("Validators / ValidatorView Refresh", "Refreshing");
     }
 
     #region Private Methods
@@ -66,10 +211,9 @@ internal static class LoggingEvents
 
     #endregion
 
-#if USING_PLAYMODESTARTSCENE
-
     #region PlayModeStartScene
 
+#if USING_PLAYMODESTARTSCENE
     private static void PlayModeStartSceneEnteredPlayModeWith()
     {
         AddLog("PlayModeStartScene / Entered PlayMode", "Entered PlayMode with PlayModeStartScene");
@@ -101,15 +245,13 @@ internal static class LoggingEvents
     {
         AddLog("Scene Changed", $"Changed to: {scene.name}");
     }
+#endif
 
     #endregion
 
-#endif
-
-#if USING_AUTOSAVE
-
     #region AutoSave
 
+#if USING_AUTOSAVE
     private static void AutoSaveSaved()
     {
         s_autoSaveSave = false;
@@ -164,10 +306,83 @@ internal static class LoggingEvents
     {
         AddLog("AutoSave / Changed SaveMode", newValue == 0 ? "Save As Current" : "Save As Duplicate");
     }
+#endif
 
     #endregion
 
+    #region Screenshot
+
+#if USING_SCREENSHOT
+    private static void ScreenshotWindowCaptureOpen()
+    {
+        AddLog("Screenshot / WindowCapture Open/Close", "Opened");
+    }
+
+    private static void ScreenshotWindowCaptureClose()
+    {
+        AddLog("Screenshot / WindowCapture Open/Close", "Closed");
+    }
+
+    private static void ScreenshotShortcutCaptureOpen()
+    {
+        AddLog("Screenshot / ShortcutCapture Open/Close", "Opened");
+    }
+
+    private static void ScreenshotShortcutCaptureClose()
+    {
+        AddLog("Screenshot / ShortcutCapture Open/Close", "Closed");
+    }
+
+    private static void ScreenshotShortcutCaptureRefresh()
+    {
+        AddLog("Screenshot / ShortcutCapture Refresh", "Refreshing");
+    }
+
+    private static void ScreenshotShortcutCaptureChangeState(string name, bool active)
+    {
+        AddLog("Screenshot / ShortcutCapture ChangeState", $"{name} set to {active}");
+    }
+
+    private static void ScreenshotWindowCaptureRefresh()
+    {
+        AddLog("Screenshot / WindowCapture Refresh", "Refreshing");
+    }
+
+    private static void ScreenshotWindowCaptureRender(string name)
+    {
+        AddLog("Screenshot / WindowCapture Rendered", name);
+    }
+
+    private static void ScreenshotWindowCaptureExport()
+    {
+        AddLog("Screenshot / WindowCapture Exported", "Exported");
+    }
+
+    private static void ScreenshotCameraCaptureExported(string name)
+    {
+        AddLog("Screenshot / CameraCapture Exported", name);
+    }
+
+    private static void ScreenshotCameraCaptureRendered(string name)
+    {
+        AddLog("Screenshot / CameraCapture Rendered", name);
+    }
+
+    private static void ScreenshotCaptureNow(int count)
+    {
+        AddLog("Screenshot / CaptureNow", $"{count} cameras rendered");
+    }
 #endif
+
+    #endregion
+    
+    #region Validators
+
+#if USING_VALIDATORS
+        
+#endif
+
+    #endregion
 }
 
 }
