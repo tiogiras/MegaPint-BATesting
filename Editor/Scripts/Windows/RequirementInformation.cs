@@ -24,6 +24,7 @@ internal class RequirementInformation : EditorWindowBase
         content.style.flexGrow = 1f;
         content.style.flexShrink = 1f;
         
+        // TODO throws some nullref
         s_root.schedule.Execute(
             () => {action?.Invoke(content);});
     }

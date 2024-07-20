@@ -97,7 +97,7 @@ internal static class LoggingEvents
         ValidatableMonoBehaviour.onValidate += ValidatorsValidatableMonoBehaviourValidate;
         ValidatableMonoBehaviour.onRequirementsChanged += ValidatorsValidatableMonoBehaviourRequirementsChanged;
         ValidatableMonoBehaviour.onPrioritiesChanged += ValidatorsValidatableMonoBehaviourPrioritiesChanged;
-        
+
         ValidatableMonoBehaviourDrawer.onImport += ValidatorsValidatableMonoBehaviourImport;
         ValidatableMonoBehaviourDrawer.onExport += ValidatorsValidatableMonoBehaviourExport;
 
@@ -109,97 +109,34 @@ internal static class LoggingEvents
 #endif
 
         #endregion
-    }
 
-    private static void ValidatorsChangedRequirementSeverityOverwrite(ValidationState state, Type type, string name)
-    {
-        AddLog("Validators / Requirement Severity Overwrite", $"Changed severity of {name}/{type.Name} to {state}");
-    }
+        #region BasePackage
 
-    private static void ValidatorsValidatableMonoBehaviourPrioritiesChanged(string arg1, int arg2, string arg3, int arg4)
-    {
-        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg1} from {arg2} to {arg4}");
-        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg3} from {arg4} to {arg2}");
-    }
+        BaseWindow.onOpen += BasePackageBaseWindowOpen;
+        BaseWindow.onClose += BasePackageBaseWindowClose;
+        BaseWindow.onOpenWithLink += BasePackageBaseWindowOpenWithLink;
+        BaseWindow.onSwitchTab += BasePackageBaseWindowSwitchTab;
 
-    private static void ValidatorsValidatableMonoBehaviourImport(string path)
-    {
-        AddLog("ValidatableMonoBehaviour / Import", path);
-    }
+        BaseWindow.onPackageItemSelected += BasePackageBaseWindowPackageItemSelected;
+        BaseWindow.onPackageItemTabSelected += BasePackageBaseWindowPackageItemTabSelected;
+        BaseWindow.onInfoItemSelected += BasePackageBaseWindowInfoItemSelected;
+        BaseWindow.onSettingItemSelected += BasePackageBaseWindowSettingItemSelected;
 
-    private static void ValidatorsValidatableMonoBehaviourExport(string path)
-    {
-        AddLog("ValidatableMonoBehaviour / Export", path);
-    }
+        SaveValues.BasePackage.onEditorThemeChanged += BasePackageEditorThemeChanged;
+        SaveValues.BasePackage.onUseIconsChanged += BasePackageUseIconsChanged;
+        SaveValues.BasePackage.onTesterTokenChanged += BasePackageTesterTokenChanged;
 
-    private static void ValidatorsChangedRequirement(string name)
-    {
-        AddLog("Validators / Requirement Changed", name);
-    }
+        Windows.PackageManager.onOpen += BasePackagePackageManagerOpen;
+        Windows.PackageManager.onClose += BasePackagePackageManagerClose;
 
-    private static void ValidatorsValidatableMonoBehaviourRequirementsChanged(string name, bool addedRequirement)
-    {
-        AddLog("Validators / ValidatableMonoBehaviour RequirementsChanged", $"{(addedRequirement ? "Added" : "Removed")} requirement of {name}");
-    }
+        Windows.PackageManager.onItemSelected += BasePackagePackageManagerItemSelected;
+        Windows.PackageManager.onImport += BasePackagePackageManagerImport;
+        Windows.PackageManager.onImportVariation += BasePackagePackageManagerImportVariation;
+        Windows.PackageManager.onImportSample += BasePackagePackageManagerImportSample;
+        Windows.PackageManager.onRemove += BasePackagePackageManagerRemove;
+        Windows.PackageManager.onUpdate += BasePackagePackageManagerUpdate;
 
-    private static void ValidatorsValidatableMonoBehaviourValidate(string name)
-    {
-        AddLog("Validators / ValidatableMonoBehaviour Validate", name);
-    }
-
-    private static void ValidatorsStatusFixAll(string name)
-    {
-        AddLog("Validators / Status FixAll", $"Fixed all issues of {name}");
-    }
-
-    private static void ValidatorsStatusIssueFixed(string name, string errorName)
-    {
-        AddLog("Validators / Status IssueFixed", $"Fixed error {errorName} of {name}");
-    }
-
-    private static void ValidatorsStatusValidateButton(string name)
-    {
-        AddLog("Validators / Status ValidateButton", name);
-    }
-
-    private static void ValidatorsValidatorViewIssueFixed(string name, string errorName)
-    {
-        AddLog("Validators / ValidatorView IssueFixed", $"Fixed error {errorName} of {name}");
-    }
-
-    private static void ValidatorsValidatorViewAllIssuesFixed(string name)
-    {
-        AddLog("Validators / ValidatorView AllIssuesFixed", $"Fixed all issues of {name}");
-    }
-
-    private static void ValidatorsValidatorViewFixAll()
-    {
-        AddLog("Validators / ValidatorView FixAll", "Fix All Button");
-    }
-
-    private static void ValidatorsValidatorViewItemSelected(string name)
-    {
-        AddLog("Validators / ValidatorView ItemSelected", name);
-    }
-
-    private static void ValidatorsValidatorViewTabChange(bool tab)
-    {
-        AddLog("Validators / ValidatorView TabChange", tab ? "Scene" : "Project");
-    }
-
-    private static void ValidatorsValidatorViewOpen()
-    {
-        AddLog("Validators / ValidatorView Open/Close", "Opened");
-    }
-
-    private static void ValidatorsValidatorViewClose()
-    {
-        AddLog("Validators / ValidatorView Open/Close", "Closed");
-    }
-
-    private static void ValidatorsValidatorViewRefresh()
-    {
-        AddLog("Validators / ValidatorView Refresh", "Refreshing");
+        #endregion
     }
 
     #region Private Methods
@@ -375,12 +312,213 @@ internal static class LoggingEvents
 #endif
 
     #endregion
-    
+
     #region Validators
 
 #if USING_VALIDATORS
-        
+    private static void ValidatorsChangedRequirementSeverityOverwrite(ValidationState state, Type type, string name)
+    {
+        AddLog("Validators / Requirement Severity Overwrite", $"Changed severity of {name}/{type.Name} to {state}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourPrioritiesChanged(
+        string arg1,
+        int arg2,
+        string arg3,
+        int arg4)
+    {
+        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg1} from {arg2} to {arg4}");
+        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg3} from {arg4} to {arg2}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourImport(string path)
+    {
+        AddLog("ValidatableMonoBehaviour / Import", path);
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourExport(string path)
+    {
+        AddLog("ValidatableMonoBehaviour / Export", path);
+    }
+
+    private static void ValidatorsChangedRequirement(string name)
+    {
+        AddLog("Validators / Requirement Changed", name);
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourRequirementsChanged(string name, bool addedRequirement)
+    {
+        AddLog(
+            "Validators / ValidatableMonoBehaviour RequirementsChanged",
+            $"{(addedRequirement ? "Added" : "Removed")} requirement of {name}");
+    }
+
+    private static void ValidatorsValidatableMonoBehaviourValidate(string name)
+    {
+        AddLog("Validators / ValidatableMonoBehaviour Validate", name);
+    }
+
+    private static void ValidatorsStatusFixAll(string name)
+    {
+        AddLog("Validators / Status FixAll", $"Fixed all issues of {name}");
+    }
+
+    private static void ValidatorsStatusIssueFixed(string name, string errorName)
+    {
+        AddLog("Validators / Status IssueFixed", $"Fixed error {errorName} of {name}");
+    }
+
+    private static void ValidatorsStatusValidateButton(string name)
+    {
+        AddLog("Validators / Status ValidateButton", name);
+    }
+
+    private static void ValidatorsValidatorViewIssueFixed(string name, string errorName)
+    {
+        AddLog("Validators / ValidatorView IssueFixed", $"Fixed error {errorName} of {name}");
+    }
+
+    private static void ValidatorsValidatorViewAllIssuesFixed(string name)
+    {
+        AddLog("Validators / ValidatorView AllIssuesFixed", $"Fixed all issues of {name}");
+    }
+
+    private static void ValidatorsValidatorViewFixAll()
+    {
+        AddLog("Validators / ValidatorView FixAll", "Fix All Button");
+    }
+
+    private static void ValidatorsValidatorViewItemSelected(string name)
+    {
+        AddLog("Validators / ValidatorView ItemSelected", name);
+    }
+
+    private static void ValidatorsValidatorViewTabChange(bool tab)
+    {
+        AddLog("Validators / ValidatorView TabChange", tab ? "Scene" : "Project");
+    }
+
+    private static void ValidatorsValidatorViewOpen()
+    {
+        AddLog("Validators / ValidatorView Open/Close", "Opened");
+    }
+
+    private static void ValidatorsValidatorViewClose()
+    {
+        AddLog("Validators / ValidatorView Open/Close", "Closed");
+    }
+
+    private static void ValidatorsValidatorViewRefresh()
+    {
+        AddLog("Validators / ValidatorView Refresh", "Refreshing");
+    }
 #endif
+
+    #endregion
+
+    #region BasePackage
+
+    private static void BasePackagePackageManagerImportSample(string package, string sample)
+    {
+        AddLog("BasePackage / PackageManager ImportSample", $"Imported Sample: {sample} of {package}");
+    }
+
+    private static void BasePackagePackageManagerImport(string package)
+    {
+        AddLog("BasePackage / PackageManager Import", $"Imported: {package}");
+    }
+
+    private static void BasePackagePackageManagerImportVariation(string package, string variation)
+    {
+        AddLog("BasePackage / PackageManager ImportVariation", $"Imported: {package} with variation {variation}");
+    }
+
+    private static void BasePackagePackageManagerRemove(string package)
+    {
+        AddLog("BasePackage / PackageManager Remove", $"Removed: {package}");
+    }
+
+    private static void BasePackagePackageManagerUpdate(string package)
+    {
+        AddLog("BasePackage / PackageManager Update", $"Updated: {package}");
+    }
+
+    private static void BasePackagePackageManagerItemSelected(string name)
+    {
+        AddLog("BasePackage / PackageManager ItemSelected", $"Selected: {name}");
+    }
+
+    private static void BasePackagePackageManagerOpen()
+    {
+        AddLog("BasePackage / PackageManager Open/Close", "Opened");
+    }
+
+    private static void BasePackagePackageManagerClose()
+    {
+        AddLog("BasePackage / PackageManager Open/Close", "Closed");
+    }
+
+    private static void BasePackageEditorThemeChanged(int newValue)
+    {
+        var theme = newValue switch
+                    {
+                        0 => "ActiveEditorTheme",
+                        1 => "Dark",
+                        var _ => "Light"
+                    };
+
+        AddLog("BasePackage / Changed EditorTheme", theme);
+    }
+
+    private static void BasePackageUseIconsChanged(bool newValue)
+    {
+        AddLog("BasePackage / Changed UseIcons", newValue ? "Enabled" : "Disabled");
+    }
+
+    private static void BasePackageTesterTokenChanged(string token)
+    {
+        AddLog("BasePackage / Changed TesterToken", $"Changed to: {token}");
+    }
+
+    private static void BasePackageBaseWindowPackageItemTabSelected(string name)
+    {
+        AddLog("BasePackage / BaseWindow PackageItemTabSelected", $"Selected: {name}");
+    }
+
+    private static void BasePackageBaseWindowSettingItemSelected(string name)
+    {
+        AddLog("BasePackage / BaseWindow SettingItemSelected", $"Selected: {name}");
+    }
+
+    private static void BasePackageBaseWindowInfoItemSelected(string name)
+    {
+        AddLog("BasePackage / BaseWindow InfoItemSelected", $"Selected: {name}");
+    }
+
+    private static void BasePackageBaseWindowPackageItemSelected(string name)
+    {
+        AddLog("BasePackage / BaseWindow PackageItemSelected", $"Selected: {name}");
+    }
+
+    private static void BasePackageBaseWindowSwitchTab(string tab)
+    {
+        AddLog("BasePackage / BaseWindow SwitchTab", $"Switched to: {tab}");
+    }
+
+    private static void BasePackageBaseWindowOpenWithLink(string link)
+    {
+        AddLog("BasePackage / BaseWindow OpenedWithLink", $"Opened with link: {link}");
+    }
+
+    private static void BasePackageBaseWindowClose()
+    {
+        AddLog("BasePackage / BaseWindow Open/Close", "Closed");
+    }
+
+    private static void BasePackageBaseWindowOpen()
+    {
+        AddLog("BasePackage / BaseWindow Open/Close", "Opened");
+    }
 
     #endregion
 }
