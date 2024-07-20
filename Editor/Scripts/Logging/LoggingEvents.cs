@@ -137,6 +137,12 @@ internal static class LoggingEvents
         Windows.PackageManager.onUpdate += BasePackagePackageManagerUpdate;
 
         #endregion
+
+        #region BATesting
+
+        SaveValues.BaTesting.onLogSaveIntervalChanged += BATestingSaveIntervalChanged;
+
+        #endregion
     }
 
     #region Private Methods
@@ -145,6 +151,15 @@ internal static class LoggingEvents
     {
         LoggingManager.LogToCurrentSession(categoryName, logText);
     }
+
+    #region BATesting
+
+    private static void BATestingSaveIntervalChanged(int count)
+    {
+        AddLog("BA Testing / Changed LogSaveInterval", $"{count} logs");
+    }
+
+    #endregion
 
     #endregion
 

@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System;
 using MegaPint.Editor.Scripts.Settings;
 
 namespace MegaPint.Editor.Scripts
@@ -17,6 +18,8 @@ internal static partial class SaveValues
 
         private static SettingsBase s_settings;
 
+        public static Action <int> onLogSaveIntervalChanged;
+        
         public static bool ApplyPSTaskManager
         {
             get => ValueProperty.Get("ApplyPSTaskManager", ref s_applyPSTaskManager, _Settings);
@@ -38,7 +41,11 @@ internal static partial class SaveValues
         public static int LogSaveInterval
         {
             get => ValueProperty.Get("LogSaveInterval", ref s_logSaveInterval, _Settings);
-            set => ValueProperty.Set("LogSaveInterval", value, ref s_logSaveInterval, _Settings);
+            set
+            {
+                ValueProperty.Set("LogSaveInterval", value, ref s_logSaveInterval, _Settings);
+                onLogSaveIntervalChanged?.Invoke(value);
+            }
         }
 
         private static SettingsBase _Settings
