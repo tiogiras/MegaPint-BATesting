@@ -1,6 +1,7 @@
 ﻿// TODO commenting
 
 #if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,6 +12,9 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 [CreateAssetMenu(fileName = "Requirement", menuName = "MegaPint/Requirement", order = 0)] // TODO remove this line
 internal class Requirement : ScriptableObject
 {
+    public static Action <string, bool> onDoneChanged;
+    public static Action <string> onExecute;
+    
     public bool Done
     {
         get => _done;
@@ -19,6 +23,8 @@ internal class Requirement : ScriptableObject
             _done = value;
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
+            
+            onDoneChanged?.Invoke(requirementName, value);
         }
     }
 
@@ -29,6 +35,8 @@ internal class Requirement : ScriptableObject
 
     public static void ExecuteRequirement(Requirement requirement)
     {
+        onExecute?.Invoke(requirement.requirementName);
+        
         RequirementLogicLookUp.Logic logic = RequirementLogicLookUp.LookUp[requirement.requirementName];
 
         if (logic.openRequirementInformation)

@@ -25,8 +25,8 @@ internal class TermsAgreement : EditorWindowBase
     {
         titleContent.text = "Terms Agreement";
 
-        minSize = new Vector2(550, 300);
-        maxSize = new Vector2(550, 300);
+        minSize = new Vector2(550, 325);
+        maxSize = new Vector2(550, 325);
 
         this.CenterOnMainWin();
 
