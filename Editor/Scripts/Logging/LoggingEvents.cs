@@ -99,6 +99,7 @@ internal static class LoggingEvents
         ValidatableMonoBehaviour.onValidate += ValidatorsValidatableMonoBehaviourValidate;
         ValidatableMonoBehaviour.onRequirementsChanged += ValidatorsValidatableMonoBehaviourRequirementsChanged;
         ValidatableMonoBehaviour.onPrioritiesChanged += ValidatorsValidatableMonoBehaviourPrioritiesChanged;
+        ValidatableMonoBehaviour.onImportRemoved += ValidatorsValidatableMonoBehaviourImportRemoved;
 
         ValidatableMonoBehaviourDrawer.onImport += ValidatorsValidatableMonoBehaviourImport;
         ValidatableMonoBehaviourDrawer.onExport += ValidatorsValidatableMonoBehaviourExport;
@@ -443,6 +444,11 @@ internal static class LoggingEvents
     private static void ValidatorsValidatableMonoBehaviourExport(string path)
     {
         AddLog("ValidatableMonoBehaviour / Export", path);
+    }
+    
+    private static void ValidatorsValidatableMonoBehaviourImportRemoved(string settingName)
+    {
+        AddLog("ValidatableMonoBehaviour / Removed Imported Setting", settingName);
     }
 
     private static void ValidatorsChangedRequirement(string name)
