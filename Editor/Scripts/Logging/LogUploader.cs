@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
@@ -28,7 +29,7 @@ internal static class LogUploader
         if (files.Length == 0)
             return;
 
-        foreach (var file in files)
+        foreach (var file in files.Where(f => !Path.GetFileName(f).Equals("Task.json")))
             await UploadLog(file);
 
         Exit();

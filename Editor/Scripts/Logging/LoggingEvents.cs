@@ -3,6 +3,7 @@ using MegaPint.Editor.Scripts.Drawer;
 using MegaPint.Editor.Scripts.Internal;
 using MegaPint.Editor.Scripts.Logic;
 using MegaPint.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using MegaPint.SerializeReferenceDropdown.Editor;
 using MegaPint.ValidationRequirement;
 using UnityEditor;
@@ -28,6 +29,7 @@ internal static class LoggingEvents
         SaveValues.PlayModeStartScene.onDisplayToolbarToggleChanged += PlayModeStartSceneToolbarToggle;
 
         PlayModeStartScene.onEnteredPlaymode += EnteredPlayMode;
+        PlayModeStartScene.onExitedPlaymode += ExitedPlayMode;
         PlayModeStartScene.onEnteredPlaymodeWithStartScene += PlayModeStartSceneEnteredPlayModeWith;
 
         EditorSceneManager.sceneOpened += SceneChanged;
@@ -142,6 +144,23 @@ internal static class LoggingEvents
 
         SaveValues.BaTesting.onLogSaveIntervalChanged += BATestingSaveIntervalChanged;
 
+        TaskManager.onOpen += BATestingTaskManagerOpen;
+        TaskManager.onClose += BATestingTaskManagerClose;
+        TaskManager.onNext += BATestingTaskManagerNext;
+        TaskManager.onStartTimer += BATestingTaskManagerStartTimer;
+        TaskManager.onStopTimer += BATestingTaskManagerStopTimer;
+        TaskManager.onHint += BATestingTaskManagerHint;
+        TaskManager.onStartTask += BATestingTaskManagerStartTask;
+
+        Goal.onGoalDone += BATestingGoalFinished;
+        Task.onTaskDoneChange += BATestingTaskDoneChange;
+
+        Requirement.onDoneChanged += BATestingRequirementDoneChanged;
+        Requirement.onExecute += BATestingRequirementExecuted;
+
+        Overview.onOpen += BATestingTaskOverviewOpen;
+        Overview.onClose += BATestingTaskOverviewClose;
+
         #endregion
     }
 
@@ -152,6 +171,8 @@ internal static class LoggingEvents
         LoggingManager.LogToCurrentSession(categoryName, logText);
     }
 
+    #endregion
+
     #region BATesting
 
     private static void BATestingSaveIntervalChanged(int count)
@@ -159,7 +180,70 @@ internal static class LoggingEvents
         AddLog("BA Testing / Changed LogSaveInterval", $"{count} logs");
     }
 
-    #endregion
+    private static void BATestingTaskOverviewOpen()
+    {
+        AddLog("BA Testing / Task Overview Open/Close", "Opened");
+    }
+
+    private static void BATestingTaskOverviewClose()
+    {
+        AddLog("BA Testing / Task Overview Open/Close", "Closed");
+    }
+
+    private static void BATestingRequirementExecuted(string name)
+    {
+        AddLog("BA Testing / Requirement Executed", name);
+    }
+
+    private static void BATestingRequirementDoneChanged(string name, bool value)
+    {
+        AddLog(value ? "BA Testing / Requirement Done" : "BA Testing / Requirement Reset", $"{name} set to {value}");
+    }
+
+    private static void BATestingTaskManagerStartTask(string name)
+    {
+        AddLog("BA Testing / TaskManager StartTask", name);
+    }
+
+    private static void BATestingTaskDoneChange(Task task)
+    {
+        AddLog(task.Done ? "BA Testing / Task Done" : "BA Testing / Task Reset", task.taskName);
+    }
+
+    private static void BATestingGoalFinished(Goal obj)
+    {
+        AddLog("BA Testing / Goal Finished", obj.title);
+    }
+
+    private static void BATestingTaskManagerHint(string hint)
+    {
+        AddLog("BA Testing / TaskManager Read Hint", hint);
+    }
+
+    private static void BATestingTaskManagerStartTimer()
+    {
+        AddLog("BA Testing / TaskManager StartTimer", "Started");
+    }
+
+    private static void BATestingTaskManagerStopTimer()
+    {
+        AddLog("BA Testing / TaskManager StopTimer", "Stopped");
+    }
+
+    private static void BATestingTaskManagerNext(string name)
+    {
+        AddLog("BA Testing / TaskManager Next", $"Finished: {name}");
+    }
+
+    private static void BATestingTaskManagerClose()
+    {
+        AddLog("BA Testing / TaskManager Open/Close", "Closed");
+    }
+
+    private static void BATestingTaskManagerOpen()
+    {
+        AddLog("BA Testing / TaskManager Open/Close", "Opened");
+    }
 
     #endregion
 
@@ -193,9 +277,14 @@ internal static class LoggingEvents
         AddLog("Entered PlayMode", "Entered PlayMode without PlayModeStartScene");
     }
 
+    private static void ExitedPlayMode()
+    {
+        AddLog("Exited PlayMode", "Exited PlayMode");
+    }
+
     private static void SceneChanged(Scene scene, OpenSceneMode mode)
     {
-        AddLog("Scene Changed", $"Changed to: {scene.name}");
+        AddLog("Changed Scene", $"Changed to: {scene.name}");
     }
 #endif
 
@@ -342,8 +431,8 @@ internal static class LoggingEvents
         string arg3,
         int arg4)
     {
-        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg1} from {arg2} to {arg4}");
-        AddLog("ValidatableMonoBehaviour / Priorities Changed", $"Changed priority of {arg3} from {arg4} to {arg2}");
+        AddLog("ValidatableMonoBehaviour / Priority Changed", $"Changed priority of {arg1} from {arg2} to {arg4}");
+        AddLog("ValidatableMonoBehaviour / Priority Changed", $"Changed priority of {arg3} from {arg4} to {arg2}");
     }
 
     private static void ValidatorsValidatableMonoBehaviourImport(string path)
@@ -363,9 +452,7 @@ internal static class LoggingEvents
 
     private static void ValidatorsValidatableMonoBehaviourRequirementsChanged(string name, bool addedRequirement)
     {
-        AddLog(
-            "Validators / ValidatableMonoBehaviour RequirementsChanged",
-            $"{(addedRequirement ? "Added" : "Removed")} requirement of {name}");
+        AddLog("Validators / Added/Removed", $"{(addedRequirement ? "Added" : "Removed")} requirement of {name}");
     }
 
     private static void ValidatorsValidatableMonoBehaviourValidate(string name)

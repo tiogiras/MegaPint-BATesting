@@ -1,6 +1,7 @@
 ﻿// TODO commenting
 
 #if UNITY_EDITOR
+using System;
 using System.Linq;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
@@ -14,6 +15,9 @@ namespace MegaPint.Editor.Scripts.Windows
 
 internal class Overview : EditorWindowBase
 {
+    public static Action onOpen;
+    public static Action onClose;
+    
     private VisualTreeAsset _baseWindow;
     private Button _btnResetAll;
     private Button _btnSend;
@@ -35,6 +39,8 @@ internal class Overview : EditorWindowBase
         // TODO minsize
         // TODO preferred size
 
+        onOpen?.Invoke();
+        
         this.CenterOnMainWin();
 
         return this;
@@ -131,6 +137,8 @@ internal class Overview : EditorWindowBase
 
         _btnResetAll.clicked -= OnResetAll;
         _btnSend.clicked -= OnSend;
+        
+        onClose?.Invoke();
     }
 
     #endregion

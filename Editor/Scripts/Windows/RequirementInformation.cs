@@ -1,9 +1,9 @@
 ﻿#if UNITY_EDITOR
 using System;
 using MegaPint.Editor.Scripts.GUI.Utility;
-using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
+using Task = System.Threading.Tasks.Task;
 
 namespace MegaPint.Editor.Scripts.Windows
 {
@@ -18,13 +18,17 @@ internal class RequirementInformation : EditorWindowBase
 
     #region Public Methods
 
-    public static void AfterGUICreation(VisualTreeAsset template, Action <VisualElement> action)
+    public static async void AfterGUICreation(VisualTreeAsset template, Action <VisualElement> action)
     {
+        while (s_root == null)
+        {
+            await Task.Delay(100);
+        }
+
         VisualElement content = GUIUtility.Instantiate(template, s_root);
         content.style.flexGrow = 1f;
         content.style.flexShrink = 1f;
-        
-        // TODO throws some nullref
+
         s_root.schedule.Execute(
             () => {action?.Invoke(content);});
     }

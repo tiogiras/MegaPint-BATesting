@@ -16,10 +16,34 @@ internal static class LoggingManager
 
     private static string s_currentLogFileName;
     private static string s_currentLogFilePath;
+    
+    private static string s_taskLogFilePath;
 
+    private static SessionLog s_taskLog;
     private static SessionLog s_currentLog;
 
     private static int s_currentLogSaveInterval;
+
+    private static bool s_taskLogging;
+    private static string s_currentTask;
+
+    private static SessionLog _CurrentLog => s_taskLogging ? s_taskLog : s_currentLog;
+    
+    public static void ActivateTaskLogging(string currentTask)
+    {
+        DevLog.Log($"Activated Task Logging for task: {currentTask}");
+        
+        s_currentTask = currentTask;
+        s_taskLogging = true;
+    }
+
+    public static void DeActivateTaskLogging()
+    {
+        DevLog.Log("Deactivated Task Logging");
+        
+        s_currentTask = "";
+        s_taskLogging = false;
+    }
 
     static LoggingManager()
     {
@@ -29,15 +53,42 @@ internal static class LoggingManager
         GetSessionLogFile();
         GetSessionLog();
 
+        GetTaskLogFile();
+        GetTaskLog();
+
         AssemblyReloadEvents.beforeAssemblyReload += () =>
         {
             LogToCurrentSession("General / DomainReload", "Domain reload detected");
             
             SaveCurrentLog();
         };
+        
         EditorApplication.wantsToQuit += OnWantsToQuit;
     }
-    
+
+    private static void GetTaskLogFile()
+    {
+        if (File.Exists(GetTaskLogFilePath()))
+            return;
+
+        File.Create(GetTaskLogFilePath()).Close();
+
+        s_taskLog = new SessionLog($"TaskLog {Guid.NewGuid()}");
+        
+        var json = JsonUtility.ToJson(s_taskLog, true);
+        File.WriteAllText(GetTaskLogFilePath(), json);
+    }
+
+    private static void GetTaskLog()
+    {
+        var json = File.ReadAllText(GetTaskLogFilePath());
+        s_taskLog = JsonUtility.FromJson <SessionLog>(json);
+    }
+
+    private static string GetTaskLogFilePath()
+    {
+        return s_taskLogFilePath ??= Path.Join(GetPersistentDataPath(), "Task.json");
+    }
 
     #region Public Methods
 
@@ -52,7 +103,9 @@ internal static class LoggingManager
         else
             s_currentLogSaveInterval++;
 
-        s_currentLog.Log(categoryName, logText);
+        var task = string.IsNullOrEmpty(s_currentTask) ? "" : $"Task_{s_currentTask} / ";
+        
+        _CurrentLog.Log($"{task}{categoryName}", logText);
     }
 
     #endregion
@@ -92,11 +145,18 @@ internal static class LoggingManager
         return s_managementFilePath;
     }
 
+    private static string s_loggingFolderPath;
+    
     private static string GetPersistentDataPath()
     {
-        s_persistentDataPath ??= Path.Join(
+        s_loggingFolderPath ??= Path.Join(
             Path.Combine(Application.persistentDataPath.Split(Path.AltDirectorySeparatorChar)[..^2]),
             "MegaPintLogging");
+        
+        if (!Directory.Exists(s_loggingFolderPath))
+            Directory.CreateDirectory(s_loggingFolderPath);
+
+        s_persistentDataPath ??= Path.Combine(s_loggingFolderPath, Application.productName);
 
         if (!Directory.Exists(s_persistentDataPath))
             Directory.CreateDirectory(s_persistentDataPath);
@@ -123,6 +183,10 @@ internal static class LoggingManager
         if (LogUploader.hasTriedUploading)
             return LogUploader.hasTriedUploading;
 
+        s_taskLogging = true;
+        SaveCurrentLog();
+        s_taskLogging = false;
+        
         s_currentLog.EndSession();
         SaveCurrentLog();
 
@@ -135,13 +199,13 @@ internal static class LoggingManager
 
     private static void SaveCurrentLog()
     {
-        if (s_currentLog == null)
+        if (_CurrentLog == null)
             return;
         
         DevLog.Log("Saving current log");
         
-        var json = JsonUtility.ToJson(s_currentLog, true);
-        File.WriteAllText(GetCurrentLogFilePath(), json);
+        var json = JsonUtility.ToJson(_CurrentLog, true);
+        File.WriteAllText(s_taskLogging ? GetTaskLogFilePath() : GetCurrentLogFilePath(), json);
     }
 
     #endregion

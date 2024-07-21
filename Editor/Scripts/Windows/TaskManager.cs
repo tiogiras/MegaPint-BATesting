@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
+using MegaPint.Editor.Scripts.Logging;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
@@ -21,6 +22,15 @@ namespace MegaPint.Editor.Scripts.Windows
 /// <summary> Window based on the <see cref="EditorWindowBase" /> to display the current ba testing tasks </summary>
 internal class TaskManager : EditorWindowBase
 {
+    public static Action onOpen;
+    public static Action onClose;
+    
+    public static Action<string> onNext;
+    public static Action onStartTimer;
+    public static Action onStopTimer;
+    public static Action<string> onHint;
+    public static Action<string> onStartTask;
+    
     private VisualTreeAsset _baseWindow;
     private Button _btnComplete;
 
@@ -64,6 +74,8 @@ internal class TaskManager : EditorWindowBase
 
         // TODO add minSize
 
+        onOpen?.Invoke();
+        
         if (!SaveValues.BaTesting.ApplyPSTaskManager)
             return this;
 
@@ -183,7 +195,11 @@ internal class TaskManager : EditorWindowBase
             goal.SetActive();
 
             element.Q <Label>("Title").text = goal.title;
-            element.Q <Label>("Hint").tooltip = goal.hint;
+
+            var hint = element.Q <Label>("Hint");
+            hint.tooltip = goal.hint;
+            
+            hint.RegisterCallback<MouseEnterEvent>(_ =>  onHint?.Invoke(goal.hint));
 
             UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.Done);
         };
@@ -191,6 +207,8 @@ internal class TaskManager : EditorWindowBase
 
     protected override void UnRegisterCallbacks()
     {
+        onClose?.Invoke();
+        
         Goal.onGoalDone -= OnGoalDone;
 
         _btnContinue.clicked -= OnContinue;
@@ -243,6 +261,7 @@ internal class TaskManager : EditorWindowBase
         if (_data.CurrentTaskIndex >= _data.TasksCount - 1)
         {
             Debug.Log("No More Tasks"); // TODO remove
+            // TODO onFinish all event
 
             return;
         }
@@ -252,6 +271,8 @@ internal class TaskManager : EditorWindowBase
         _data.CurrentTaskIndex++;
         task.Done = true;
         UpdateTaskManager();
+        
+        onNext?.Invoke(task.taskName);
     }
 
     private void OnGoalDone(Goal _)
@@ -279,6 +300,8 @@ internal class TaskManager : EditorWindowBase
         }
 
         OnContinue();
+
+        onStartTask?.Invoke(_data.CurrentTask().taskName);
     }
 
     private void PauseTimer()
@@ -314,12 +337,15 @@ internal class TaskManager : EditorWindowBase
 
         _btnPause.style.display = DisplayStyle.Flex;
         _btnResume.style.display = DisplayStyle.None;
-
+        
+        LoggingManager.ActivateTaskLogging(_data.CurrentTask().taskName);
         Timer();
     }
 
     private async void Timer()
     {
+        onStartTimer?.Invoke();
+        
         while (this != null)
         {
             if (!await TryWaitOneSecond())
@@ -329,6 +355,10 @@ internal class TaskManager : EditorWindowBase
 
             UpdateTimerText();
         }
+
+        onStopTimer?.Invoke();
+        
+        LoggingManager.DeActivateTaskLogging();
     }
 
     private async Task <bool> TryWaitOneSecond()
