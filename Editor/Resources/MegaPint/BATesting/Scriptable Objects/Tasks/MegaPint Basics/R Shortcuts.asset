@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: R Shortcuts
   m_EditorClassIdentifier: 
   requirementName: Shortcuts
-  _done: 0
+  _done: 1

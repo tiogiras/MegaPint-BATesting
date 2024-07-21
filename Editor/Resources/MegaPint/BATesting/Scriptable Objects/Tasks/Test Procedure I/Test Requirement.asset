@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test Requirement
   m_EditorClassIdentifier: 
   requirementName: Test Requirement
-  _done: 0
+  _done: 1
