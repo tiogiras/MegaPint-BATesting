@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.DevMode;
+using MegaPint.Editor.Scripts.Windows;
 using UnityEditor;
 using UnityEngine;
 using Application = UnityEngine.Device.Application;
+using ContextMenu = MegaPint.Editor.Scripts.ContextMenu;
 
-namespace MegaPint.Editor.Scripts.Logging
+namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
 {
 
 [InitializeOnLoad]
@@ -29,18 +32,22 @@ internal static class LoggingManager
 
     private static SessionLog _CurrentLog => s_taskLogging ? s_taskLog : s_currentLog;
     
-    public static void ActivateTaskLogging(string currentTask)
+    private static void ActivateTaskLogging(string currentTask)
     {
         DevLog.Log($"Activated Task Logging for task: {currentTask}");
         
+        AnyKeyDetector.Enable();
+
         s_currentTask = currentTask;
         s_taskLogging = true;
     }
 
-    public static void DeActivateTaskLogging()
+    private static void DeActivateTaskLogging()
     {
         DevLog.Log("Deactivated Task Logging");
         
+        AnyKeyDetector.Disable();
+
         s_currentTask = "";
         s_taskLogging = false;
     }
@@ -64,6 +71,9 @@ internal static class LoggingManager
         };
         
         EditorApplication.wantsToQuit += OnWantsToQuit;
+
+        TaskManager.onStartTaskLogging += ActivateTaskLogging;
+        TaskManager.onStopTaskLogging += DeActivateTaskLogging;
     }
 
     private static void GetTaskLogFile()

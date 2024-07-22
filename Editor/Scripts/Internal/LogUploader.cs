@@ -1,11 +1,12 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using MegaPint.Editor.Scripts;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace MegaPint.Editor.Scripts.Logging
+namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
 {
 
 internal static class LogUploader

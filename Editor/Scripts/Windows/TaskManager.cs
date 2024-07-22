@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
-using MegaPint.Editor.Scripts.Logging;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
@@ -30,6 +29,9 @@ internal class TaskManager : EditorWindowBase
     public static Action onStopTimer;
     public static Action<string> onHint;
     public static Action<string> onStartTask;
+    
+    public static Action<string> onStartTaskLogging;
+    public static Action onStopTaskLogging;
     
     private VisualTreeAsset _baseWindow;
     private Button _btnComplete;
@@ -337,15 +339,15 @@ internal class TaskManager : EditorWindowBase
 
         _btnPause.style.display = DisplayStyle.Flex;
         _btnResume.style.display = DisplayStyle.None;
-        
-        LoggingManager.ActivateTaskLogging(_data.CurrentTask().taskName);
+
         Timer();
     }
 
     private async void Timer()
     {
         onStartTimer?.Invoke();
-        
+        onStartTaskLogging?.Invoke(_data.CurrentTask().taskName);
+
         while (this != null)
         {
             if (!await TryWaitOneSecond())
@@ -356,9 +358,8 @@ internal class TaskManager : EditorWindowBase
             UpdateTimerText();
         }
 
+        onStopTaskLogging?.Invoke();
         onStopTimer?.Invoke();
-        
-        LoggingManager.DeActivateTaskLogging();
     }
 
     private async Task <bool> TryWaitOneSecond()

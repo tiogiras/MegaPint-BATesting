@@ -1,4 +1,5 @@
 ﻿using System;
+using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.Drawer;
 using MegaPint.Editor.Scripts.Internal;
 using MegaPint.Editor.Scripts.Logic;
@@ -8,9 +9,12 @@ using MegaPint.SerializeReferenceDropdown.Editor;
 using MegaPint.ValidationRequirement;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
+using ContextMenu = MegaPint.Editor.Scripts.ContextMenu;
 
-namespace MegaPint.Editor.Scripts.Logging
+namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
 {
 
 [InitializeOnLoad]
@@ -129,15 +133,15 @@ internal static class LoggingEvents
         SaveValues.BasePackage.onUseIconsChanged += BasePackageUseIconsChanged;
         SaveValues.BasePackage.onTesterTokenChanged += BasePackageTesterTokenChanged;
 
-        Windows.PackageManager.onOpen += BasePackagePackageManagerOpen;
-        Windows.PackageManager.onClose += BasePackagePackageManagerClose;
+        PackageManager.onOpen += BasePackagePackageManagerOpen;
+        PackageManager.onClose += BasePackagePackageManagerClose;
 
-        Windows.PackageManager.onItemSelected += BasePackagePackageManagerItemSelected;
-        Windows.PackageManager.onImport += BasePackagePackageManagerImport;
-        Windows.PackageManager.onImportVariation += BasePackagePackageManagerImportVariation;
-        Windows.PackageManager.onImportSample += BasePackagePackageManagerImportSample;
-        Windows.PackageManager.onRemove += BasePackagePackageManagerRemove;
-        Windows.PackageManager.onUpdate += BasePackagePackageManagerUpdate;
+        PackageManager.onItemSelected += BasePackagePackageManagerItemSelected;
+        PackageManager.onImport += BasePackagePackageManagerImport;
+        PackageManager.onImportVariation += BasePackagePackageManagerImportVariation;
+        PackageManager.onImportSample += BasePackagePackageManagerImportSample;
+        PackageManager.onRemove += BasePackagePackageManagerRemove;
+        PackageManager.onUpdate += BasePackagePackageManagerUpdate;
 
         #endregion
 
@@ -162,6 +166,8 @@ internal static class LoggingEvents
         Overview.onOpen += BATestingTaskOverviewOpen;
         Overview.onClose += BATestingTaskOverviewClose;
 
+        AnyKeyDetector.onInput += BATestingOnKeyPressed;
+
         #endregion
     }
 
@@ -175,6 +181,11 @@ internal static class LoggingEvents
     #endregion
 
     #region BATesting
+
+    private static void BATestingOnKeyPressed(bool isKeyboardInput)
+    {
+        AddLog("BA Testing / KeyPressed", isKeyboardInput ? "Key" : "Mouse Button");
+    }
 
     private static void BATestingSaveIntervalChanged(int count)
     {
@@ -445,7 +456,7 @@ internal static class LoggingEvents
     {
         AddLog("ValidatableMonoBehaviour / Export", path);
     }
-    
+
     private static void ValidatorsValidatableMonoBehaviourImportRemoved(string settingName)
     {
         AddLog("ValidatableMonoBehaviour / Removed Imported Setting", settingName);
