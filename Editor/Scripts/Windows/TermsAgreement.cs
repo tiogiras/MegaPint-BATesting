@@ -71,6 +71,9 @@ internal class TermsAgreement : EditorWindowBase
 
     protected override void UnRegisterCallbacks()
     {
+        if (_btnAgree == null)
+            return;
+        
         _btnAgree.clicked -= OnAgree;
     }
 
