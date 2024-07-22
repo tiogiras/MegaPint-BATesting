@@ -6,7 +6,11 @@
         <ui:VisualElement style="flex-grow: 1; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
             <MegaPint.Editor.Scripts.GUI.Factories.TextElements.TextSecondary tabindex="-1" text="Package Info" name="PackageInfo" style="white-space: normal; -unity-font-style: italic;" />
             <MegaPint.Editor.Scripts.GUI.Factories.Structure.Separator />
-            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="..." class="mp_link" style="white-space: normal; margin-top: 20px;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="Thank you for paticipating in the test of the MegaPint package collection.&#10;&#10;If possible do all tasks in one sitting. If this is not possible or you need a break you can do this and continue where you left. If you need to pause during a timed task make sure to pause it.&#10;&#10;&lt;b&gt;To start the test and to get further information open the TaskManager&lt;/b&gt;" class="mp_link" style="white-space: normal; margin-top: 20px;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="&lt;link=&quot;taskManager&quot;&gt;Task Manager&lt;/link&gt;" class="mp_link" style="margin-top: 20px; margin-left: 15px; white-space: normal; -unity-font-style: bold;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="Opens a window that shows the current task you need to do for the guided section of the test." style="white-space: normal; margin-left: 15px;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="&lt;link=&quot;taskOverview&quot;&gt;Task Overview&lt;/link&gt;" class="mp_link" style="margin-top: 20px; margin-left: 15px; white-space: normal; -unity-font-style: bold;" />
+            <MegaPint.Editor.Scripts.GUI.Factories.TextElements.Text tabindex="-1" text="Shows your overall progress with the test and adds options to revert certain tasks or reset all progress." style="white-space: normal; margin-left: 15px;" />
         </ui:VisualElement>
     </MegaPint.Editor.Scripts.GUI.Factories.RootElement>
 </ui:UXML>

@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using MegaPint.Editor.Scripts.PackageManager.Packages;
+using MegaPint.Editor.Scripts.Settings;
 using MegaPint.Editor.Scripts.Windows;
 using UnityEditor;
 
@@ -33,24 +34,20 @@ internal static partial class ContextMenu
 
         #region Public Methods
 
+        [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
+        public static void OpenOverview()
+        {
+            TryToOpenWithValidToken <Overview>(false, s_overviewSignature);
+        }
+
         /// <summary> Open the requirement information window </summary>
         public static void OpenRequirementInformation()
         {
             TryToOpenWithValidToken <RequirementInformation>(false, s_requirementInformationSignature);
         }
 
-        #endregion
-
-        #region Private Methods
-
-        [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
-        private static void OpenOverview()
-        {
-            TryToOpenWithValidToken <Overview>(false, s_overviewSignature);
-        }
-
         [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Manager &t", false, 101)]
-        private static void OpenTaskManager()
+        public static void OpenTaskManager()
         {
             TryToOpenWithValidToken <TaskManager>(false, s_taskManagerSignature);
         }
@@ -60,6 +57,10 @@ internal static partial class ContextMenu
         {
             EditorWindow.GetWindow <TermsAgreement>(true, "").ShowWindow();
         }
+
+        #endregion
+
+        #region Private Methods
 
         /// <summary> Open the editor window when the tester token is valid if not open the invalid token window </summary>
         /// <param name="utility"> Targeted utility state of the window </param>
@@ -71,20 +72,20 @@ internal static partial class ContextMenu
             MenuItemSignature menuItemSignature,
             string title = "") where T : EditorWindowBase
         {
-            if (!Settings.MegaPintSettings.Exists())
+            if (!MegaPintSettings.Exists())
             {
                 EditorWindow.GetWindow <FirstSteps>(true, title).ShowWindow();
-                
+
                 return;
             }
 
             if (!SaveValues.BaTesting.AgreedToTerms)
             {
                 OpenTermsAgreement();
-                
+
                 return;
             }
-            
+
             if (await Utility.IsValidTesterToken())
                 TryOpen <T>(utility, menuItemSignature, title);
             else
