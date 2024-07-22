@@ -1,7 +1,5 @@
 ﻿#if UNITY_EDITOR
 using MegaPint.Editor.Scripts.GUI.Utility;
-using MegaPint.Editor.Scripts.PackageManager.Packages;
-using UnityEditor;
 
 namespace MegaPint.Editor.Scripts
 {
@@ -17,16 +15,27 @@ internal static partial class DisplayContent
     {
         InitializeDisplayContent(
             refs,
-            new TabSettings {info = true, help = true},
+            new TabSettings {info = true},
             new TabActions
             {
                 info = root =>
                 {
-                    
-                },
-                help = root =>
-                {
-
+                    root.ActivateLinks(
+                        evt =>
+                        {
+                            switch (evt.linkID)
+                            {
+                                case "taskManager":
+                                    ContextMenu.BATesting.OpenTaskManager();
+                                    
+                                    break;
+                                
+                                case "taskOverview":
+                                    ContextMenu.BATesting.OpenOverview();
+                                    
+                                    break;
+                            }
+                        });
                 }
             });
     }

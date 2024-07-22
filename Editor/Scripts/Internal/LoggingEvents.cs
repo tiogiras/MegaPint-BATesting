@@ -1,18 +1,29 @@
-﻿using System;
-using MegaPint.Editor.Scripts;
+﻿#if UNITY_EDITOR
+
+#if USING_SCREENSHOT
 using MegaPint.Editor.Scripts.Drawer;
-using MegaPint.Editor.Scripts.Internal;
+#endif
+
+#if USING_AUTOSAVE || USING_PLAYMODESTARTSCENE
 using MegaPint.Editor.Scripts.Logic;
-using MegaPint.Editor.Scripts.Windows;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+#endif
+
+#if USING_VALIDATORS
+using System;
 using MegaPint.SerializeReferenceDropdown.Editor;
 using MegaPint.ValidationRequirement;
+using MegaPint.Editor.Scripts.Internal;
+#endif
+
+#endif
+
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.SceneManagement;
-using UnityEngine;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.SceneManagement;
-using ContextMenu = MegaPint.Editor.Scripts.ContextMenu;
+using MegaPint.Editor.Scripts;
+using MegaPint.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 
 namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
 {
@@ -643,3 +654,4 @@ internal static class LoggingEvents
 }
 
 }
+#endif
