@@ -41,4 +41,4 @@ MonoBehaviour:
   startInPlayMode: 1
   goals: []
   _done: 1
-  _neededTime: 2
+  _neededTime: 0

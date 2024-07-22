@@ -8,5 +8,8 @@
   "description": "This package is required to perform the guided part of the ba testing tasks.",
   "repository": {
     "url": "https://github.com/tiogiras/MegaPint-BATesting.git"
+  },
+  "dependencies": {
+    "com.unity.inputsystem": "1.7.0"
   }
 }

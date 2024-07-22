@@ -5,7 +5,7 @@ using MegaPint.Editor.Scripts.DevMode;
 using MegaPint.Editor.Scripts.PackageManager.Cache;
 using MegaPint.Editor.Scripts.PackageManager.Packages;
 
-namespace MegaPint.Editor.Scripts.Logging
+namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
 {
 
 [Serializable]
