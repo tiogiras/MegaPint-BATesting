@@ -9,7 +9,6 @@ using UnityEngine.UIElements;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
-[CreateAssetMenu(fileName = "Requirement", menuName = "MegaPint/Requirement", order = 0)] // TODO remove this line
 internal class Requirement : ScriptableObject
 {
     public static Action <string, bool> onDoneChanged;

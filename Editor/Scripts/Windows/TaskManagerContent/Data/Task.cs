@@ -9,7 +9,6 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
-[CreateAssetMenu(fileName = "TaskData", menuName = "MegaPint/TaskData", order = 0)] // TODO remove this line
 internal class Task : ScriptableObject
 {
     public static Action<Task> onTaskDoneChange;

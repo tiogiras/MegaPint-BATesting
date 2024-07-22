@@ -8,10 +8,6 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
-[CreateAssetMenu(
-    fileName = "TaskManagerData",
-    menuName = "MegaPint/TaskManagerData",
-    order = 0)] // TODO remove this line
 internal class TaskManagerData : ScriptableObject
 {
     public int TasksCount => _tasks.Count;
