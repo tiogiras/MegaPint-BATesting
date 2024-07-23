@@ -53,6 +53,14 @@ internal class PackageTests
             ref isValid,
             Constants.BaTesting.UserInterface.Requirements.TestRequirement);
 
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.MenuItems);
+        
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.UploadScreenshots1);
+
         Assert.IsTrue(isValid);
     }
     
