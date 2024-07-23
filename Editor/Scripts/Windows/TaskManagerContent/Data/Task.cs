@@ -42,6 +42,7 @@ internal class Task : ScriptableObject
     [TextArea] public string taskDescription;
     public List <Requirement> taskRequirements;
     public bool hasDoableTask;
+    public bool cannotBeFinishedAutomatically;
     public SceneAsset scene;
     public bool startInPlayMode;
     public List <Goal> goals;

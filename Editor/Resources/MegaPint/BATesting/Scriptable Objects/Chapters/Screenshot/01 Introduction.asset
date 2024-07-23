@@ -35,6 +35,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c621276e473383545aff2702c5cda90f, type: 2}
   - {fileID: 11400000, guid: 4657a898c10c1e545be99a8ed11b4785, type: 2}
   hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []

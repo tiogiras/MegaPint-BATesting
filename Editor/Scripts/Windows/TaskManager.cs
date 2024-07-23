@@ -12,9 +12,9 @@ using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
+using Object = UnityEngine.Object;
 using Task = MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data.Task;
 
 namespace MegaPint.Editor.Scripts.Windows
@@ -25,24 +25,27 @@ internal class TaskManager : EditorWindowBase
 {
     public static Action onOpen;
     public static Action onClose;
-    
-    public static Action<string> onNext;
+
+    public static Action <string> onNext;
     public static Action onStartTimer;
     public static Action onStopTimer;
-    public static Action<string> onHint;
-    public static Action<string> onStartTask;
-    
-    public static Action<string> onStartTaskLogging;
+    public static Action <string> onHint;
+    public static Action <string> onStartTask;
+
+    public static Action <string> onStartTaskLogging;
     public static Action onStopTaskLogging;
-    
+
+    public static Action onForceFinishTask;
+
     private VisualTreeAsset _baseWindow;
     private Button _btnComplete;
 
     private Button _btnContinue;
+    private Button _btnFinishTask;
     private Button _btnPause;
+    private Button _btnReloadTaskScene;
     private Button _btnResume;
     private Button _btnStart;
-    private Button _btnReloadTaskScene;
 
     private Label _chapter;
     private Label _currentTaskIndex;
@@ -80,7 +83,7 @@ internal class TaskManager : EditorWindowBase
         // TODO add minSize
 
         onOpen?.Invoke();
-        
+
         if (!SaveValues.BaTesting.ApplyPSTaskManager)
             return this;
 
@@ -124,6 +127,7 @@ internal class TaskManager : EditorWindowBase
         _btnContinue = content.Q <Button>("BTN_Continue");
         _btnStart = content.Q <Button>("BTN_Start");
         _btnReloadTaskScene = content.Q <Button>("BTN_ReloadTaskScene");
+        _btnFinishTask = content.Q <Button>("BTN_FinishTask");
         _btnComplete = content.Q <Button>("BTN_Complete");
 
         _timerContainer = content.Q <VisualElement>("TimerContainer");
@@ -156,6 +160,7 @@ internal class TaskManager : EditorWindowBase
         _btnContinue.clicked += OnContinue;
         _btnComplete.clicked += OnContinue;
         _btnReloadTaskScene.clicked += LoadTaskScene;
+        _btnFinishTask.clicked += FinishTask;
         _btnStart.clicked += OnStart;
 
         _btnPause.clicked += PauseTimer;
@@ -205,8 +210,8 @@ internal class TaskManager : EditorWindowBase
 
             var hint = element.Q <Label>("Hint");
             hint.tooltip = goal.hint;
-            
-            hint.RegisterCallback<MouseEnterEvent>(_ =>  onHint?.Invoke(goal.hint));
+
+            hint.RegisterCallback <MouseEnterEvent>(_ => onHint?.Invoke(goal.hint));
 
             UpdateRequirementContainer(element.Q <VisualElement>("Container"), goal.Done);
         };
@@ -215,45 +220,27 @@ internal class TaskManager : EditorWindowBase
     protected override void UnRegisterCallbacks()
     {
         onClose?.Invoke();
-        
+
         Goal.onGoalDone -= OnGoalDone;
 
         _btnContinue.clicked -= OnContinue;
         _btnComplete.clicked -= OnContinue;
         _btnReloadTaskScene.clicked -= LoadTaskScene;
+        _btnFinishTask.clicked -= FinishTask;
         _btnStart.clicked -= OnStart;
 
         _btnPause.clicked -= PauseTimer;
         _btnResume.clicked -= StartTimer;
     }
 
-    private void LoadTaskScene()
-    {
-        if (EditorApplication.isPlaying)
-            return;
-        
-        Task currentTask = _data.CurrentTask();
-        SceneAsset scene = currentTask.scene;
-
-        if (scene != null)
-            OpenScene(currentTask.scene);
-
-        if (currentTask.startInPlayMode && !currentTask.Done)
-            EditorApplication.EnterPlaymode();
-    }
-
-    private void OpenScene(UnityEngine.Object scene)
-    {
-        var path = AssetDatabase.GetAssetPath(scene);
-        var fileName = Path.GetFileName(path);
-        var newFileName = fileName[2..];
-        
-        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
-    }
-    
     #endregion
 
     #region Private Methods
+
+    private static void FinishTask()
+    {
+        onForceFinishTask?.Invoke();
+    }
 
     private static void TryInitializeGoals(Task task, bool initialize)
     {
@@ -288,11 +275,27 @@ internal class TaskManager : EditorWindowBase
         }
     }
 
+    private void LoadTaskScene()
+    {
+        if (EditorApplication.isPlaying)
+            return;
+
+        Task currentTask = _data.CurrentTask();
+        SceneAsset scene = currentTask.scene;
+
+        if (scene != null)
+            OpenScene(currentTask.scene);
+
+        if (currentTask.startInPlayMode && !currentTask.Done)
+            EditorApplication.EnterPlaymode();
+    }
+
     private void OnContinue()
     {
         if (_data.CurrentTaskIndex >= _data.TasksCount - 1)
         {
             Debug.Log("No More Tasks"); // TODO remove
+
             // TODO onFinish all event
 
             return;
@@ -303,7 +306,7 @@ internal class TaskManager : EditorWindowBase
         _data.CurrentTaskIndex++;
         task.Done = true;
         UpdateTaskManager();
-        
+
         onNext?.Invoke(task.taskName);
     }
 
@@ -332,6 +335,15 @@ internal class TaskManager : EditorWindowBase
         OnContinue();
 
         onStartTask?.Invoke(_data.CurrentTask().taskName);
+    }
+
+    private void OpenScene(Object scene)
+    {
+        var path = AssetDatabase.GetAssetPath(scene);
+        var fileName = Path.GetFileName(path);
+        var newFileName = fileName[2..];
+
+        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
     }
 
     private void PauseTimer()
@@ -375,7 +387,7 @@ internal class TaskManager : EditorWindowBase
     {
         onStartTimer?.Invoke();
         onStartTaskLogging?.Invoke(_data.CurrentTask().taskName);
-        
+
         while (this != null)
         {
             if (!await TryWaitOneSecond())
@@ -385,7 +397,7 @@ internal class TaskManager : EditorWindowBase
 
             UpdateTimerText();
         }
-        
+
         Task task = _data.CurrentTask();
 
         AssetDatabase.SaveAssetIfDirty(task);
@@ -456,8 +468,10 @@ internal class TaskManager : EditorWindowBase
             _btnStart.style.display = DisplayStyle.Flex;
         else
             _btnStart.style.display = DisplayStyle.None;
-        
+
         _btnReloadTaskScene.style.display = currentTask.scene != null ? DisplayStyle.Flex : DisplayStyle.None;
+        _btnFinishTask.style.display = currentTask.cannotBeFinishedAutomatically ? DisplayStyle.Flex : DisplayStyle.None;
+        
 
         _btnComplete.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;
         _timerContainer.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;
