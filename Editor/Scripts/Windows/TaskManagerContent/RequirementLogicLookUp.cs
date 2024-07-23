@@ -48,7 +48,21 @@ internal static class RequirementLogicLookUp
                 true,
                 element =>
                 {
+                    element.ActivateLinks(
+                        evt =>
+                        {
+                            switch (evt.linkID)
+                            {
+                                case "PackageManager":
+                                    ContextMenu.BasePackage.OpenPackageManager();
+                                    break;
+                                
+                                case "BaseWindow":
+                                    ContextMenu.BasePackage.OpenBaseWindow();
 
+                                    break;
+                            }
+                        });
                 })
         },
         {

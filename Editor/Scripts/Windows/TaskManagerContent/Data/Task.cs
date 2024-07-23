@@ -3,6 +3,7 @@
 #if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -58,8 +59,24 @@ internal class Task : ScriptableObject
         foreach (Goal goal in goals)
             goal.ResetValues();
 
+        if (scene != null)
+            RecreateSceneFromBackup();
+
         NeededTime = 0;
         Done = false;
+    }
+
+    private void RecreateSceneFromBackup()
+    {
+        var path = AssetDatabase.GetAssetPath(scene);
+        var fileName = Path.GetFileName(path);
+        
+        var instanceFileName = fileName[2..];
+        var instancePath = path.Replace(fileName, instanceFileName);
+
+        AssetDatabase.DeleteAsset(instancePath);
+        AssetDatabase.CopyAsset(path, instancePath);
+        AssetDatabase.Refresh();
     }
 
     public void SetRequirementDone(int index, bool done)

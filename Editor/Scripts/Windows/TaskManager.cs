@@ -1,7 +1,8 @@
-﻿// TODO commenting
+// TODO commenting
 
 #if UNITY_EDITOR
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaPint.Editor.Scripts.GUI;
@@ -11,6 +12,7 @@ using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
 using Task = MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data.Task;
@@ -40,6 +42,7 @@ internal class TaskManager : EditorWindowBase
     private Button _btnPause;
     private Button _btnResume;
     private Button _btnStart;
+    private Button _btnReloadTaskScene;
 
     private Label _chapter;
     private Label _currentTaskIndex;
@@ -120,6 +123,7 @@ internal class TaskManager : EditorWindowBase
 
         _btnContinue = content.Q <Button>("BTN_Continue");
         _btnStart = content.Q <Button>("BTN_Start");
+        _btnReloadTaskScene = content.Q <Button>("BTN_ReloadTaskScene");
         _btnComplete = content.Q <Button>("BTN_Complete");
 
         _timerContainer = content.Q <VisualElement>("TimerContainer");
@@ -151,6 +155,7 @@ internal class TaskManager : EditorWindowBase
 
         _btnContinue.clicked += OnContinue;
         _btnComplete.clicked += OnContinue;
+        _btnReloadTaskScene.clicked += LoadTaskScene;
         _btnStart.clicked += OnStart;
 
         _btnPause.clicked += PauseTimer;
@@ -215,12 +220,37 @@ internal class TaskManager : EditorWindowBase
 
         _btnContinue.clicked -= OnContinue;
         _btnComplete.clicked -= OnContinue;
+        _btnReloadTaskScene.clicked -= LoadTaskScene;
         _btnStart.clicked -= OnStart;
 
         _btnPause.clicked -= PauseTimer;
         _btnResume.clicked -= StartTimer;
     }
 
+    private void LoadTaskScene()
+    {
+        if (EditorApplication.isPlaying)
+            return;
+        
+        Task currentTask = _data.CurrentTask();
+        SceneAsset scene = currentTask.scene;
+
+        if (scene != null)
+            OpenScene(currentTask.scene);
+
+        if (currentTask.startInPlayMode && !currentTask.Done)
+            EditorApplication.EnterPlaymode();
+    }
+
+    private void OpenScene(UnityEngine.Object scene)
+    {
+        var path = AssetDatabase.GetAssetPath(scene);
+        var fileName = Path.GetFileName(path);
+        var newFileName = fileName[2..];
+        
+        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
+    }
+    
     #endregion
 
     #region Private Methods
@@ -288,16 +318,14 @@ internal class TaskManager : EditorWindowBase
 
     private void OnStart()
     {
-        Task currentTask = _data.CurrentTask();
-        SceneAsset scene = currentTask.scene;
+        Task nextTask = _data.NextTask();
+        SceneAsset scene = nextTask.scene;
 
         if (scene != null)
         {
-            EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(scene));
+            OpenScene(scene);
 
-            Task nextTask = _data.Tasks[_data.CurrentTaskIndex + 1];
-
-            if (currentTask.startInPlayMode && !nextTask.Done)
+            if (nextTask.startInPlayMode && !nextTask.Done)
                 EditorApplication.EnterPlaymode();
         }
 
@@ -422,6 +450,8 @@ internal class TaskManager : EditorWindowBase
             _btnStart.style.display = DisplayStyle.Flex;
         else
             _btnStart.style.display = DisplayStyle.None;
+        
+        _btnReloadTaskScene.style.display = currentTask.scene != null ? DisplayStyle.Flex : DisplayStyle.None;
 
         _btnComplete.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;
         _timerContainer.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;

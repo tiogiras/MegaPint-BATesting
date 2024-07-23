@@ -43,6 +43,11 @@ internal class TaskManagerData : ScriptableObject
         return _tasks[_currentTaskIndex];
     }
 
+    public Task NextTask()
+    {
+        return _currentTaskIndex == _tasks.Count ? null : _tasks[_currentTaskIndex + 1];
+    }
+
     #endregion
 }
 
