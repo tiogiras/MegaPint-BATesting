@@ -375,7 +375,7 @@ internal class TaskManager : EditorWindowBase
     {
         onStartTimer?.Invoke();
         onStartTaskLogging?.Invoke(_data.CurrentTask().taskName);
-
+        
         while (this != null)
         {
             if (!await TryWaitOneSecond())
@@ -385,6 +385,12 @@ internal class TaskManager : EditorWindowBase
 
             UpdateTimerText();
         }
+        
+        Task task = _data.CurrentTask();
+
+        AssetDatabase.SaveAssetIfDirty(task);
+
+        TryInitializeGoals(task, false);
 
         onStopTaskLogging?.Invoke();
         onStopTimer?.Invoke();

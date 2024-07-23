@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using MegaPint.Editor.Scripts.GUI.Utility;
+using MegaPint.Editor.Scripts.PackageManager.Packages;
 using UnityEngine.UIElements;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
@@ -71,6 +72,30 @@ internal static class RequirementLogicLookUp
                 _ =>
                 {
                     ContextMenu.BasePackage.OpenBaseWindowPerLink("Info/Help/How To's/How To: Shortcuts");
+                })
+        },
+        {
+            "Camera Rendering", new Logic(
+                false,
+                _ =>
+                {
+                    ContextMenu.BasePackage.OpenBaseWindowPerLink($"Packages/{PackageKey.Screenshot}/Guides");
+                })
+        },
+        {
+            "Shortcut Capture", new Logic(
+                false,
+                _ =>
+                {
+                    ContextMenu.BasePackage.OpenBaseWindowPerLink($"Packages/{PackageKey.Screenshot}/Guides");
+                })
+        },
+        {
+            "Window Capture", new Logic(
+                false,
+                _ =>
+                {
+                    ContextMenu.BasePackage.OpenBaseWindowPerLink($"Packages/{PackageKey.Screenshot}/Guides");
                 })
         },
     };

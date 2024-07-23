@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Change Shortcut State Of Any Camera
+  m_EditorClassIdentifier: 
+  title: Change Shortcut State Of Any Camera
+  hint: '1. Open the ShortcutCapture (MegaPint/Packages/Screenshot/Shortcut Capture)
+
+    2.
+    Select the camera in the scene
+
+    3. Change the toggle state of the camera'
+  hasInitializationLogic: 1
+  _done: 1
