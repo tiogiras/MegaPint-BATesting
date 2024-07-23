@@ -17,6 +17,10 @@ internal static class RequirementGUILookUp
         {
             "MenuItems",
             Constants.BaTesting.UserInterface.Requirements.MenuItems
+        },
+        {
+            "Upload Screenshots 1",
+            Constants.BaTesting.UserInterface.Requirements.UploadScreenshots1
         }
     };
 }
