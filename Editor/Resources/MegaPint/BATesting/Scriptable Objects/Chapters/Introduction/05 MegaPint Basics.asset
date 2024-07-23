@@ -23,5 +23,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  _done: 0
+  _done: 1
   _neededTime: 0
