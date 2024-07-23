@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using MegaPint.Editor.Scripts.Drawer;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
-using UnityEngine;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
 {
@@ -19,6 +18,7 @@ internal static class GoalInitializationLogicLookUp
     private const string WindowCaptureRender = "Window Capture Render";
     private const string WindowCaptureExport = "Window Capture Export";
     private const string ChangeShortcutStateOfAnyCamera = "Change Shortcut State Of Any Camera";
+    private const string TakeManualScreenshots = "Take Manual Screenshots";
 
     public static readonly Dictionary <string, Action> InitializationLookUp = new()
     {
@@ -28,7 +28,8 @@ internal static class GoalInitializationLogicLookUp
         {CameraCaptureExport, () => {CameraCaptureDrawer.onCameraCaptureExported += OnCameraCaptureExported;}},
         {WindowCaptureRender, () => {WindowCapture.onRender += OnWindowCaptureRendered;}},
         {WindowCaptureExport, () => {WindowCapture.onExport += OnWindowCaptureExported;}},
-        {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState += OnShortcutStateChanged;}}
+        {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState += OnShortcutStateChanged;}},
+        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask += OnTakeManualScreenshots;}}
     };
 
     public static readonly Dictionary <string, Action> DeInitializationLookUp = new()
@@ -39,7 +40,8 @@ internal static class GoalInitializationLogicLookUp
         {CameraCaptureExport, () => {CameraCaptureDrawer.onCameraCaptureExported -= OnCameraCaptureExported;}},
         {WindowCaptureRender, () => {WindowCapture.onRender -= OnWindowCaptureRendered;}},
         {WindowCaptureExport, () => {WindowCapture.onExport -= OnWindowCaptureExported;}},
-        {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState -= OnShortcutStateChanged;}}
+        {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState -= OnShortcutStateChanged;}},
+        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask -= OnTakeManualScreenshots;}}
     };
 
     #region Private Methods
@@ -83,6 +85,11 @@ internal static class GoalInitializationLogicLookUp
     private static void OnShortcutStateChanged(string _, bool __)
     {
         MarkGoalAsDone(ChangeShortcutStateOfAnyCamera);
+    }
+
+    private static void OnTakeManualScreenshots()
+    {
+        MarkGoalAsDone(TakeManualScreenshots);
     }
 
     private static void OnWindowCaptureExported()

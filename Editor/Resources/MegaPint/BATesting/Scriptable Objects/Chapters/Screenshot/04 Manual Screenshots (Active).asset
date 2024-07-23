@@ -10,21 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: 02 Introduction (Active)
+  m_Name: 04 Manual Screenshots (Active)
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
-  taskName: Introduction (Active)
+  taskName: Manual Screenshots (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
-  cannotBeFinishedAutomatically: 0
-  scene: {fileID: 102900000, guid: 82b548fa0c7fd9149b56531585038d02, type: 3}
+  cannotBeFinishedAutomatically: 1
+  scene: {fileID: 102900000, guid: 143bc2556c355784b9d1fdd86e5a0cba, type: 3}
   startInPlayMode: 0
   goals:
-  - {fileID: 11400000, guid: c068df26a86c0d6458cd0e5da7425487, type: 2}
-  - {fileID: 11400000, guid: 30bc44bac6d38b24d99847b0e056a8c4, type: 2}
-  - {fileID: 11400000, guid: 3de2f24060fff4441aeb34665729993a, type: 2}
-  - {fileID: 11400000, guid: c543c33acaef67946b521eeb65388d88, type: 2}
-  - {fileID: 11400000, guid: 9958fb2c16f04294ba284d6d158f7e3e, type: 2}
+  - {fileID: 11400000, guid: 088b4c5e415912f44a618e0485cc420a, type: 2}
   _done: 1
-  _neededTime: 32
+  _neededTime: 34

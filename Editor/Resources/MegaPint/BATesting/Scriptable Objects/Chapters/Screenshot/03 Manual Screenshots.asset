@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 03 Manual Screenshots
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
+  taskName: Manual Screenshots
+  taskDescription: 'In the following task you need to take screenshots hile in playmode
+    using your own screenshot method. You can for example use the snipping tool or
+    the windows command if awailable. Use the tool you are most familliar with.
+
+
+    While
+    in playmode the camera is rotating contantly your task is to take a screenshot
+    of each asset group. Try to align the asset group to the center of your screen.
+    After taking screenshots of all 4 asset groups you are asked to upload them to
+    a cloud so make sure to <b>save them</b>.
+
+
+    The time of this task cannot
+    be estimated autoamtically. Because of that you have to hit the <b>Finish Task</b>
+    button once you are satisfied with your taken screenshots.'
+  taskRequirements: []
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  _done: 1
+  _neededTime: 0
