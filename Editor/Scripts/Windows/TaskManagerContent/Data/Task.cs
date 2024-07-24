@@ -46,6 +46,7 @@ internal class Task : ScriptableObject
     public SceneAsset scene;
     public bool startInPlayMode;
     public List <Goal> goals;
+    public List <ResetObjectLogic> resetObjects;
 
     [SerializeField] private bool _done;
     [SerializeField] private float _neededTime;
@@ -63,8 +64,19 @@ internal class Task : ScriptableObject
         if (scene != null)
             RecreateSceneFromBackup();
 
+        if (resetObjects.Count > 0)
+            ResetObjects();
+
         NeededTime = 0;
         Done = false;
+    }
+
+    private void ResetObjects()
+    {
+        foreach (ResetObjectLogic resetObject in resetObjects)
+        {
+            resetObject.ResetLogic();
+        }
     }
 
     private void RecreateSceneFromBackup()

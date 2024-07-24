@@ -23,5 +23,6 @@ MonoBehaviour:
   goals:
   - {fileID: 11400000, guid: b3b904ca1558bec4a99a6c0c7c77aaf6, type: 2}
   - {fileID: 11400000, guid: e1a45a537f2186c41b6cb0e317cc3f1c, type: 2}
+  resetObjects: []
   _done: 1
   _neededTime: 72

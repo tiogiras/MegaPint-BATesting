@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 07 Validator View (Active)
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Validator View (Active)
+  taskDescription: 
+  taskRequirements: []
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 102900000, guid: c816b020d8e73cf42b44e24091e9be66, type: 3}
+  startInPlayMode: 0
+  goals:
+  - {fileID: 11400000, guid: 2ee21f376931a9f468431a199d60e61a, type: 2}
+  - {fileID: 11400000, guid: 976283adb3134384ebef871d7a603ee7, type: 2}
+  - {fileID: 11400000, guid: b41a32b201c68d349b557c81119e6ca6, type: 2}
+  resetObjects:
+  - {fileID: 5082061263723825947, guid: cf9c9f576f42c0a47961fd019b1002f2, type: 3}
+  _done: 1
+  _neededTime: 26

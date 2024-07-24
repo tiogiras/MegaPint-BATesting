@@ -1,22 +1,24 @@
 // TODO commenting
 
+using System;
 using System.Collections.Generic;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace MegaPint
 {
 
 [AddComponentMenu("")]
-public class TestProcedure : MonoBehaviour
+internal class SceneManagerTestProcedure : MonoBehaviour
 {
+    public static Action onWin;
+    
     [SerializeField] private List <FadeGraphic> _loseGraphics;
     [SerializeField] private GameObject _winGraphic;
     [SerializeField] private GameObject _hintGraphic;
     [SerializeField] private Button _button;
     [SerializeField] private Image _background;
-    [SerializeField] private Goal _goal;
 
     private readonly List <FadeGraphic> _loseGraphicsPool = new();
 
@@ -79,8 +81,8 @@ public class TestProcedure : MonoBehaviour
         _winGraphic.SetActive(true);
         _button.interactable = false;
         _background.color = new Color(0.09f, 0.51f, 0.09f);
-
-        Goal.MarkGoalAsDone(_goal);
+        
+        onWin?.Invoke();
     }
 
     #endregion

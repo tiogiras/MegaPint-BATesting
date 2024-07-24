@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: 01 Introduction
+  m_Name: 01 Introduction Screenshots
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
-  taskName: Introduction
+  taskName: Introduction Screenshots
   taskDescription: "The next chapter is about the <b>Screenshot</b> Tool of the MegaPint
     collection.\n\nThe package is used to take Screenshots inside of unity by either
     directly rendering any camera component or an opened editor window. \n\nIn the
@@ -39,5 +39,6 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
+  resetObjects: []
   _done: 1
   _neededTime: 0

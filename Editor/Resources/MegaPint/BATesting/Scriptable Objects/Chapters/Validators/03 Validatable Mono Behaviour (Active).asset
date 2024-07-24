@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 03 Validatable Mono Behaviour (Active)
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: ValidatableMonoBehaviour (Active)
+  taskDescription: 
+  taskRequirements: []
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 102900000, guid: 0fe35f00610c44940a0ee179aa97c054, type: 3}
+  startInPlayMode: 0
+  goals:
+  - {fileID: 11400000, guid: e2c27d2f3cf9a8143bc38574bbc35350, type: 2}
+  - {fileID: 11400000, guid: 4fac3e51a95095a45b46ac0d320291eb, type: 2}
+  - {fileID: 11400000, guid: cf92c9ceedf4ceb4ebd0e27335585a22, type: 2}
+  - {fileID: 11400000, guid: 825ed040d3d468d43a0b25d79a441113, type: 2}
+  resetObjects: []
+  _done: 1
+  _neededTime: 6
