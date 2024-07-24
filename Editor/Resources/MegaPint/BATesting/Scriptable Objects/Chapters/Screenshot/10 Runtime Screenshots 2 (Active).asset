@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: 04 Manual Screenshots (Active)
+  m_Name: 10 Runtime Screenshots 2 (Active)
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
-  taskName: Manual Screenshots (Active)
+  taskName: Runtime Screenshots 2 (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 1
-  scene: {fileID: 102900000, guid: 143bc2556c355784b9d1fdd86e5a0cba, type: 3}
+  scene: {fileID: 102900000, guid: 43bab9084a55ad546ace478acb7325b4, type: 3}
   startInPlayMode: 0
   goals:
-  - {fileID: 11400000, guid: 088b4c5e415912f44a618e0485cc420a, type: 2}
+  - {fileID: 11400000, guid: 97dca0201b2bd7442b893ba392303026, type: 2}
+  - {fileID: 11400000, guid: 65e3ae15e80297e47aa984af200ef323, type: 2}
   _done: 1
-  _neededTime: 1
+  _neededTime: 5

@@ -19,6 +19,10 @@ internal static class GoalInitializationLogicLookUp
     private const string WindowCaptureExport = "Window Capture Export";
     private const string ChangeShortcutStateOfAnyCamera = "Change Shortcut State Of Any Camera";
     private const string TakeManualScreenshots = "Take Manual Screenshots";
+    private const string TakeRuntimeScreenshots1 = "Take Runtime Screenshots 1";
+    private const string TakeScreenshotOfCameraCaptureConfig1 = "Take Screenshot Of Camera Capture Config 1";
+    private const string TakeRuntimeScreenshots2 = "Take Runtime Screenshots 2";
+    private const string TakeScreenshotOfCameraCaptureConfig2 = "Take Screenshot Of Camera Capture Config 2";
 
     public static readonly Dictionary <string, Action> InitializationLookUp = new()
     {
@@ -29,7 +33,17 @@ internal static class GoalInitializationLogicLookUp
         {WindowCaptureRender, () => {WindowCapture.onRender += OnWindowCaptureRendered;}},
         {WindowCaptureExport, () => {WindowCapture.onExport += OnWindowCaptureExported;}},
         {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState += OnShortcutStateChanged;}},
-        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask += OnTakeManualScreenshots;}}
+        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask += OnTakeManualScreenshots;}},
+        {TakeRuntimeScreenshots1, () => {TaskManager.onForceFinishTask += OnTakRuntimeScreenshots1;}},
+        {
+            TakeScreenshotOfCameraCaptureConfig1,
+            () => {TaskManager.onForceFinishTask += OnTakeScreenshotOfCameraCaptureConfig1;}
+        },
+        {TakeRuntimeScreenshots2, () => {TaskManager.onForceFinishTask += OnTakRuntimeScreenshots2;}},
+        {
+            TakeScreenshotOfCameraCaptureConfig2,
+            () => {TaskManager.onForceFinishTask += OnTakeScreenshotOfCameraCaptureConfig2;}
+        }
     };
 
     public static readonly Dictionary <string, Action> DeInitializationLookUp = new()
@@ -41,7 +55,17 @@ internal static class GoalInitializationLogicLookUp
         {WindowCaptureRender, () => {WindowCapture.onRender -= OnWindowCaptureRendered;}},
         {WindowCaptureExport, () => {WindowCapture.onExport -= OnWindowCaptureExported;}},
         {ChangeShortcutStateOfAnyCamera, () => {ShortcutCapture.onChangeState -= OnShortcutStateChanged;}},
-        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask -= OnTakeManualScreenshots;}}
+        {TakeManualScreenshots, () => {TaskManager.onForceFinishTask -= OnTakeManualScreenshots;}},
+        {TakeRuntimeScreenshots1, () => {TaskManager.onForceFinishTask -= OnTakRuntimeScreenshots1;}},
+        {
+            TakeScreenshotOfCameraCaptureConfig1,
+            () => {TaskManager.onForceFinishTask -= OnTakeScreenshotOfCameraCaptureConfig1;}
+        },
+        {TakeRuntimeScreenshots2, () => {TaskManager.onForceFinishTask -= OnTakRuntimeScreenshots2;}},
+        {
+            TakeScreenshotOfCameraCaptureConfig2,
+            () => {TaskManager.onForceFinishTask -= OnTakeScreenshotOfCameraCaptureConfig2;}
+        }
     };
 
     #region Private Methods
@@ -90,6 +114,26 @@ internal static class GoalInitializationLogicLookUp
     private static void OnTakeManualScreenshots()
     {
         MarkGoalAsDone(TakeManualScreenshots);
+    }
+
+    private static void OnTakeScreenshotOfCameraCaptureConfig1()
+    {
+        MarkGoalAsDone(TakeScreenshotOfCameraCaptureConfig1);
+    }
+
+    private static void OnTakeScreenshotOfCameraCaptureConfig2()
+    {
+        MarkGoalAsDone(TakeScreenshotOfCameraCaptureConfig2);
+    }
+
+    private static void OnTakRuntimeScreenshots1()
+    {
+        MarkGoalAsDone(TakeRuntimeScreenshots1);
+    }
+
+    private static void OnTakRuntimeScreenshots2()
+    {
+        MarkGoalAsDone(TakeRuntimeScreenshots2);
     }
 
     private static void OnWindowCaptureExported()

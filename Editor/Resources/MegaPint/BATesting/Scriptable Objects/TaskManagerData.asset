@@ -25,5 +25,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac6e482ea7aac2d4db4bb22e474d1181, type: 2}
   - {fileID: 11400000, guid: 798ea47aa73142148bb09ab5cf0d10e6, type: 2}
   - {fileID: 11400000, guid: da6a4d56f52893b4b804460943729339, type: 2}
+  - {fileID: 11400000, guid: c198a1a40a8c7164686519ea6a416de1, type: 2}
+  - {fileID: 11400000, guid: 287ff87bbfc61e543996983b9841345d, type: 2}
+  - {fileID: 11400000, guid: 01ebdcbca09f9db43b4915cca8d14c7b, type: 2}
+  - {fileID: 11400000, guid: 30ee4ec1b986f134d9e89f4aab6198b2, type: 2}
+  - {fileID: 11400000, guid: f64577d34d92b4a46b93348fbce23409, type: 2}
+  - {fileID: 11400000, guid: 2eff42edcb9e42e4ab0f3f9c37b08997, type: 2}
+  - {fileID: 11400000, guid: 3aebb3522816ca148b957faaa8d7cf60, type: 2}
   - {fileID: 11400000, guid: 19589c9956fbee5438bf59698eee03d0, type: 2}
-  _currentTaskIndex: 12
+  _currentTaskIndex: 19

@@ -10,17 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: 04 Manual Screenshots (Active)
+  m_Name: 11 Upload Screenshots 3
   m_EditorClassIdentifier: 
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
-  taskName: Manual Screenshots (Active)
-  taskDescription: 
-  taskRequirements: []
+  taskName: Upload Screenshots 3
+  taskDescription: 'Please upload all 20 screenshots with the upload link. The link
+    can be found in the attatched requirement.
+
+
+    <b>Only upload your files to
+    the folder with your tester token!</b>'
+  taskRequirements:
+  - {fileID: 11400000, guid: 2149226ab2a61924cae4c4047cfb8b03, type: 2}
   hasDoableTask: 0
-  cannotBeFinishedAutomatically: 1
-  scene: {fileID: 102900000, guid: 143bc2556c355784b9d1fdd86e5a0cba, type: 3}
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
   startInPlayMode: 0
-  goals:
-  - {fileID: 11400000, guid: 088b4c5e415912f44a618e0485cc420a, type: 2}
+  goals: []
   _done: 1
-  _neededTime: 1
+  _neededTime: 0

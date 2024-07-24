@@ -21,6 +21,18 @@ internal static class RequirementGUILookUp
         {
             "Upload Screenshots 1",
             Constants.BaTesting.UserInterface.Requirements.UploadScreenshots1
+        },
+        {
+            "Upload Screenshots 2",
+            Constants.BaTesting.UserInterface.Requirements.UploadScreenshots2
+        },
+        {
+            "Upload Screenshots 3",
+            Constants.BaTesting.UserInterface.Requirements.UploadScreenshots3
+        },
+        {
+            "Screenshot Survey",
+            Constants.BaTesting.UserInterface.Requirements.ScreenshotSurvey
         }
     };
 }

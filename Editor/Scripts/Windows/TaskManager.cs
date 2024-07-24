@@ -237,9 +237,11 @@ internal class TaskManager : EditorWindowBase
 
     #region Private Methods
 
-    private static void FinishTask()
+    private void FinishTask()
     {
         onForceFinishTask?.Invoke();
+
+        _btnFinishTask.style.display = DisplayStyle.None;
     }
 
     private static void TryInitializeGoals(Task task, bool initialize)
@@ -470,8 +472,11 @@ internal class TaskManager : EditorWindowBase
             _btnStart.style.display = DisplayStyle.None;
 
         _btnReloadTaskScene.style.display = currentTask.scene != null ? DisplayStyle.Flex : DisplayStyle.None;
-        _btnFinishTask.style.display = currentTask.cannotBeFinishedAutomatically ? DisplayStyle.Flex : DisplayStyle.None;
-        
+
+        _btnFinishTask.style.display =
+            currentTask.goals.Any(goal => !goal.Done) && currentTask.cannotBeFinishedAutomatically
+                ? DisplayStyle.Flex
+                : DisplayStyle.None;
 
         _btnComplete.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;
         _timerContainer.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Take Screenshot Of Camera Capture Config 2
+  m_EditorClassIdentifier: 
+  title: Take Screenshot Of Camera Capture Config 2
+  hint: '1. Select your camera''s in the inspector
+
+    2. Open the window capture
+    (MegaPint/Packages/Screenshot/Window Capture)
+
+    3. Select the Inspector window
+
+    4.
+    Press the Render button
+
+    5. Press the Export button
+
+    6. Press the Finish
+    Task button'
+  hasInitializationLogic: 1
+  _done: 1

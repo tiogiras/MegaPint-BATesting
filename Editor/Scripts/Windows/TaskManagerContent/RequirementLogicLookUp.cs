@@ -96,6 +96,33 @@ internal static class RequirementLogicLookUp
                     element.ActivateLinks(
                         evt => {Application.OpenURL(evt.linkText);});
                 })
+        },
+        {
+            "Upload Screenshots 2", new Logic(
+                true,
+                element =>
+                {
+                    element.ActivateLinks(
+                        evt => {Application.OpenURL(evt.linkText);});
+                })
+        },
+        {
+            "Upload Screenshots 3", new Logic(
+                true,
+                element =>
+                {
+                    element.ActivateLinks(
+                        evt => {Application.OpenURL(evt.linkText);});
+                })
+        },
+        {
+            "Screenshot Survey", new Logic(
+                true,
+                element =>
+                {
+                    element.ActivateLinks(
+                        evt => {Application.OpenURL(evt.linkText);});
+                })
         }
     };
 }
