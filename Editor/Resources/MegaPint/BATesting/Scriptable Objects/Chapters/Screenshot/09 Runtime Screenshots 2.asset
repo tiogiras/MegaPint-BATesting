@@ -31,8 +31,8 @@ MonoBehaviour:
 
 
     The time of this task cannot
-    be estimated autoamtically. Because of that you have to hit the <b>Finish Task</b>
-    button once you are satisfied with your taken screenshots.'
+    be estimated autoamtically. Because of that you have to hit the <b>Finish All
+    Goals</b> button once you are satisfied with your taken screenshots.'
   taskRequirements: []
   hasDoableTask: 1
   cannotBeFinishedAutomatically: 0

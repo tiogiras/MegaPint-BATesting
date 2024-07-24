@@ -30,13 +30,15 @@ MonoBehaviour:
     yourself.
 
 
-    The task will automatically detect when the goal has been reached.
+    The task will automatically detect when the goal has been reached
+    as long as this window stays open. <b>Therefor always keep this window open!</b>
 
 
     The
     test can be advanced once all goals are met.'
   taskRequirements: []
   hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
