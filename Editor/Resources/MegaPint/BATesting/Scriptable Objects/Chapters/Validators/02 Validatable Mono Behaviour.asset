@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 02 Validatable Mono Behaviour
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: ValidatableMonoBehaviour
+  taskDescription: 'The core of the Validators package are ValidatableMonoBehaviours
+    (VMB). These are a type of MonoBehaviour that can be added to any gameObject.
+    You can add a list of requirements to them and as soon as the GameObject is validated
+    every VMB is validated as well.
+
+
+    To display the found issues every VMB adds
+    a Status script to the gameObject. This status component allows you to see the
+    current state of the gameObject, any occured issue on any VMB and you can also
+    manually revalidate the gameObject.
+
+
+    The following task will ask of you
+    to try these functions for yourself. You can experiment with the <b>VMB Example</b>
+    gameObject in the hierarchy, try to add, remove and change some requirements.
+    In addition Validate the gameObject manually and fix an issue via the status
+    component.'
+  taskRequirements: []
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetObjects: []
+  _done: 1
+  _neededTime: 0

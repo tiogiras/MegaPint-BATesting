@@ -22,5 +22,6 @@ MonoBehaviour:
   startInPlayMode: 1
   goals:
   - {fileID: 11400000, guid: d717d19fe90f61e4db781230a0d1dce4, type: 2}
+  resetObjects: []
   _done: 1
-  _neededTime: 21
+  _neededTime: 3
