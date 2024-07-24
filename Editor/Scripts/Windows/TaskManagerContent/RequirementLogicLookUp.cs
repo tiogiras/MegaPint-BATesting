@@ -89,7 +89,7 @@ internal static class RequirementLogicLookUp
                 _ => {ContextMenu.BasePackage.OpenBaseWindowPerLink($"Packages/{PackageKey.Screenshot}/Guides");})
         },
         {
-            "Upload Screenshots 1", new Logic(
+            "Upload Screenshots I", new Logic(
                 true,
                 element =>
                 {
@@ -98,7 +98,7 @@ internal static class RequirementLogicLookUp
                 })
         },
         {
-            "Upload Screenshots 2", new Logic(
+            "Upload Screenshots II", new Logic(
                 true,
                 element =>
                 {
@@ -107,7 +107,7 @@ internal static class RequirementLogicLookUp
                 })
         },
         {
-            "Upload Screenshots 3", new Logic(
+            "Upload Screenshots III", new Logic(
                 true,
                 element =>
                 {
@@ -123,6 +123,11 @@ internal static class RequirementLogicLookUp
                     element.ActivateLinks(
                         evt => {Application.OpenURL(evt.linkText);});
                 })
+        },
+        {
+            "Recall Validators Functions", new Logic(
+                false,
+                _ => {ContextMenu.BasePackage.OpenBaseWindowPerLink($"Packages/{PackageKey.Validators}/Guides");})
         }
     };
 }

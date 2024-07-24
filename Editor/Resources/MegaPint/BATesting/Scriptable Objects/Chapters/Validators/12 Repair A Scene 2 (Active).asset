@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: PLACEHOLDER
+  m_Name: 12 Repair A Scene 2 (Active)
   m_EditorClassIdentifier: 
-  chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: PLACEHOLDER
-  taskDescription: PLACEHOLDER
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Repair A Scene II (Active)
+  taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
-  scene: {fileID: 0}
+  scene: {fileID: 102900000, guid: 3c659f37f7465034088d7fd71a6dfc92, type: 3}
   startInPlayMode: 0
-  goals: []
+  goals:
+  - {fileID: 11400000, guid: 1e9ec6386cac6b4449b825fe7a4cb228, type: 2}
   resetObjects: []
-  _done: 0
+  _done: 1
   _neededTime: 0

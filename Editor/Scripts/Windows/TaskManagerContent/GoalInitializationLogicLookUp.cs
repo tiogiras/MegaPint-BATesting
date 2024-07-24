@@ -22,10 +22,10 @@ internal static class GoalInitializationLogicLookUp
     private const string WindowCaptureExport = "Window Capture Export";
     private const string ChangeShortcutStateOfAnyCamera = "Change Shortcut State Of Any Camera";
     private const string TakeManualScreenshots = "Take Manual Screenshots";
-    private const string TakeRuntimeScreenshots1 = "Take Runtime Screenshots 1";
-    private const string TakeScreenshotOfCameraCaptureConfig1 = "Take Screenshot Of Camera Capture Config 1";
-    private const string TakeRuntimeScreenshots2 = "Take Runtime Screenshots 2";
-    private const string TakeScreenshotOfCameraCaptureConfig2 = "Take Screenshot Of Camera Capture Config 2";
+    private const string TakeRuntimeScreenshots1 = "Take Runtime Screenshots I";
+    private const string TakeScreenshotOfCameraCaptureConfig1 = "Take Screenshot Of Camera Capture Config I";
+    private const string TakeRuntimeScreenshots2 = "Take Runtime Screenshots II";
+    private const string TakeScreenshotOfCameraCaptureConfig2 = "Take Screenshot Of Camera Capture Config II";
     private const string AddRequirement = "Add Requirement";
     private const string RemoveRequirement = "Remove Requirement";
     private const string ChangeRequirement = "Change Requirement";

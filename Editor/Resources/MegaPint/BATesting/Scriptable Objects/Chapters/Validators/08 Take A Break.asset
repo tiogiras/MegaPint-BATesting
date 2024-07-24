@@ -10,11 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: PLACEHOLDER
+  m_Name: 08 Take A Break
   m_EditorClassIdentifier: 
-  chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: PLACEHOLDER
-  taskDescription: PLACEHOLDER
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Take A Break
+  taskDescription: 'You have completed most of the tasks if you feel like you need
+    a break please take at least a 5 to 10 minute break before continuing with the
+    next task.
+
+
+    The following tasks will be longer and may require your full
+    concentration.'
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
@@ -22,5 +28,5 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
+  _done: 1
   _neededTime: 0
