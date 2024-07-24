@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 09 Runtime Screenshots 2
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
+  taskName: Runtime Screenshots 2
+  taskDescription: 'In the following task you are tasked to do the same you did right
+    now but with more than one camera. Duplicate the main camera of the scene so
+    that you have 4 camera''s to your disposal. Then setup these camera''s that every
+    background type is used. Be creative with your settings.
+
+
+    Remember to setup
+    all of the camera''s to render with the shortcut. Once you have taken screenshots
+    of all 4 asset groups while in playmode, take a screenshot of each CameraCapture
+    configuration.
+
+
+    In total you should have 16 Screenshots of the asset groups
+    and 4 Screenshots of your configurations.
+
+
+    The time of this task cannot
+    be estimated autoamtically. Because of that you have to hit the <b>Finish All
+    Goals</b> button once you are satisfied with your taken screenshots.'
+  taskRequirements: []
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  _done: 1
+  _neededTime: 0

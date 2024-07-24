@@ -17,6 +17,7 @@ MonoBehaviour:
   taskDescription: PLACEHOLDER
   taskRequirements: []
   hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []

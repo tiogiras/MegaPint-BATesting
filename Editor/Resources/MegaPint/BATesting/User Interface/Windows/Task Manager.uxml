@@ -43,7 +43,7 @@
                     </ui:VisualElement>
                     <ui:VisualElement style="flex-direction: row-reverse; margin-right: 25px; margin-left: 25px; margin-top: 5px; justify-content: space-between; flex-shrink: 0;">
                         <ui:Button text="Reload Task Scene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_ReloadTaskScene" />
-                        <ui:Button text="Finish Task" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_FinishTask" />
+                        <ui:Button text="Finish All Goals" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_FinishTask" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BTN_Continue" style="margin-top: 20px; margin-right: 25px; margin-bottom: 20px; margin-left: 25px;" />

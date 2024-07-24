@@ -26,6 +26,9 @@ internal static partial class Constants
                 public static readonly string TestRequirement = Path.Combine(s_requirements, "Test Requirement");
                 public static readonly string MenuItems = Path.Combine(s_requirements, "Menu Items");
                 public static readonly string UploadScreenshots1 = Path.Combine(s_requirements, "Upload Screenshots 1");
+                public static readonly string UploadScreenshots2 = Path.Combine(s_requirements, "Upload Screenshots 2");
+                public static readonly string UploadScreenshots3 = Path.Combine(s_requirements, "Upload Screenshots 3");
+                public static readonly string ScreenshotSurvey = Path.Combine(s_requirements, "Screenshot Survey");
             }
 
             private static readonly string s_windows = Path.Combine(s_userInterface, "Windows");
