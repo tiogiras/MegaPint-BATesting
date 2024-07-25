@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using MegaPint.Editor.Scripts.Drawer;
 using MegaPint.Editor.Scripts.Internal;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
+using MegaPint.RepairScene.NonValidatable;
 using MegaPint.SerializeReferenceDropdown.Editor;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
@@ -38,6 +39,8 @@ internal static class GoalInitializationLogicLookUp
     private const string FixAllIssuesInScene = "Fix All Issues In The Opened Scene";
     private const string FixTestValidationPrefab = "Fix The Test Validation Prefab";
     private const string OpenValidatorView = "Open Validator View";
+    private const string RepairAScene1 = "Repair A Scene I";
+    
 
     public static readonly Dictionary <string, Action> InitializationLookUp = new()
     {
@@ -80,7 +83,8 @@ internal static class GoalInitializationLogicLookUp
         },
         {OpenValidatorView, () => {ValidatorView.onOpen += OnValidatorView;}},
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated += OnFixTestValidationPrefab;}},
-        {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin += OnFixAllIssuesInScene;}}
+        {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin += OnFixAllIssuesInScene;}},
+        {RepairAScene1, () => {SceneManager.onWin += OnRepairScene1;}}
     };
 
     public static readonly Dictionary <string, Action> DeInitializationLookUp = new()
@@ -124,7 +128,8 @@ internal static class GoalInitializationLogicLookUp
         },
         {OpenValidatorView, () => {ValidatorView.onOpen -= OnValidatorView;}},
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated -= OnFixTestValidationPrefab;}},
-        {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin -= OnFixAllIssuesInScene;}}
+        {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin -= OnFixAllIssuesInScene;}},
+        {RepairAScene1, () => {SceneManager.onWin -= OnRepairScene1;}}
     };
 
     #region Private Methods
@@ -231,6 +236,11 @@ internal static class GoalInitializationLogicLookUp
     private static void OnRemoveVSRequirement(string _, bool added)
     {
         MarkGoalAsDoneIf(RemoveVSRequirement, !added);
+    }
+
+    private static void OnRepairScene1()
+    {
+        MarkGoalAsDone(RepairAScene1);
     }
 
     private static void OnShortcutStateChanged(string _, bool __)

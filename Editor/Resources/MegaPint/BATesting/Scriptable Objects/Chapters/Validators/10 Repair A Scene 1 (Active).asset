@@ -18,10 +18,10 @@ MonoBehaviour:
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
-  scene: {fileID: 102900000, guid: 618ca1bc89ce2a44b858817e6e52fc48, type: 3}
+  scene: {fileID: 102900000, guid: e01cfb0d6810bea40b5aa08310cf5515, type: 3}
   startInPlayMode: 0
   goals:
   - {fileID: 11400000, guid: 33520d7e16ac79e45869a1b6902f565e, type: 2}
   resetObjects: []
-  _done: 1
-  _neededTime: 0
+  _done: 0
+  _neededTime: 2

@@ -21,6 +21,7 @@ namespace MegaPint.Editor.Scripts.Windows
 {
 
 /// <summary> Window based on the <see cref="EditorWindowBase" /> to display the current ba testing tasks </summary>
+[InitializeOnLoad]
 internal class TaskManager : EditorWindowBase
 {
     public static Action onOpen;
@@ -71,6 +72,16 @@ internal class TaskManager : EditorWindowBase
     private Label _timer;
 
     private VisualElement _timerContainer;
+
+    #region Unity Event Functions
+
+    private void OnEnable()
+    {
+        if (docked)
+            Focus();
+    }
+
+    #endregion
 
     #region Public Methods
 
@@ -237,13 +248,6 @@ internal class TaskManager : EditorWindowBase
 
     #region Private Methods
 
-    private void FinishTask()
-    {
-        onForceFinishTask?.Invoke();
-
-        _btnFinishTask.style.display = DisplayStyle.None;
-    }
-
     private static void TryInitializeGoals(Task task, bool initialize)
     {
         if (task.goals.Count == 0)
@@ -275,6 +279,13 @@ internal class TaskManager : EditorWindowBase
             container.AddToClassList(StyleSheetClasses.Background.Color.Red);
             container.RemoveFromClassList(StyleSheetClasses.Background.Color.Green);
         }
+    }
+
+    private void FinishTask()
+    {
+        onForceFinishTask?.Invoke();
+
+        _btnFinishTask.style.display = DisplayStyle.None;
     }
 
     private void LoadTaskScene()
