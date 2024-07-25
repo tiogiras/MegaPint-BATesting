@@ -21,7 +21,6 @@ namespace MegaPint.Editor.Scripts.Windows
 {
 
 /// <summary> Window based on the <see cref="EditorWindowBase" /> to display the current ba testing tasks </summary>
-[InitializeOnLoad]
 internal class TaskManager : EditorWindowBase
 {
     public static Action onOpen;

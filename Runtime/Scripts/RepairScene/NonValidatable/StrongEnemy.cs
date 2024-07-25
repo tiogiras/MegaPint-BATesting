@@ -7,11 +7,13 @@ namespace MegaPint.RepairScene.NonValidatable
 internal class StrongEnemy : MonoBehaviour
 {
     [SerializeField] private float _health;
+    [SerializeField] private string _name;
+    
     public bool IsValid {get; private set;}
 
     private void Awake()
     {
-        IsValid = _health is >= 30 and <= 60;
+        IsValid = _health is >= 30 and <= 60 && !string.IsNullOrEmpty(_name);
     }
     
     private void OnValidate()
@@ -23,6 +25,12 @@ internal class StrongEnemy : MonoBehaviour
         {
             hasIssue = true;
             issue.Append("- Health is not in range!\n");
+        }
+        
+        if (string.IsNullOrEmpty(_name))
+        {
+            hasIssue = true;
+            issue.Append("- The enemy is missing a name!\n");
         }
 
         if (hasIssue)

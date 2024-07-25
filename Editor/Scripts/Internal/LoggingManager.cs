@@ -2,6 +2,7 @@
 using System.IO;
 using MegaPint.Editor.Scripts;
 using MegaPint.Editor.Scripts.DevMode;
+using MegaPint.Editor.Scripts.Internal;
 using MegaPint.Editor.Scripts.Windows;
 using UnityEditor;
 using UnityEngine;

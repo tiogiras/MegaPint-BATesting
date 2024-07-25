@@ -7,6 +7,7 @@ namespace MegaPint.RepairScene.NonValidatable
 internal class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health;
+
     public bool IsValid {get; private set;}
 
     private void Awake()
