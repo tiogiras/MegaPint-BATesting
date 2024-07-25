@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
-  m_Name: Repair Scene 1
+  m_Name: Repair A Scene 1
   m_EditorClassIdentifier: 
-  title: Repair Scene I
+  title: Repair A Scene I
   hint: 1. Use the given pdf and the console logs to determine what needs to be fixed.
   hasInitializationLogic: 1
-  _done: 0
+  _done: 1

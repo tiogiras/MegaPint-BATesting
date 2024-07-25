@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Take Runtime Screenshots 2
   m_EditorClassIdentifier: 
-  title: Take Runtime Screenshots 2
+  title: Take Runtime Screenshots II
   hint: '1. Setup your camera''s to use the shortcut
 
     2. MegaPint/Packages/Screenshot/Shortcut
