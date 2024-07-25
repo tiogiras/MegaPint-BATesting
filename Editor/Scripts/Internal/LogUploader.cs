@@ -1,16 +1,18 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using MegaPint.Editor.Scripts;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
+using Directory = System.IO.Directory;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
+namespace MegaPint.Editor.Scripts.Internal
 {
 
 internal static class LogUploader
 {
+    // TODO upload the log file IMPORTANT!!! => key must contain the timestamp to differ when user uploads multiple task logs
+    
     private const string UploadUrl = "https://tiogiras.games/submitLog.php";
     public static bool hasTriedUploading;
 

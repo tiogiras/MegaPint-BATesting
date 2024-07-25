@@ -40,7 +40,8 @@ internal static class GoalInitializationLogicLookUp
     private const string FixTestValidationPrefab = "Fix The Test Validation Prefab";
     private const string OpenValidatorView = "Open Validator View";
     private const string RepairAScene1 = "Repair A Scene I";
-    
+    private const string RepairAScene2 = "Repair A Scene II";
+    private const string RepairAScene3 = "Repair A Scene III";
 
     public static readonly Dictionary <string, Action> InitializationLookUp = new()
     {
@@ -84,7 +85,9 @@ internal static class GoalInitializationLogicLookUp
         {OpenValidatorView, () => {ValidatorView.onOpen += OnValidatorView;}},
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated += OnFixTestValidationPrefab;}},
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin += OnFixAllIssuesInScene;}},
-        {RepairAScene1, () => {SceneManager.onWin += OnRepairScene1;}}
+        {RepairAScene1, () => {SceneManager.onWin += OnRepairScene1;}},
+        {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene2;}},
+        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene3;}}
     };
 
     public static readonly Dictionary <string, Action> DeInitializationLookUp = new()
@@ -129,7 +132,9 @@ internal static class GoalInitializationLogicLookUp
         {OpenValidatorView, () => {ValidatorView.onOpen -= OnValidatorView;}},
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated -= OnFixTestValidationPrefab;}},
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin -= OnFixAllIssuesInScene;}},
-        {RepairAScene1, () => {SceneManager.onWin -= OnRepairScene1;}}
+        {RepairAScene1, () => {SceneManager.onWin -= OnRepairScene1;}},
+        {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene2;}},
+        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene3;}}
     };
 
     #region Private Methods
@@ -241,6 +246,16 @@ internal static class GoalInitializationLogicLookUp
     private static void OnRepairScene1()
     {
         MarkGoalAsDone(RepairAScene1);
+    }
+
+    private static void OnRepairScene2()
+    {
+        MarkGoalAsDone(RepairAScene2);
+    }
+
+    private static void OnRepairScene3()
+    {
+        MarkGoalAsDone(RepairAScene3);
     }
 
     private static void OnShortcutStateChanged(string _, bool __)
