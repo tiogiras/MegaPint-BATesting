@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d3942af42a4cdf99dcbb5260b15292, type: 3}
+  m_Name: Strong Enemy
+  m_EditorClassIdentifier: 
+  _requirements:
+  - rid: 1543758887584530463
+  - rid: 1543758887584530465
+  - rid: 1543758887584530466
+  references:
+    version: 2
+    RefIds:
+    - rid: 1543758887584530463
+      type: {class: RequireCustomName, ns: MegaPint.ValidationRequirement.Requirements, asm: tiogiras.megapint.validators.runtime}
+      data:
+        preventListHeaderIssues: 
+        initialized: 1
+        uniqueID: 7066173b-eac8-4d75-8a1f-6dbc614ae976
+        severityOverwrite: 0
+        targetGameObject: {fileID: 0}
+        objectReference: {fileID: 11400000}
+        _regexPattern: '^\[ELITE\] '
+    - rid: 1543758887584530465
+      type: {class: Variables, ns: MegaPint.ValidationRequirement.Requirements.CSharp, asm: tiogiras.megapint.validators.runtime}
+      data:
+        preventListHeaderIssues: 
+        initialized: 1
+        uniqueID: 3a915cb3-2cff-4abc-b145-eb4c0defead5
+        severityOverwrite: 2
+        targetGameObject: {fileID: 0}
+        objectReference: {fileID: 11400000}
+        _classNamespace: MegaPint.RepairScene.Validatable
+        _className: StrongEnemy
+        _assemblyName: tiogiras.megapint.batesting.runtime
+        validation:
+          foundClass: 1
+          propertyHeight: 0
+        _variables:
+        - properties:
+            name: _health
+            type: 4
+            objectRequirement: 0
+            stringRequirement: 0
+            boolRequirement: 0
+            intRequirement: 0
+            floatRequirement: 6
+            targetObjectValue: {fileID: 0}
+            targetStringValue: 
+            targetBoolValue: 0
+            targetIntValue: 0
+            intReferenceValue: 0
+            intRangeMin: 0
+            intRangeMax: 0
+            targetFloatValue: 0
+            floatReferenceValue: 0
+            floatRangeMin: 30
+            floatRangeMax: 60
+            propertyHeight: 118
+            fieldFound: 1
+            typeIndex: 4
+        - properties:
+            name: _name
+            type: 1
+            objectRequirement: 0
+            stringRequirement: 1
+            boolRequirement: 0
+            intRequirement: 0
+            floatRequirement: 6
+            targetObjectValue: {fileID: 0}
+            targetStringValue: 
+            targetBoolValue: 0
+            targetIntValue: 0
+            intReferenceValue: 0
+            intRangeMin: 0
+            intRangeMax: 0
+            targetFloatValue: 0
+            floatReferenceValue: 0
+            floatRangeMin: 30
+            floatRangeMax: 60
+            propertyHeight: 75
+            fieldFound: 1
+            typeIndex: 1
+    - rid: 1543758887584530466
+      type: {class: RequireComponentOrder, ns: MegaPint.ValidationRequirement.Requirements.ComponentOrder, asm: tiogiras.megapint.validators.runtime}
+      data:
+        preventListHeaderIssues: 
+        initialized: 1
+        uniqueID: 4aa04493-2c1f-463f-9975-4734b33de129
+        severityOverwrite: 0
+        targetGameObject: {fileID: 0}
+        objectReference: {fileID: 11400000}
+        _config: {fileID: 11400000, guid: 7a3fc0f0b620d964fa5a302cd8a4af02, type: 2}

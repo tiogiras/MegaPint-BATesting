@@ -22,13 +22,13 @@ internal class SceneManager : MonoBehaviour
 
     private void Awake()
     {
-        _items = Resources.FindObjectsOfTypeAll <Item>();
-        _groundObjects = Resources.FindObjectsOfTypeAll <GroundObject>();
-        _debugObjects = Resources.FindObjectsOfTypeAll <DebugObject>();
-        _defaultTransformObjects = Resources.FindObjectsOfTypeAll <DefaultTransformObject>();
-        _npcs = Resources.FindObjectsOfTypeAll <Npc>();
-        _enemies = Resources.FindObjectsOfTypeAll <Enemy>();
-        _strongEnemies = Resources.FindObjectsOfTypeAll <StrongEnemy>();
+        _items = FindObjectsOfType <Item>();
+        _groundObjects = FindObjectsOfType <GroundObject>();
+        _debugObjects = FindObjectsOfType <DebugObject>();
+        _defaultTransformObjects = FindObjectsOfType <DefaultTransformObject>();
+        _npcs = FindObjectsOfType <Npc>();
+        _enemies = FindObjectsOfType <Enemy>();
+        _strongEnemies = FindObjectsOfType <StrongEnemy>();
     }
 
     private IEnumerator Start()

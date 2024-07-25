@@ -22,6 +22,13 @@ MonoBehaviour:
   startInPlayMode: 0
   goals:
   - {fileID: 11400000, guid: 88120c44f25a3aa488e58e160c5d133c, type: 2}
-  resetObjects: []
+  resetObjects:
+  - {fileID: 5763723299812982038, guid: 8582b3660c477934ab29b43ca8b46074, type: 3}
+  - {fileID: -4889559301201081429, guid: 1a6a367c9928d1f4aa9ae9b156ad674a, type: 3}
+  - {fileID: -6661309150733457635, guid: f78472e3d34a312498f164783f3d6eea, type: 3}
+  - {fileID: 343183344180914377, guid: 70e21d428e7bce94ca44d66054eaf085, type: 3}
+  - {fileID: 6738741195782075499, guid: fdb3d473f12b1324d9bd8f29be3d4a55, type: 3}
+  - {fileID: 7714837057184161499, guid: 5f4e84816ea8661469588bc7f69fa3be, type: 3}
+  - {fileID: -3789447780087099072, guid: 577179c1961044246982f3cd2243039d, type: 3}
   _done: 0
-  _neededTime: 0
+  _neededTime: 3
