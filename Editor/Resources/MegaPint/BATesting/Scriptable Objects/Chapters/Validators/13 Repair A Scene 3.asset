@@ -15,29 +15,26 @@ MonoBehaviour:
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Repair A Scene III
   taskDescription: 'The following task requires you like the previous one to repair
-    the scene. But this time some VMBs are missing their requirements or contain
-    wrong requirements. Use all Validators functions to your disposal to fix the
-    scene. Do not forget the possibility of exportable Validator Settings.
+    the scene. But this time all VMBs are missing their requirements. Use all Validators
+    functions to your disposal to fix the scene. <b>Do not forget the possibility
+    of exportable Validator Settings.</b>
 
 
-    Scene
-    modifications:
+    Scene modifications:
 
     - 2x Size
 
-    - VMBs are not fully prepared
-
-    - Some
-    VMBs are prepared incorrectly
+    -
+    VMBs are not prepared
 
 
-    The scene is considered repaired when you
-    can enter the playmode and the UI displays the win screen.
+    The scene is considered repaired when you can enter
+    the playmode and the UI displays the win screen.
 
 
-    To achieve this
-    every gameObject needs to fulfill certain requirements stated in the pdf that
-    was given to you.'
+    To achieve this every
+    gameObject needs to fulfill certain requirements stated in the pdf that was given
+    to you.'
   taskRequirements: []
   hasDoableTask: 1
   cannotBeFinishedAutomatically: 0
@@ -45,5 +42,5 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
+  _done: 1
   _neededTime: 0

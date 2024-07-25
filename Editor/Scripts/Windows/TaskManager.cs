@@ -76,8 +76,16 @@ internal class TaskManager : EditorWindowBase
 
     private void OnEnable()
     {
-        if (docked)
+        ForceFocus();
+    }
+
+    private async void ForceFocus()
+    {
+        while (!hasFocus)
+        {
+            await System.Threading.Tasks.Task.Delay(150);
             Focus();
+        }
     }
 
     #endregion
