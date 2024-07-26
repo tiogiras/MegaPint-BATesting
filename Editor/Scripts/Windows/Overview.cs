@@ -6,6 +6,7 @@ using System.Linq;
 using MegaPint.Editor.Scripts.GUI;
 using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
@@ -122,6 +123,13 @@ internal class Overview : EditorWindowBase
                         if (index < _data.CurrentTaskIndex)
                             _data.CurrentTaskIndex = index;
 
+                        if (!EditorUtility.DisplayDialog(
+                                "Reset Task",
+                                "Are you sure you want to reset this task?\nThis action may be permanent and you will all of your progress regarding this task.",
+                                "Yes",
+                                "Cancel"))
+                            return;
+                        
                         task.ResetValues();
                         UpdateListElementContainer(container, task.Done, i);
                     });
@@ -159,7 +167,12 @@ internal class Overview : EditorWindowBase
 
     private void OnResetAll()
     {
-        _data.ResetValues();
+        if (EditorUtility.DisplayDialog(
+                "Reset All Tasks",
+                "Are you sure you want to reset all tasks?\nThis action may be permanent and you will lose all of your progress.",
+                "Yes",
+                "Cancel"))
+            _data.ResetValues();
     }
 
     private void OnSend()
