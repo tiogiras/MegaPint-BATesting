@@ -412,7 +412,6 @@ GameObject:
   - component: {fileID: 77966963}
   - component: {fileID: 77966962}
   - component: {fileID: 77966961}
-  - component: {fileID: 77966964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -494,28 +493,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &77966964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77966960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df98e60138ef9e4fb1092aecdd7c238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 1920
-  height: 1080
-  depth: 32
-  backgroundType: 0
-  lastPath: Assets
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  backgroundImage: {fileID: 0}
-  imageType: Simple
-  pixelPerUnit: 1
-  listenToShortcut: 0
 --- !u!1 &89122659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7bd9a7b7b20478044897bfd9ac280075, type: 3}
@@ -5081,6 +5058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  _name: 
 --- !u!1001 &1351633166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6491,6 +6469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  _name: 
 --- !u!1001 &1777523122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6673,6 +6652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  _name: 
 --- !u!1001 &1825791598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6849,6 +6829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  _name: 
 --- !u!1001 &1832442744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7060,6 +7041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  _name: 
 --- !u!1 &1852027386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7bd9a7b7b20478044897bfd9ac280075, type: 3}

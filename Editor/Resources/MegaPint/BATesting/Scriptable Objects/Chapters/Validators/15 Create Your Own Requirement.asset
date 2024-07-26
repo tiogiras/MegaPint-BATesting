@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 15 Create Your Own Requirement
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Create Your Own Requirement
+  taskDescription: 'Your last task is to create your own custom requirement. For
+    this you will need your IDE so prepare it now so you can create and open scripts
+    in this project.
+
+
+    The only VMB in the following scene contains a rigidbody
+    component and should simulate an item. Some intern always removes the "use gravity"
+    toggle, no matter how often you explain to him that objects need to drop down.
+
+
+    To
+    automatically check and fix this after every push from the intern you are now
+    tasked to write a requirement to check for this.
+
+
+    - Your requirement validates
+    if the use gravity bool is set
+
+    - Your requirement autofixes the issue by
+    setting the bool to true
+
+
+    In order to track your progress with the script
+    you need to include the following lines of code at certain points in your script.
+
+
+    At
+    the start of the Validate(gameObject) method:
+
+    <b>TestEvent.onBeginValidate?.Invoke(gameObject)</b>
+
+
+    At
+    the end of your created FixAction(gameObject) method:
+
+    <b>TestEvent.onFixed?.Invoke(gameObject)</b>
+
+
+    Before
+    starting your task read about creating your own requirement. Information on this
+    topic can be found with the attatched requirement. (Sections marked as [Code])'
+  taskRequirements:
+  - {fileID: 11400000, guid: 07e2e3ba638aead4a999f501c9e10caa, type: 2}
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetObjects: []
+  _done: 1
+  _neededTime: 0

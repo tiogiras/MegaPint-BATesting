@@ -68,6 +68,18 @@ internal class PackageTests
         TestsUtility.ValidateResource <VisualTreeAsset>(
             ref isValid,
             Constants.BaTesting.UserInterface.Requirements.UploadScreenshots3);
+        
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.ScreenshotSurvey);
+        
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.ValidatorsSurvey);
+            
+        TestsUtility.ValidateResource <VisualTreeAsset>(
+            ref isValid,
+            Constants.BaTesting.UserInterface.Requirements.GeneralSurvey);
 
         Assert.IsTrue(isValid);
     }

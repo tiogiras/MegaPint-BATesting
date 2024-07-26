@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17967202, g: 0.22496803, b: 0.30650917, a: 1}
+  m_IndirectSpecularColor: {r: 0.18311606, g: 0.22878803, b: 0.30662295, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,8 +158,8 @@ Camera:
   m_GameObject: {fileID: 77966960}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -208,14 +208,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77966960}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0020362397, y: -0.97555053, z: 0.2195782, w: 0.009083979}
-  m_LocalPosition: {x: -2.3824375, y: 3.2183342, z: 7.452131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 6.29, y: -178.417, z: 0.001}
---- !u!1 &628992862
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737467699
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,8 +223,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 628992864}
-  - component: {fileID: 628992863}
+  - component: {fileID: 737467701}
+  - component: {fileID: 737467700}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -232,18 +232,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &628992863
+--- !u!108 &737467700
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628992862}
+  m_GameObject: {fileID: 737467699}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8392157, g: 0.95416915, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -287,29 +287,29 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 3786
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &628992864
+--- !u!4 &737467701
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628992862}
+  m_GameObject: {fileID: 737467699}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6380149, y: -0.56986564, z: 0.48189843, w: -0.18964197}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: -0.26003766, y: 0.5439493, z: -0.7210532, w: 0.3414411}
+  m_LocalPosition: {x: 10.126008, y: 5.7033005, z: -4.5235276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 52.3, y: -139.3, z: 117.1}
---- !u!1 &1035959826
+  m_LocalEulerAnglesHint: {x: 142.637, y: 249.91101, z: 77.275}
+--- !u!1 &1301935811
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,32 +317,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1035959829}
-  - component: {fileID: 1035959828}
-  - component: {fileID: 1035959827}
+  - component: {fileID: 1301935815}
+  - component: {fileID: 1301935814}
+  - component: {fileID: 1301935813}
+  - component: {fileID: 1301935812}
   m_Layer: 0
-  m_Name: VMB Example
+  m_Name: Example VMB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1035959827
+--- !u!54 &1301935812
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301935811}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1301935813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035959826}
+  m_GameObject: {fileID: 1301935811}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec8d3441f27a96e41a686dea72d5b2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _requirements:
-  - rid: 1543758860798656514
-  - rid: 1543758860798656515
-  - rid: 1543758860798656516
+  - rid: 1543758906645807104
   defaultSettings: []
   _importedSettings: []
   importedSettingsFoldout: 0
@@ -350,57 +376,34 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1543758860798656514
-      type: {class: RequireDefaultTransform, ns: MegaPint.ValidationRequirement.Requirements.TransformValidation, asm: tiogiras.megapint.validators.runtime}
+    - rid: 1543758906645807104
+      type: {class: RequireRigidbodyGravity, ns: , asm: Assembly-CSharp}
       data:
         preventListHeaderIssues: 
         initialized: 1
-        uniqueID: dc11c6cf-fce3-416f-b777-33595ae990c1
+        uniqueID: 7db2c07a-d4c5-4753-af40-d014e0e30ac4
         severityOverwrite: 0
-        targetGameObject: {fileID: 1035959826}
-        objectReference: {fileID: 1035959827}
-        _defaultPosition: 1
-        _defaultRotation: 1
-        _defaultScale: 0
-    - rid: 1543758860798656515
-      type: {class: RequireGameObjectActive, ns: MegaPint.ValidationRequirement.Requirements.GameObjectValidation, asm: tiogiras.megapint.validators.runtime}
-      data:
-        preventListHeaderIssues: 
-        initialized: 1
-        uniqueID: fd24a7d9-bc2e-4acb-8594-0c7d05387943
-        severityOverwrite: 0
-        targetGameObject: {fileID: 1035959826}
-        objectReference: {fileID: 1035959827}
-        _targetState: 1
-    - rid: 1543758860798656516
-      type: {class: RequireLayer, ns: MegaPint.ValidationRequirement.Requirements.GameObjectValidation, asm: tiogiras.megapint.validators.runtime}
-      data:
-        preventListHeaderIssues: 
-        initialized: 1
-        uniqueID: 9d654aaf-b824-4fb6-abc6-71c6f7506b21
-        severityOverwrite: 0
-        targetGameObject: {fileID: 1035959826}
-        objectReference: {fileID: 1035959827}
-        _layerName: Default
---- !u!114 &1035959828
+        targetGameObject: {fileID: 1301935811}
+        objectReference: {fileID: 1301935813}
+--- !u!114 &1301935814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035959826}
+  m_GameObject: {fileID: 1301935811}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e204cf03b664f168d9efa980bf6409f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1035959829
+--- !u!4 &1301935815
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035959826}
+  m_GameObject: {fileID: 1301935811}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -414,5 +417,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 77966963}
-  - {fileID: 628992864}
-  - {fileID: 1035959829}
+  - {fileID: 737467701}
+  - {fileID: 1301935815}

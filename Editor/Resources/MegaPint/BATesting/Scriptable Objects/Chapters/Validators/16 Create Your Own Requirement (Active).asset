@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 16 Create Your Own Requirement (Active)
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Create Your Own Requirement (Active)
+  taskDescription: 
+  taskRequirements: []
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 102900000, guid: 6c58731c53f7fa140ba8e715ab0d5314, type: 3}
+  startInPlayMode: 0
+  goals:
+  - {fileID: 11400000, guid: cefaa6d16f15bc6449560a8ca381953e, type: 2}
+  - {fileID: 11400000, guid: 9c665a4dddde4c24fac195a5c05b493d, type: 2}
+  resetObjects: []
+  _done: 1
+  _neededTime: 19

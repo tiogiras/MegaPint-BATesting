@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
-  m_Name: Repair A Scene 3
+  m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
+  m_Name: R General Survey
   m_EditorClassIdentifier: 
-  title: Repair A Scene III
-  hint: 1. Use the given pdf and the console logs to determine what needs to be fixed.
-  hasInitializationLogic: 1
+  requirementName: General Survey
   _done: 1

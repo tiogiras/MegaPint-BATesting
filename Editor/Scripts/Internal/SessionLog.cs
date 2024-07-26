@@ -34,6 +34,7 @@ internal class SessionLog
     public bool usingScreenshot;
     public bool usingValidators;
     
+    public float[] neededTimes;
     public List <LogCategory> categories;
 
     public SessionLog(string sessionID)

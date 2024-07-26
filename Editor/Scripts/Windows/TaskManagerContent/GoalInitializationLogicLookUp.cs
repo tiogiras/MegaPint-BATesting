@@ -8,6 +8,7 @@ using MegaPint.Editor.Scripts.Internal;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using MegaPint.RepairScene.NonValidatable;
 using MegaPint.SerializeReferenceDropdown.Editor;
+using UnityEngine;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
 {
@@ -42,6 +43,8 @@ internal static class GoalInitializationLogicLookUp
     private const string RepairAScene1 = "Repair A Scene I";
     private const string RepairAScene2 = "Repair A Scene II";
     private const string RepairAScene3 = "Repair A Scene III";
+    private const string CustomRequirementValidated = "Custom Requirement Validated";
+    private const string CustomRequirementFixed = "Custom Requirement Fixed";
 
     public static readonly Dictionary <string, Action> InitializationLookUp = new()
     {
@@ -87,7 +90,9 @@ internal static class GoalInitializationLogicLookUp
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin += OnFixAllIssuesInScene;}},
         {RepairAScene1, () => {SceneManager.onWin += OnRepairScene1;}},
         {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene2;}},
-        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene3;}}
+        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene3;}},
+        {CustomRequirementValidated, () => {TestEvent.onValidate += OnRequirementValidated;}},
+        {CustomRequirementFixed, () => {TestEvent.onFixed += OnRequirementFixed;}}
     };
 
     public static readonly Dictionary <string, Action> DeInitializationLookUp = new()
@@ -134,7 +139,9 @@ internal static class GoalInitializationLogicLookUp
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin -= OnFixAllIssuesInScene;}},
         {RepairAScene1, () => {SceneManager.onWin -= OnRepairScene1;}},
         {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene2;}},
-        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene3;}}
+        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene3;}},
+        {CustomRequirementValidated, () => {TestEvent.onValidate -= OnRequirementValidated;}},
+        {CustomRequirementFixed, () => {TestEvent.onFixed -= OnRequirementFixed;}}
     };
 
     #region Private Methods
@@ -256,6 +263,16 @@ internal static class GoalInitializationLogicLookUp
     private static void OnRepairScene3()
     {
         MarkGoalAsDone(RepairAScene3);
+    }
+
+    private static void OnRequirementFixed(GameObject obj)
+    {
+        MarkGoalAsDoneIf(CustomRequirementFixed, obj.GetComponent <Rigidbody>().useGravity);
+    }
+
+    private static void OnRequirementValidated(GameObject obj)
+    {
+        MarkGoalAsDone(CustomRequirementValidated);
     }
 
     private static void OnShortcutStateChanged(string _, bool __)

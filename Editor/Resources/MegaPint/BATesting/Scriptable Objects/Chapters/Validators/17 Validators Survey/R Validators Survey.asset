@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d3942af42a4cdf99dcbb5260b15292, type: 3}
-  m_Name: Settings
+  m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
+  m_Name: R Validators Survey
   m_EditorClassIdentifier: 
-  _requirements: []
-  references:
-    version: 2
-    RefIds: []
+  requirementName: Validators Survey
+  _done: 1
