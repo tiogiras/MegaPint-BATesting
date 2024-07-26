@@ -479,7 +479,7 @@ internal class TaskManager : EditorWindowBase
         var hasGoals = currentTask.goals.Count > 0;
         _goalsContainer.style.display = hasGoals ? DisplayStyle.Flex : DisplayStyle.None;
 
-        if (!currentTask.hasDoableTask && !hasGoals)
+        if (!currentTask.hasDoableTask && !hasGoals && _data.CurrentTaskIndex < _data.TasksCount - 1)
             _btnContinue.style.display = DisplayStyle.Flex;
         else
             _btnContinue.style.display = DisplayStyle.None;

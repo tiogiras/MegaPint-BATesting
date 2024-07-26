@@ -34,5 +34,6 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
+  resetObjects: []
   _done: 1
   _neededTime: 0

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 02 Upload Results
+  m_EditorClassIdentifier: 
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Upload Results
+  taskDescription: "This is the final task of this evaluation. You should now be
+    able to press the submit button in the Task Overview window (Alt + O). With this
+    action all information about the time and inputs you needed to solve the tasks
+    will be uploaded for further studies. \n\nPlease do not yet delete this project.
+    The integrity of your data needs to be varified and you will be notified once
+    this is done.\n\nWith this you can now close this window. Thank you for your
+    patience!"
+  taskRequirements: []
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetObjects: []
+  _done: 0
+  _neededTime: 0

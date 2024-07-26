@@ -75,6 +75,8 @@ internal static class LoggingManager
 
         TaskManager.onStartTaskLogging += ActivateTaskLogging;
         TaskManager.onStopTaskLogging += DeActivateTaskLogging;
+
+        Overview.onSend += UploadTaskLog;
     }
 
     private static void GetTaskLogFile()
@@ -103,6 +105,33 @@ internal static class LoggingManager
 
     #region Public Methods
 
+    private static async void UploadTaskLog(float[] neededTimes)
+    {
+        s_taskLog.neededTimes = neededTimes;
+        
+        var json = JsonUtility.ToJson(s_taskLog, true);
+        await File.WriteAllTextAsync(GetTaskLogFilePath(), json);
+
+        if (await LogUploader.TryUploadTaskLog(GetPersistentDataPath()))
+        {
+            EditorUtility.DisplayDialog(
+                "Upload Results.",
+                "The results have been successfully uploaded. Please do not delete the project until the results have been reviewed.",
+                "Ok");
+            
+            Overview.onSendComplete?.Invoke();
+            
+            return;
+        }
+
+        EditorUtility.DisplayDialog(
+            "Upload Results.",
+            "The upload of the results has failed! Confirm that you have an established internet connection and try again. If the problem persists, please contact me.",
+            "Ok");
+        
+        Overview.onSendComplete?.Invoke();
+    }
+    
     public static void LogToCurrentSession(string categoryName, string logText)
     {
         if (s_currentLogSaveInterval >= SaveValues.BaTesting.LogSaveInterval)

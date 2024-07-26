@@ -33,6 +33,14 @@ internal static class RequirementGUILookUp
         {
             "Screenshot Survey",
             Constants.BaTesting.UserInterface.Requirements.ScreenshotSurvey
+        },
+        {
+            "Validators Survey",
+            Constants.BaTesting.UserInterface.Requirements.ValidatorsSurvey
+        },
+        {
+            "General Survey",
+            Constants.BaTesting.UserInterface.Requirements.GeneralSurvey
         }
     };
 }

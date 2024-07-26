@@ -17,6 +17,8 @@ internal class Overview : EditorWindowBase
 {
     public static Action onOpen;
     public static Action onClose;
+    public static Action<float[]> onSend;
+    public static Action onSendComplete;
     
     private VisualTreeAsset _baseWindow;
     private Button _btnResetAll;
@@ -129,6 +131,14 @@ internal class Overview : EditorWindowBase
             
             UpdateListElementContainer(container, task.Done, i);
         };
+
+        onSendComplete += ReenableSendButton;
+    }
+
+    private void ReenableSendButton()
+    {
+        _btnSend.pickingMode = PickingMode.Position;
+        _btnSend.style.opacity = 1f;
     }
 
     protected override void UnRegisterCallbacks()
@@ -139,6 +149,8 @@ internal class Overview : EditorWindowBase
         _btnSend.clicked -= OnSend;
         
         onClose?.Invoke();
+        
+        onSendComplete -= ReenableSendButton;
     }
 
     #endregion
@@ -152,7 +164,18 @@ internal class Overview : EditorWindowBase
 
     private void OnSend()
     {
-        // TODO
+        var times = new float[_data.TasksCount];
+
+        for (var i = 0; i < _data.Tasks.Count; i++)
+        {
+            Task task = _data.Tasks[i];
+            times[i] = task.NeededTime;
+        }
+
+        onSend?.Invoke(times);
+        
+        _btnSend.pickingMode = PickingMode.Ignore;
+        _btnSend.style.opacity = 0.5f;
     }
 
     private void Refresh(Task _)
@@ -195,7 +218,7 @@ internal class Overview : EditorWindowBase
 
     private void UpdateSendButton()
     {
-        var hasUncompletedTasks = _data.Tasks.Any(task => !task.Done);
+        var hasUncompletedTasks = _data.Tasks.ToArray()[..^1].Any(task => !task.Done);
 
         _btnSend.pickingMode = hasUncompletedTasks ? PickingMode.Ignore : PickingMode.Position;
         _btnSend.style.opacity = hasUncompletedTasks ? 0.5f : 1f;

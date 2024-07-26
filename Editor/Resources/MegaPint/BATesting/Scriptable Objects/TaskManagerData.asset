@@ -46,5 +46,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d73ec5c810edae428692add80f46a6d, type: 2}
   - {fileID: 11400000, guid: 3709409694a5a4e4a9ff62edacf43d4a, type: 2}
   - {fileID: 11400000, guid: 0ce8bd77d0b551b40ae713973e7564a9, type: 2}
-  - {fileID: 11400000, guid: 19589c9956fbee5438bf59698eee03d0, type: 2}
-  _currentTaskIndex: 32
+  - {fileID: 11400000, guid: 0780e90de1f9edc499476b03c69448bd, type: 2}
+  - {fileID: 11400000, guid: 5066323a71e0af94f92624b1d59b2716, type: 2}
+  - {fileID: 11400000, guid: 9f2ffc86d5e2fc646956157d3a83ec85, type: 2}
+  - {fileID: 11400000, guid: 3d8cab3e103d2cb41a7504d92f611f77, type: 2}
+  - {fileID: 11400000, guid: 67c706958a88d604f8304032d0d30189, type: 2}
+  _currentTaskIndex: 2

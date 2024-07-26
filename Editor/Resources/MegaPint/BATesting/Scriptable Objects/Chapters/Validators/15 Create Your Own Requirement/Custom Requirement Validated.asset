@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
-  m_Name: Repair A Scene 3
+  m_Name: Custom Requirement Validated
   m_EditorClassIdentifier: 
-  title: Repair A Scene III
-  hint: 1. Use the given pdf and the console logs to determine what needs to be fixed.
+  title: Custom Requirement Validated
+  hint: '1. Enter the line [TestEvent.onValidate?.Invoke(gameObject)] as the first
+    line of your Validate method
+
+    2. Once called the goal is met
+
+    3. For
+    further help consult the given pdf that includes the solution to this task'
   hasInitializationLogic: 1
   _done: 1

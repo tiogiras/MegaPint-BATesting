@@ -11,8 +11,6 @@ namespace MegaPint.Editor.Scripts.Internal
 
 internal static class LogUploader
 {
-    // TODO upload the log file IMPORTANT!!! => key must contain the timestamp to differ when user uploads multiple task logs
-    
     private const string UploadUrl = "https://tiogiras.games/submitLog.php";
     public static bool hasTriedUploading;
 
@@ -38,6 +36,19 @@ internal static class LogUploader
         Exit();
     }
 
+    public static async Task<bool> TryUploadTaskLog(string persistentPath)
+    {
+        if (!await Utility.IsValidTesterToken())
+            return false;
+        
+        var file = Path.Combine(persistentPath, "Task.json");
+        
+        if (!File.Exists(file))
+            return false;
+
+        return await UploadLog(file, true);
+    }
+
     #endregion
 
     #region Private Methods
@@ -48,7 +59,7 @@ internal static class LogUploader
         EditorApplication.Exit(0);
     }
 
-    private static async Task UploadLog(string path)
+    private static async Task<bool> UploadLog(string path, bool suppressDeletion = false)
     {
         var logContent = await File.ReadAllTextAsync(path);
 
@@ -61,9 +72,11 @@ internal static class LogUploader
 
         while (!task.isDone)
             await Task.Delay(100);
-
-        if (www.result == UnityWebRequest.Result.Success)
+        
+        if (www.result == UnityWebRequest.Result.Success && !suppressDeletion)
             File.Delete(path);
+
+        return www.result == UnityWebRequest.Result.Success;
     }
 
     #endregion
