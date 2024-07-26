@@ -367,24 +367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8d3441f27a96e41a686dea72d5b2d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requirements:
-  - rid: 1543758906645807104
+  _requirements: []
   defaultSettings: []
   _importedSettings: []
   importedSettingsFoldout: 0
   settingPriorities: []
   references:
     version: 2
-    RefIds:
-    - rid: 1543758906645807104
-      type: {class: RequireRigidbodyGravity, ns: , asm: Assembly-CSharp}
-      data:
-        preventListHeaderIssues: 
-        initialized: 1
-        uniqueID: 7db2c07a-d4c5-4753-af40-d014e0e30ac4
-        severityOverwrite: 0
-        targetGameObject: {fileID: 1301935811}
-        objectReference: {fileID: 1301935813}
+    RefIds: []
 --- !u!114 &1301935814
 MonoBehaviour:
   m_ObjectHideFlags: 0

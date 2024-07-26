@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1372214597187708903}
   - component: {fileID: 4666762085301789934}
   - component: {fileID: 6738741195782075499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: '[ITEM] SM_Item_Coins_03'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,9 +112,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _requirements: []
   defaultSettings: []
-  _importedSettings: []
+  _importedSettings:
+  - {fileID: 11400000, guid: 34bfed208c545d146a5d97fe1a4d9f48, type: 2}
   importedSettingsFoldout: 1
-  settingPriorities: []
+  settingPriorities:
+  - setting: {fileID: 11400000, guid: 34bfed208c545d146a5d97fe1a4d9f48, type: 2}
+    priority: 1
   references:
     version: 2
     RefIds: []
