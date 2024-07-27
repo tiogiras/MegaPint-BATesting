@@ -51,4 +51,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f2ffc86d5e2fc646956157d3a83ec85, type: 2}
   - {fileID: 11400000, guid: 3d8cab3e103d2cb41a7504d92f611f77, type: 2}
   - {fileID: 11400000, guid: 67c706958a88d604f8304032d0d30189, type: 2}
-  _currentTaskIndex: 34
+  _currentTaskIndex: 0
