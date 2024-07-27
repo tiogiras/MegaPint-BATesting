@@ -23,7 +23,7 @@ internal class MenuItemTests
     {
         TestsUtility.ValidateMenuItemLink(Constants.BaTesting.Links.TaskManager, typeof(TaskManager));
     }
-    
+
     #endregion
 }
 

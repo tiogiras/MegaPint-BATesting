@@ -1,5 +1,3 @@
-// TODO commenting
-
 #if UNITY_EDITOR
 using System;
 using System.IO;
@@ -77,15 +75,6 @@ internal class TaskManager : EditorWindowBase
     private void OnEnable()
     {
         ForceFocus();
-    }
-
-    private async void ForceFocus()
-    {
-        while (!hasFocus)
-        {
-            await System.Threading.Tasks.Task.Delay(150);
-            Focus();
-        }
     }
 
     #endregion
@@ -255,6 +244,20 @@ internal class TaskManager : EditorWindowBase
 
     #region Private Methods
 
+    /// <summary> Open a scene </summary>
+    /// <param name="scene"> Targeted scene </param>
+    private static void OpenScene(Object scene)
+    {
+        var path = AssetDatabase.GetAssetPath(scene);
+        var fileName = Path.GetFileName(path);
+        var newFileName = fileName[2..];
+
+        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
+    }
+
+    /// <summary> Try to set initialization of all goals with initialization logic of the task </summary>
+    /// <param name="task"> Targeted task </param>
+    /// <param name="initialize"> If they should be initialized or de initialized </param>
     private static void TryInitializeGoals(Task task, bool initialize)
     {
         if (task.goals.Count == 0)
@@ -274,6 +277,9 @@ internal class TaskManager : EditorWindowBase
         }
     }
 
+    /// <summary> Update the element of a requirement </summary>
+    /// <param name="container"> Targeted element </param>
+    /// <param name="done"> If the requirement is done </param>
     private static void UpdateRequirementContainer(VisualElement container, bool done)
     {
         if (done)
@@ -288,6 +294,7 @@ internal class TaskManager : EditorWindowBase
         }
     }
 
+    /// <summary> Finish button callback </summary>
     private void FinishTask()
     {
         onForceFinishTask?.Invoke();
@@ -295,6 +302,17 @@ internal class TaskManager : EditorWindowBase
         _btnFinishTask.style.display = DisplayStyle.None;
     }
 
+    /// <summary> Force the window to focus </summary>
+    private async void ForceFocus()
+    {
+        while (!hasFocus)
+        {
+            await System.Threading.Tasks.Task.Delay(150);
+            Focus();
+        }
+    }
+
+    /// <summary> Load the task scene </summary>
     private void LoadTaskScene()
     {
         if (EditorApplication.isPlaying)
@@ -310,16 +328,11 @@ internal class TaskManager : EditorWindowBase
             EditorApplication.EnterPlaymode();
     }
 
+    /// <summary> Continue button callback </summary>
     private void OnContinue()
     {
         if (_data.CurrentTaskIndex >= _data.TasksCount - 1)
-        {
-            Debug.Log("No More Tasks"); // TODO remove
-
-            // TODO onFinish all event
-
             return;
-        }
 
         Task task = _data.CurrentTask();
 
@@ -330,6 +343,8 @@ internal class TaskManager : EditorWindowBase
         onNext?.Invoke(task.taskName);
     }
 
+    /// <summary> Callback when a goal is done </summary>
+    /// <param name="_"> Callback event </param>
     private void OnGoalDone(Goal _)
     {
         _goalsList.RefreshItems();
@@ -339,6 +354,7 @@ internal class TaskManager : EditorWindowBase
             PauseTimer();
     }
 
+    /// <summary> Start button callback </summary>
     private void OnStart()
     {
         Task nextTask = _data.NextTask();
@@ -357,15 +373,7 @@ internal class TaskManager : EditorWindowBase
         onStartTask?.Invoke(_data.CurrentTask().taskName);
     }
 
-    private void OpenScene(Object scene)
-    {
-        var path = AssetDatabase.GetAssetPath(scene);
-        var fileName = Path.GetFileName(path);
-        var newFileName = fileName[2..];
-
-        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
-    }
-
+    /// <summary> Pause the timer </summary>
     private void PauseTimer()
     {
         Task task = _data.CurrentTask();
@@ -384,6 +392,7 @@ internal class TaskManager : EditorWindowBase
             _data.CurrentTask().goals.All(goal => goal.Done) ? DisplayStyle.None : DisplayStyle.Flex;
     }
 
+    /// <summary> Start the timer </summary>
     private void StartTimer()
     {
         Task task = _data.CurrentTask();
@@ -403,6 +412,7 @@ internal class TaskManager : EditorWindowBase
         Timer();
     }
 
+    /// <summary> Handle the timer </summary>
     private async void Timer()
     {
         onStartTimer?.Invoke();
@@ -428,6 +438,8 @@ internal class TaskManager : EditorWindowBase
         onStopTimer?.Invoke();
     }
 
+    /// <summary> Try to wait one second </summary>
+    /// <returns> If the timer should stop </returns>
     private async Task <bool> TryWaitOneSecond()
     {
         for (var i = 0; i < 10; i++)
@@ -441,6 +453,7 @@ internal class TaskManager : EditorWindowBase
         return true;
     }
 
+    /// <summary> Update the buttons </summary>
     private void UpdateButtons()
     {
         var missingRequirements = _data.CurrentTask().taskRequirements.Any(requirement => !requirement.Done);
@@ -452,6 +465,7 @@ internal class TaskManager : EditorWindowBase
         _btnContinue.style.opacity = missingRequirements ? .5f : 1f;
     }
 
+    /// <summary> Update the goal button </summary>
     private void UpdateGoalButton()
     {
         var unCompletedGoals = _data.CurrentTask().goals.Any(goal => !goal.Done);
@@ -460,6 +474,7 @@ internal class TaskManager : EditorWindowBase
         _btnComplete.style.opacity = unCompletedGoals ? .5f : 1f;
     }
 
+    /// <summary> Update the task manager based on the current active task </summary>
     private void UpdateTaskManager()
     {
         _lastTaskIndex.text = $"/{_data.TasksCount}";
@@ -521,6 +536,7 @@ internal class TaskManager : EditorWindowBase
         StartTimer();
     }
 
+    /// <summary> Update the text of the timer </summary>
     private void UpdateTimerText()
     {
         _timer.text = TimeSpan.FromSeconds(_data.CurrentTask().NeededTime).ToString();

@@ -1,6 +1,4 @@
-﻿// TODO commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -8,6 +6,7 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
+/// <summary> Stores all tasks and the current progress </summary>
 internal class TaskManagerData : ScriptableObject
 {
     public int TasksCount => _tasks.Count;
@@ -28,24 +27,29 @@ internal class TaskManagerData : ScriptableObject
     [SerializeField] private List <Task> _tasks;
     [SerializeField] private int _currentTaskIndex;
 
-    public void ResetValues()
-    {
-        CurrentTaskIndex = 0;
-        
-        foreach (Task task in _tasks)
-            task.ResetValues();
-    }
-
     #region Public Methods
 
+    /// <summary> Get the current active task </summary>
+    /// <returns> Current task </returns>
     public Task CurrentTask()
     {
         return _tasks[_currentTaskIndex];
     }
 
+    /// <summary> Get the next task </summary>
+    /// <returns> Next task </returns>
     public Task NextTask()
     {
         return _currentTaskIndex == _tasks.Count ? null : _tasks[_currentTaskIndex + 1];
+    }
+
+    /// <summary> Reset all tasks </summary>
+    public void ResetValues()
+    {
+        CurrentTaskIndex = 0;
+
+        foreach (Task task in _tasks)
+            task.ResetValues();
     }
 
     #endregion

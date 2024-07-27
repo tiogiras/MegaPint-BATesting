@@ -1,6 +1,4 @@
-﻿// TODO commenting
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace MegaPint
@@ -34,6 +32,7 @@ internal class FadeGraphic : MonoBehaviour
 
     #region Public Methods
 
+    /// <summary> Fade in </summary>
     public void FadeIn()
     {
         SetAlpha(1f);
@@ -43,6 +42,8 @@ internal class FadeGraphic : MonoBehaviour
 
     #region Private Methods
 
+    /// <summary> Set the alpha of the graphic </summary>
+    /// <param name="alpha"> Targeted alpha value </param>
     private void SetAlpha(float alpha)
     {
         Color color = _graphic.color;

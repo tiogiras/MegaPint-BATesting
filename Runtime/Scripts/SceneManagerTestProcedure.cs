@@ -1,5 +1,3 @@
-// TODO commenting
-
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +7,12 @@ using Random = UnityEngine.Random;
 namespace MegaPint
 {
 
+/// <summary> Handles winning and losing in the task test procedure </summary>
 [AddComponentMenu("")]
 internal class SceneManagerTestProcedure : MonoBehaviour
 {
     public static Action onWin;
-    
+
     [SerializeField] private List <FadeGraphic> _loseGraphics;
     [SerializeField] private GameObject _winGraphic;
     [SerializeField] private GameObject _hintGraphic;
@@ -40,10 +39,11 @@ internal class SceneManagerTestProcedure : MonoBehaviour
 
     #region Public Methods
 
+    /// <summary> Try to win the task </summary>
     public void TryWin()
     {
         _tryCount++;
-        
+
         if (_spaceIsPressed)
             Win();
         else
@@ -54,6 +54,8 @@ internal class SceneManagerTestProcedure : MonoBehaviour
 
     #region Private Methods
 
+    /// <summary> Get a fade graphic from the pool </summary>
+    /// <returns> Found fade graphic </returns>
     private FadeGraphic GetFromPool()
     {
         if (_loseGraphicsPool.Count == 0)
@@ -68,20 +70,22 @@ internal class SceneManagerTestProcedure : MonoBehaviour
         return graphic;
     }
 
+    /// <summary> Lose the task </summary>
     private void Lose()
     {
         if (_tryCount == 5)
             _hintGraphic.SetActive(true);
-        
+
         GetFromPool().FadeIn();
     }
 
+    /// <summary> Win the task </summary>
     private void Win()
     {
         _winGraphic.SetActive(true);
         _button.interactable = false;
         _background.color = new Color(0.09f, 0.51f, 0.09f);
-        
+
         onWin?.Invoke();
     }
 

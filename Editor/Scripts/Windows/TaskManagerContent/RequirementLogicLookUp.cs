@@ -1,6 +1,4 @@
-﻿// TODO Commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using MegaPint.Editor.Scripts.GUI.Utility;
@@ -11,6 +9,7 @@ using UnityEngine.UIElements;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
 {
 
+/// <summary> Look up for the requirements logic </summary>
 internal static class RequirementLogicLookUp
 {
     public class Logic
@@ -154,5 +153,6 @@ internal static class RequirementLogicLookUp
         }
     };
 }
+
 }
 #endif

@@ -1,6 +1,4 @@
-﻿// TODO commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,10 +8,11 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
+/// <summary> Holds data about a task </summary>
 internal class Task : ScriptableObject
 {
-    public static Action<Task> onTaskDoneChange;
-    
+    public static Action <Task> onTaskDoneChange;
+
     public float NeededTime
     {
         get => _neededTime;
@@ -32,7 +31,7 @@ internal class Task : ScriptableObject
             _done = value;
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
-            
+
             onTaskDoneChange?.Invoke(this);
         }
     }
@@ -53,6 +52,7 @@ internal class Task : ScriptableObject
 
     #region Public Methods
 
+    /// <summary> Reset all values of the task </summary>
     public void ResetValues()
     {
         foreach (Requirement requirement in taskRequirements)
@@ -71,19 +71,16 @@ internal class Task : ScriptableObject
         Done = false;
     }
 
-    private void ResetObjects()
-    {
-        foreach (ResetObjectLogic resetObject in resetObjects)
-        {
-            resetObject.ResetLogic();
-        }
-    }
+    #endregion
 
+    #region Private Methods
+
+    /// <summary> Reset the scene based on the stored backup </summary>
     private void RecreateSceneFromBackup()
     {
         var path = AssetDatabase.GetAssetPath(scene);
         var fileName = Path.GetFileName(path);
-        
+
         var instanceFileName = fileName[2..];
         var instancePath = path.Replace(fileName, instanceFileName);
 
@@ -92,15 +89,11 @@ internal class Task : ScriptableObject
         AssetDatabase.Refresh();
     }
 
-    public void SetRequirementDone(int index, bool done)
+    /// <summary> Reset all objects based on their reset behaviour </summary>
+    private void ResetObjects()
     {
-        taskRequirements[index].Done = done;
-    }
-
-    public void SetRequirementsDone(bool done)
-    {
-        for (var i = 0; i < taskRequirements.Count; i++)
-            SetRequirementDone(i, done);
+        foreach (ResetObjectLogic resetObject in resetObjects)
+            resetObject.ResetLogic();
     }
 
     #endregion

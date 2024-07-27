@@ -27,12 +27,12 @@ internal static partial class DisplayContent
                             {
                                 case "taskManager":
                                     ContextMenu.BATesting.OpenTaskManager();
-                                    
+
                                     break;
-                                
+
                                 case "taskOverview":
                                     ContextMenu.BATesting.OpenOverview();
-                                    
+
                                     break;
                             }
                         });

@@ -1,8 +1,12 @@
+using UnityEngine;
+
 namespace MegaPint
 {
-// TODO remove from component list
-    internal class SomeVMB : ValidatableMonoBehaviour
-    {
 
-    }
+/// <summary> Used in the validators tasks </summary>
+[AddComponentMenu("")]
+internal class SomeVMB : ValidatableMonoBehaviour
+{
+}
+
 }

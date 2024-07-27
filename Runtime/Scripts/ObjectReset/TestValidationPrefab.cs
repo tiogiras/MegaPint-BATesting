@@ -3,7 +3,8 @@
 namespace MegaPint.ObjectReset
 {
 
-// TODO remove from components menu
+/// <summary> Contains reset logic for the test validation prefab </summary>
+[AddComponentMenu("")]
 internal class TestValidationPrefab : ResetObjectLogic
 {
     #region Public Methods

@@ -1,13 +1,16 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 
 namespace MegaPint.RepairScene.NonValidatable
 {
 
+/// <summary> Used in the repair a scene 1 task </summary>
+[AddComponentMenu("")]
 internal class GroundObject : MonoBehaviour
 {
     public bool IsValid {get; private set;}
+
+    #region Unity Event Functions
 
     private void Awake()
     {
@@ -32,16 +35,18 @@ internal class GroundObject : MonoBehaviour
             hasIssue = true;
             issue.Append("- Rigidbody found!\n");
         }
-        
+
         if (!gameObject.GetComponent(typeof(Collider)))
         {
             hasIssue = true;
             issue.Append("- No Collider found!\n");
         }
-        
+
         if (hasIssue)
             Debug.LogWarning(issue);
     }
+
+    #endregion
 }
 
 }

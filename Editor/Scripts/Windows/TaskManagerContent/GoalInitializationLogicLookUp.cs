@@ -1,6 +1,4 @@
-﻿// TODO Commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using MegaPint.Editor.Scripts.Drawer;
@@ -13,6 +11,7 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent
 {
 
+/// <summary> Used to initialize any goal (subscribe to completion events) </summary>
 internal static class GoalInitializationLogicLookUp
 {
     private const string ExecuteTheAutoSaveMenuItem = "Execute The AutoSave MenuItem";

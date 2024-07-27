@@ -1,5 +1,3 @@
-// TODO Commenting
-
 #if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
@@ -9,6 +7,7 @@ using UnityEngine;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
+/// <summary> Holds data about a goal </summary>
 internal class Goal : ScriptableObject
 {
     public static readonly List <Goal> ActiveGoals = new();
@@ -34,6 +33,8 @@ internal class Goal : ScriptableObject
 
     #region Public Methods
 
+    /// <summary> Mark a goal as done </summary>
+    /// <param name="goal"> Targeted goal </param>
     public static void MarkGoalAsDone(Goal goal)
     {
         goal.Done = true;
@@ -42,11 +43,13 @@ internal class Goal : ScriptableObject
         onGoalDone?.Invoke(goal);
     }
 
+    /// <summary> Reset all values of the goal </summary>
     public void ResetValues()
     {
         Done = false;
     }
 
+    /// <summary> Set the goal to active </summary>
     public void SetActive()
     {
         if (!ActiveGoals.Contains(this))

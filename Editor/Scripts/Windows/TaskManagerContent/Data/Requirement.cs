@@ -1,6 +1,4 @@
-﻿// TODO commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -9,11 +7,12 @@ using UnityEngine.UIElements;
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
+/// <summary> Holds data about a requirement </summary>
 internal class Requirement : ScriptableObject
 {
     public static Action <string, bool> onDoneChanged;
     public static Action <string> onExecute;
-    
+
     public bool Done
     {
         get => _done;
@@ -22,7 +21,7 @@ internal class Requirement : ScriptableObject
             _done = value;
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssetIfDirty(this);
-            
+
             onDoneChanged?.Invoke(requirementName, value);
         }
     }
@@ -32,10 +31,12 @@ internal class Requirement : ScriptableObject
 
     #region Public Methods
 
+    /// <summary> Execute the requirement </summary>
+    /// <param name="requirement"> Targeted requirement </param>
     public static void ExecuteRequirement(Requirement requirement)
     {
         onExecute?.Invoke(requirement.requirementName);
-        
+
         RequirementLogicLookUp.Logic logic = RequirementLogicLookUp.LookUp[requirement.requirementName];
 
         if (logic.openRequirementInformation)
@@ -50,6 +51,7 @@ internal class Requirement : ScriptableObject
             logic.action?.Invoke(null);
     }
 
+    /// <summary> Reset all values of the requirement </summary>
     public void ResetValues()
     {
         Done = false;

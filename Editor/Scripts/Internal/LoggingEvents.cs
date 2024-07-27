@@ -1,33 +1,34 @@
 ﻿#if UNITY_EDITOR
+using MegaPint.Editor.Scripts.Windows;
+using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
+using UnityEditor;
+#endif
+
+#if UNITY_EDITOR
+#if USING_VALIDATORS
+using System;
+using MegaPint.SerializeReferenceDropdown.Editor;
+using MegaPint.ValidationRequirement;
+#endif
 
 #if USING_SCREENSHOT
 using MegaPint.Editor.Scripts.Drawer;
 #endif
 
-#if USING_AUTOSAVE || USING_PLAYMODESTARTSCENE
+#if USING_PLAYMODESTARTSCENE || USING_AUTOSAVE
 using MegaPint.Editor.Scripts.Logic;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 #endif
 
-#if USING_VALIDATORS
-using System;
-using MegaPint.SerializeReferenceDropdown.Editor;
-using MegaPint.ValidationRequirement;
-using MegaPint.Editor.Scripts.Internal;
-#endif
-
 #endif
 
 #if UNITY_EDITOR
-using UnityEditor;
-using MegaPint.Editor.Scripts;
-using MegaPint.Editor.Scripts.Windows;
-using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
+namespace MegaPint.Editor.Scripts.Internal
 {
 
+/// <summary> Subscribes to various events and logs if they are invoked </summary>
 [InitializeOnLoad]
 internal static class LoggingEvents
 {
@@ -144,15 +145,15 @@ internal static class LoggingEvents
         SaveValues.BasePackage.onUseIconsChanged += BasePackageUseIconsChanged;
         SaveValues.BasePackage.onTesterTokenChanged += BasePackageTesterTokenChanged;
 
-        PackageManager.onOpen += BasePackagePackageManagerOpen;
-        PackageManager.onClose += BasePackagePackageManagerClose;
+        Windows.PackageManager.onOpen += BasePackagePackageManagerOpen;
+        Windows.PackageManager.onClose += BasePackagePackageManagerClose;
 
-        PackageManager.onItemSelected += BasePackagePackageManagerItemSelected;
-        PackageManager.onImport += BasePackagePackageManagerImport;
-        PackageManager.onImportVariation += BasePackagePackageManagerImportVariation;
-        PackageManager.onImportSample += BasePackagePackageManagerImportSample;
-        PackageManager.onRemove += BasePackagePackageManagerRemove;
-        PackageManager.onUpdate += BasePackagePackageManagerUpdate;
+        Windows.PackageManager.onItemSelected += BasePackagePackageManagerItemSelected;
+        Windows.PackageManager.onImport += BasePackagePackageManagerImport;
+        Windows.PackageManager.onImportVariation += BasePackagePackageManagerImportVariation;
+        Windows.PackageManager.onImportSample += BasePackagePackageManagerImportSample;
+        Windows.PackageManager.onRemove += BasePackagePackageManagerRemove;
+        Windows.PackageManager.onUpdate += BasePackagePackageManagerUpdate;
 
         #endregion
 
