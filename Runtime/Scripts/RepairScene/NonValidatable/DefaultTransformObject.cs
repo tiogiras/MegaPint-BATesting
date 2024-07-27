@@ -1,13 +1,16 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 
 namespace MegaPint.RepairScene.NonValidatable
 {
 
+/// <summary> Used in the repair a scene 1 task </summary>
+[AddComponentMenu("")]
 public class DefaultTransformObject : MonoBehaviour
 {
     public bool HasDefaultTransform {get; private set;}
+
+    #region Unity Event Functions
 
     private void Awake()
     {
@@ -29,6 +32,10 @@ public class DefaultTransformObject : MonoBehaviour
             Debug.LogWarning(issue);
     }
 
+    #endregion
+
+    #region Private Methods
+
     private bool HasDt()
     {
         Transform myTransform = transform;
@@ -37,6 +44,8 @@ public class DefaultTransformObject : MonoBehaviour
                myTransform.localRotation == Quaternion.identity &&
                myTransform.localScale == Vector3.one;
     }
+
+    #endregion
 }
 
 }

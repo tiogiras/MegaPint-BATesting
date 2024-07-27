@@ -1,13 +1,15 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Utilities;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
+namespace MegaPint.Editor.Scripts.Internal
 {
 
+/// <summary> Detects any keyboard or mouse input </summary>
 [InitializeOnLoad]
 internal class AnyKeyDetector : IObserver <InputEventPtr>
 {
@@ -73,11 +75,13 @@ internal class AnyKeyDetector : IObserver <InputEventPtr>
         }
     }
 
+    /// <summary> Disable the logging </summary>
     public static void Disable()
     {
         s_active = false;
     }
 
+    /// <summary> Enable the logging </summary>
     public static void Enable()
     {
         s_active = true;
@@ -87,6 +91,7 @@ internal class AnyKeyDetector : IObserver <InputEventPtr>
 
     #region Private Methods
 
+    /// <summary> Reduce the cooldown until the next possible mouse input </summary>
     private static void ReduceCooldown()
     {
         if (s_mouseInputCooldown > 0)
@@ -97,3 +102,4 @@ internal class AnyKeyDetector : IObserver <InputEventPtr>
 }
 
 }
+#endif

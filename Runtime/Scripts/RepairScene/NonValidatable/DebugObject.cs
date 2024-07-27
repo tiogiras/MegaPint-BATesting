@@ -4,8 +4,12 @@ using UnityEngine;
 namespace MegaPint.RepairScene.NonValidatable
 {
 
+/// <summary> Used in the repair a scene 1 task </summary>
+[AddComponentMenu("")]
 internal class DebugObject : MonoBehaviour
 {
+    #region Unity Event Functions
+
     private void OnValidate()
     {
         var issue = new StringBuilder($"Issues in {this}:\n");
@@ -20,6 +24,8 @@ internal class DebugObject : MonoBehaviour
         if (hasIssue)
             Debug.LogWarning(issue);
     }
+
+    #endregion
 }
 
 }

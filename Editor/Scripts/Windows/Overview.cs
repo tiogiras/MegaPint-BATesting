@@ -1,6 +1,4 @@
-﻿// TODO commenting
-
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using System;
 using System.Linq;
 using MegaPint.Editor.Scripts.GUI;
@@ -14,13 +12,14 @@ using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
 namespace MegaPint.Editor.Scripts.Windows
 {
 
+/// <summary> Gives the user an overview about all tasks. Allows to reset tasks and send the finished results </summary>
 internal class Overview : EditorWindowBase
 {
     public static Action onOpen;
     public static Action onClose;
-    public static Action<float[]> onSend;
+    public static Action <float[]> onSend;
     public static Action onSendComplete;
-    
+
     private VisualTreeAsset _baseWindow;
     private Button _btnResetAll;
     private Button _btnSend;
@@ -43,7 +42,7 @@ internal class Overview : EditorWindowBase
         // TODO preferred size
 
         onOpen?.Invoke();
-        
+
         this.CenterOnMainWin();
 
         return this;
@@ -89,6 +88,7 @@ internal class Overview : EditorWindowBase
         return _baseWindow != null && _taskItem != null && _data != null;
     }
 
+    // ReSharper disable once CognitiveComplexity
     protected override void RegisterCallbacks()
     {
         Task.onTaskDoneChange += Refresh;
@@ -129,24 +129,18 @@ internal class Overview : EditorWindowBase
                                 "Yes",
                                 "Cancel"))
                             return;
-                        
+
                         task.ResetValues();
                         UpdateListElementContainer(container, task.Done, i);
                     });
             }
             else
                 btnReset.style.display = DisplayStyle.None;
-            
+
             UpdateListElementContainer(container, task.Done, i);
         };
 
         onSendComplete += ReenableSendButton;
-    }
-
-    private void ReenableSendButton()
-    {
-        _btnSend.pickingMode = PickingMode.Position;
-        _btnSend.style.opacity = 1f;
     }
 
     protected override void UnRegisterCallbacks()
@@ -155,9 +149,9 @@ internal class Overview : EditorWindowBase
 
         _btnResetAll.clicked -= OnResetAll;
         _btnSend.clicked -= OnSend;
-        
+
         onClose?.Invoke();
-        
+
         onSendComplete -= ReenableSendButton;
     }
 
@@ -165,6 +159,7 @@ internal class Overview : EditorWindowBase
 
     #region Private Methods
 
+    /// <summary> Reset all tasks </summary>
     private void OnResetAll()
     {
         if (EditorUtility.DisplayDialog(
@@ -175,6 +170,7 @@ internal class Overview : EditorWindowBase
             _data.ResetValues();
     }
 
+    /// <summary> Upload the task data </summary>
     private void OnSend()
     {
         var times = new float[_data.TasksCount];
@@ -186,19 +182,32 @@ internal class Overview : EditorWindowBase
         }
 
         onSend?.Invoke(times);
-        
+
         _btnSend.pickingMode = PickingMode.Ignore;
         _btnSend.style.opacity = 0.5f;
     }
 
+    /// <summary> Reenable the send button </summary>
+    private void ReenableSendButton()
+    {
+        _btnSend.pickingMode = PickingMode.Position;
+        _btnSend.style.opacity = 1f;
+    }
+
+    /// <summary> Refresh the gui </summary>
+    /// <param name="_"> Callback Event </param>
     private void Refresh(Task _)
     {
         _tasksView.RefreshItems();
-        
+
         UpdateProgressBar();
         UpdateSendButton();
     }
 
+    /// <summary> Update the container of a list element </summary>
+    /// <param name="element"> Targeted element </param>
+    /// <param name="done"> If the task is done </param>
+    /// <param name="index"> index of the task </param>
     private void UpdateListElementContainer(VisualElement element, bool done, int index)
     {
         if (done)
@@ -221,6 +230,7 @@ internal class Overview : EditorWindowBase
         }
     }
 
+    /// <summary> Update the progress bar </summary>
     private void UpdateProgressBar()
     {
         var completedTasks = _data.Tasks.Count(task => task.Done);
@@ -229,6 +239,7 @@ internal class Overview : EditorWindowBase
         _progress.value = progress;
     }
 
+    /// <summary> Update the send button </summary>
     private void UpdateSendButton()
     {
         var hasUncompletedTasks = _data.Tasks.ToArray()[..^1].Any(task => !task.Done);

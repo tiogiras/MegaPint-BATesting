@@ -73,7 +73,7 @@ internal class TermsAgreement : EditorWindowBase
     {
         if (_btnAgree == null)
             return;
-        
+
         _btnAgree.clicked -= OnAgree;
     }
 
@@ -81,6 +81,7 @@ internal class TermsAgreement : EditorWindowBase
 
     #region Private Methods
 
+    /// <summary> Agree button callback </summary>
     private void OnAgree()
     {
         SaveValues.BaTesting.AgreedToTerms = true;

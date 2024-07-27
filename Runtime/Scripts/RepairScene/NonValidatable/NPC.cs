@@ -4,18 +4,22 @@ using UnityEngine;
 namespace MegaPint.RepairScene.NonValidatable
 {
 
+/// <summary> Used in the repair a scene 1 task </summary>
+[AddComponentMenu("")]
 internal class Npc : MonoBehaviour
 {
+    public bool IsValid {get; private set;}
+
     [SerializeField] private float _health;
     [SerializeField] private string _name;
 
-    public bool IsValid {get; private set;}
+    #region Unity Event Functions
 
     private void Awake()
     {
         IsValid = _health is >= 50 and <= 99 && !string.IsNullOrEmpty(_name);
     }
-    
+
     private void OnValidate()
     {
         var issue = new StringBuilder($"Issues in {this}:\n");
@@ -26,7 +30,7 @@ internal class Npc : MonoBehaviour
             hasIssue = true;
             issue.Append("- Health is not in range!\n");
         }
-        
+
         if (string.IsNullOrEmpty(_name))
         {
             hasIssue = true;
@@ -36,6 +40,8 @@ internal class Npc : MonoBehaviour
         if (hasIssue)
             Debug.LogWarning(issue);
     }
+
+    #endregion
 }
 
 }

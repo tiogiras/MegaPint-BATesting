@@ -5,7 +5,8 @@ using UnityEngine;
 namespace MegaPint.RepairScene
 {
 
-// TODO remove from add component menu
+/// <summary> Used in the repair a scene 1 to 3 task </summary>
+[AddComponentMenu("")]
 internal class EndMessage : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
@@ -30,6 +31,8 @@ internal class EndMessage : MonoBehaviour
 
     #region Public Methods
 
+    /// <summary> Show the message </summary>
+    /// <param name="success"> If the validation was successful </param>
     public void ShowMessage(bool success)
     {
         _text.text = success ? "Success" : "Try Again";
@@ -43,6 +46,8 @@ internal class EndMessage : MonoBehaviour
 
     #region Private Methods
 
+    /// <summary> Fade in the message </summary>
+    /// <returns> Coroutine </returns>
     private IEnumerator ShowMessageIE()
     {
         _fadeProgress = 0;

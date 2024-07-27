@@ -4,17 +4,21 @@ using UnityEngine;
 namespace MegaPint.RepairScene.NonValidatable
 {
 
+/// <summary> Used in the repair a scene 1 task </summary>
+[AddComponentMenu("")]
 internal class Enemy : MonoBehaviour
 {
+    public bool IsValid {get; private set;}
+
     [SerializeField] private float _health;
 
-    public bool IsValid {get; private set;}
+    #region Unity Event Functions
 
     private void Awake()
     {
         IsValid = _health is >= 10 and <= 30;
     }
-    
+
     private void OnValidate()
     {
         var issue = new StringBuilder($"Issues in {this}:\n");
@@ -29,6 +33,8 @@ internal class Enemy : MonoBehaviour
         if (hasIssue)
             Debug.LogWarning(issue);
     }
+
+    #endregion
 }
 
 }

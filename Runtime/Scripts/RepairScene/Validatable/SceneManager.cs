@@ -6,6 +6,8 @@ using UnityEngine;
 namespace MegaPint.RepairScene.Validatable
 {
 
+/// <summary> Used in the repair a scene 2 and 3 task </summary>
+[AddComponentMenu("")]
 internal class SceneManager : MonoBehaviour
 {
     public static Action onWin;
@@ -26,7 +28,7 @@ internal class SceneManager : MonoBehaviour
     private void Awake()
     {
         _states = FindObjectsOfType <ValidatableMonoBehaviourStatus>();
-        
+
         _items = FindObjectsOfType <Item>();
         _groundObjects = FindObjectsOfType <GroundObject>();
         _debugObjects = FindObjectsOfType <DebugObject>();
@@ -50,7 +52,9 @@ internal class SceneManager : MonoBehaviour
     #endregion
 
     #region Private Methods
-    
+
+    /// <summary> Validate the scene </summary>
+    /// <returns> If the scene is valid </returns>
     private bool ValidateScene()
     {
         var valid = true;

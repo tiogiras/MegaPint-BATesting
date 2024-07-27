@@ -1,13 +1,15 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MegaPint.Editor.Scripts.DevMode;
 using MegaPint.Editor.Scripts.PackageManager.Cache;
 using MegaPint.Editor.Scripts.PackageManager.Packages;
 
-namespace MegaPint.com.tiogiras.megapint_batesting.Editor.Scripts.Internal
+namespace MegaPint.Editor.Scripts.Internal
 {
 
+/// <summary> Contains log data </summary>
 [Serializable]
 internal class SessionLog
 {
@@ -33,7 +35,7 @@ internal class SessionLog
     public bool usingAutoSave;
     public bool usingScreenshot;
     public bool usingValidators;
-    
+
     public float[] neededTimes;
     public List <LogCategory> categories;
 
@@ -45,31 +47,17 @@ internal class SessionLog
         GetUsedPackages();
     }
 
-    private void GetUsedPackages()
-    {
-        if (!PackageCache.WasInitialized)
-        {
-            PackageCache.onCacheRefreshed += GetUsedPackages;
-            PackageCache.Refresh();
-            
-            return;
-        }
-        
-        PackageCache.onCacheRefreshed -= GetUsedPackages;
-
-        usingPlayModeStartScene = PackageCache.IsInstalled(PackageKey.PlayModeStartScene);
-        usingAutoSave = PackageCache.IsInstalled(PackageKey.AutoSave);
-        usingScreenshot = PackageCache.IsInstalled(PackageKey.Screenshot);
-        usingValidators = PackageCache.IsInstalled(PackageKey.Validators);
-    }
-
     #region Public Methods
 
+    /// <summary> End the session for this log file </summary>
     public void EndSession()
     {
         sessionEndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
     }
 
+    /// <summary> Log a message to this file </summary>
+    /// <param name="categoryName"> Category of the message </param>
+    /// <param name="logText"> Log message </param>
     public void Log(string categoryName, string logText)
     {
         DevLog.Log($"Added log: {logText}\n to category: {categoryName}");
@@ -82,6 +70,9 @@ internal class SessionLog
 
     #region Private Methods
 
+    /// <summary> Get the category or create a new one </summary>
+    /// <param name="categoryName"> CategoryName </param>
+    /// <returns> Found category </returns>
     private LogCategory GetCategory(string categoryName)
     {
         LogCategory category = null;
@@ -100,7 +91,27 @@ internal class SessionLog
         return category;
     }
 
+    /// <summary> Get all used packages </summary>
+    private void GetUsedPackages()
+    {
+        if (!PackageCache.WasInitialized)
+        {
+            PackageCache.onCacheRefreshed += GetUsedPackages;
+            PackageCache.Refresh();
+
+            return;
+        }
+
+        PackageCache.onCacheRefreshed -= GetUsedPackages;
+
+        usingPlayModeStartScene = PackageCache.IsInstalled(PackageKey.PlayModeStartScene);
+        usingAutoSave = PackageCache.IsInstalled(PackageKey.AutoSave);
+        usingScreenshot = PackageCache.IsInstalled(PackageKey.Screenshot);
+        usingValidators = PackageCache.IsInstalled(PackageKey.Validators);
+    }
+
     #endregion
 }
 
 }
+#endif

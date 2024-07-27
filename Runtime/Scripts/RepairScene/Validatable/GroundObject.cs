@@ -3,8 +3,12 @@
 namespace MegaPint.RepairScene.Validatable
 {
 
+/// <summary> Used in the repair a scene 2 and 3 task </summary>
+[AddComponentMenu("")]
 internal class GroundObject : ValidatableMonoBehaviour
 {
+    #region Public Methods
+
     public bool ValidateManually()
     {
         GameObject o = gameObject;
@@ -14,6 +18,8 @@ internal class GroundObject : ValidatableMonoBehaviour
                o.GetComponent <Rigidbody>() == null &&
                o.GetComponent(typeof(Collider)) != null;
     }
+
+    #endregion
 }
 
 }

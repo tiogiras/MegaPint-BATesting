@@ -6,8 +6,8 @@ using UnityEngine;
 namespace MegaPint
 {
 
-// TODO remove from add component menu
-
+/// <summary> Handles winning and losing in the task validator view </summary>
+[AddComponentMenu("")]
 [ExecuteInEditMode]
 internal class SceneManagerValidatorView : MonoBehaviour
 {
@@ -27,6 +27,7 @@ internal class SceneManagerValidatorView : MonoBehaviour
 
     #region Private Methods
 
+    /// <summary> Get all VMBStates </summary>
     private void GetStates()
     {
         _states = new List <ValidatableMonoBehaviourStatus>();
@@ -36,6 +37,8 @@ internal class SceneManagerValidatorView : MonoBehaviour
             _states.Add(status);
     }
 
+    /// <summary> Callback when a VMBStatus was validated </summary>
+    /// <param name="_"></param>
     private void OnStatusUpdate(ValidationState _)
     {
         if (_states.Any(status => status.State != ValidationState.Ok))
@@ -44,6 +47,7 @@ internal class SceneManagerValidatorView : MonoBehaviour
         onWin?.Invoke();
     }
 
+    /// <summary> Subscribe to the events of all found states </summary>
     private void SubscribeToStates()
     {
         if (_states.Count == 0)
