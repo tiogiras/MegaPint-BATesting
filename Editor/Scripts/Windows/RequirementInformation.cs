@@ -2,7 +2,9 @@
 using System;
 using System.Threading.Tasks;
 using MegaPint.Editor.Scripts.GUI.Utility;
+using UnityEngine;
 using UnityEngine.UIElements;
+using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
 
 namespace MegaPint.Editor.Scripts.Windows
 {
@@ -22,6 +24,8 @@ internal class RequirementInformation : EditorWindowBase
         while (s_root == null)
             await Task.Delay(100);
 
+        s_root.Clear();
+
         VisualElement content = GUIUtility.Instantiate(template, s_root);
         content.style.flexGrow = 1f;
         content.style.flexShrink = 1f;
@@ -36,10 +40,17 @@ internal class RequirementInformation : EditorWindowBase
     {
         titleContent.text = "Requirement Information";
 
-        // TODO preferred size
-        // TODO minSize
+        minSize = new Vector2(200, 150);
 
-        this.CenterOnMainWin();
+        if (!SaveValues.BaTesting.ApplyPSRequirement)
+        {
+            this.CenterOnMainWin();
+
+            return this;
+        }
+
+        this.CenterOnMainWin(500, 250);
+        SaveValues.BaTesting.ApplyPSRequirement = false;
 
         return this;
     }

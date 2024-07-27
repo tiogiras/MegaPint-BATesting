@@ -12,6 +12,9 @@ internal static partial class SaveValues
     {
         public static Action <int> onLogSaveIntervalChanged;
         private static CacheValue <bool> s_applyPSTaskManager = new() {defaultValue = true};
+        private static CacheValue <bool> s_applyPSOverview = new() {defaultValue = true};
+        private static CacheValue <bool> s_applyPSRequirement = new() {defaultValue = true};
+
         private static CacheValue <int> s_currentTaskIndex = new() {defaultValue = 0};
 
         private static CacheValue <bool> s_termsAgreement = new() {defaultValue = false};
@@ -23,6 +26,18 @@ internal static partial class SaveValues
         {
             get => ValueProperty.Get("ApplyPSTaskManager", ref s_applyPSTaskManager, _Settings);
             set => ValueProperty.Set("ApplyPSTaskManager", value, ref s_applyPSTaskManager, _Settings);
+        }
+
+        public static bool ApplyPSOverview
+        {
+            get => ValueProperty.Get("ApplyPSOverview", ref s_applyPSOverview, _Settings);
+            set => ValueProperty.Set("ApplyPSOverview", value, ref s_applyPSOverview, _Settings);
+        }
+
+        public static bool ApplyPSRequirement
+        {
+            get => ValueProperty.Get("ApplyPSRequirement", ref s_applyPSRequirement, _Settings);
+            set => ValueProperty.Set("ApplyPSRequirement", value, ref s_applyPSRequirement, _Settings);
         }
 
         public static int CurrentTaskIndex

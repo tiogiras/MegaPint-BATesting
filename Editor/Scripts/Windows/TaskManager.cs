@@ -87,14 +87,14 @@ internal class TaskManager : EditorWindowBase
     {
         titleContent.text = "Task Manager";
 
-        // TODO add minSize
+        minSize = new Vector2(350, 400);
 
         onOpen?.Invoke();
 
         if (!SaveValues.BaTesting.ApplyPSTaskManager)
             return this;
 
-        this.CenterOnMainWin(); // TODO add preffered size
+        this.CenterOnMainWin(550, 450);
         SaveValues.BaTesting.ApplyPSTaskManager = false;
 
         return this;

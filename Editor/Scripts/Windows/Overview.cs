@@ -38,13 +38,16 @@ internal class Overview : EditorWindowBase
     {
         titleContent.text = "Test Overview";
 
-        // TODO minsize
-        // TODO preferred size
-
+        minSize = new Vector2(550, 300);
+        
         onOpen?.Invoke();
 
-        this.CenterOnMainWin();
-
+        if (!SaveValues.BaTesting.ApplyPSOverview)
+            return this;
+        
+        this.CenterOnMainWin(650, 500);
+        SaveValues.BaTesting.ApplyPSOverview = false;
+        
         return this;
     }
 
