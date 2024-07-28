@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Validator Settings Remove Requirement
   m_EditorClassIdentifier: 
+  _guid: e6747689-deb8-43df-a1e1-40c7b2a35360
   title: Validator Settings Remove Requirement
   hint: '1. Select the exported ValidatorSettings
 
@@ -20,4 +21,3 @@ MonoBehaviour:
 
     3. Remove an element from the list'
   hasInitializationLogic: 1
-  _done: 0

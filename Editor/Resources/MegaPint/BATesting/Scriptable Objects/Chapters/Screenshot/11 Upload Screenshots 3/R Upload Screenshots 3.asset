@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
   m_Name: R Upload Screenshots 3
   m_EditorClassIdentifier: 
+  _guid: 34398ddb-21ba-4d05-8132-e75c7bb4f07c
   requirementName: Upload Screenshots III
-  _done: 0

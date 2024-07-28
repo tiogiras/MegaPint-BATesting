@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Import Requirements
   m_EditorClassIdentifier: 
+  _guid: befb53d1-6ad0-4dad-9e5f-b7e110101ec7
   title: Import Requirements
   hint: '1. Select the VMB Example in the hierarchy
 
     2. Press the export button
     and chose a VS file'
   hasInitializationLogic: 1
-  _done: 0

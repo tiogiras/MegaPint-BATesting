@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 11 Repair A Scene 2
   m_EditorClassIdentifier: 
+  _guid: 1711eea0-58fa-4f8e-9c93-8de2d37387ea
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Repair A Scene II
   taskDescription: '<b>Before starting the task recall all functionality if needed
@@ -39,12 +40,11 @@ MonoBehaviour:
     achieve this every gameObject needs to fulfill certain requirements stated in
     the pdf that was given to you.'
   taskRequirements:
-  - {fileID: 11400000, guid: ebf6e050429bc0d429ffe3ee0a97fbbc, type: 2}
+  - {fileID: 11400000, guid: 56c0180fe01654d4b84c913664bc48cc, type: 2}
   hasDoableTask: 1
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

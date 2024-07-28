@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using MegaPint.RepairScene;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -69,7 +70,8 @@ internal class Task : ScriptableObject
     public SceneAsset scene;
     public bool startInPlayMode;
     public List <Goal> goals;
-    public List <ResetObjectLogic> resetObjects;
+    public bool resetSinglePrefab;
+    public bool resetPrefabs;
 
     private int _autoSaveCount;
 
@@ -121,13 +123,14 @@ internal class Task : ScriptableObject
         if (scene != null)
             GetSceneFromBackUp(true, out var _);
 
-        if (resetObjects.Count > 0)
-            ResetObjects();
+        if (resetPrefabs)
+            PrefabRepair.ResetPrefabs();
 
         NeededTime = 0;
         Done = false;
     }
 
+    /// <summary> Force the needed time to save the settings </summary>
     public void SaveNeededTime()
     {
         SaveValues.TestData.SetValue(taskName, "1", NeededTime);
@@ -141,22 +144,15 @@ internal class Task : ScriptableObject
     private void GetSceneFromBackUp(bool resetScene, out string path)
     {
         var directoryPath = Path.Join(Application.dataPath, "MegaPint Test Scenes");
-
-        Debug.Log(directoryPath);
-
+        
         if (!Directory.Exists(directoryPath))
-        {
-            Debug.Log("Creating directory");
             Directory.CreateDirectory(directoryPath);
-        }
 
         var sceneName = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(scene));
-        Debug.Log($"Scene Name: {sceneName}");
+        sceneName = sceneName.Replace("B_", "");
 
         path = Path.Join("Assets", "MegaPint Test Scenes", sceneName + ".unity");
-
-        Debug.Log("Editable Scene Path: " + path);
-
+        
         if (!AssetDatabase.LoadAssetAtPath <Object>(path))
         {
             AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
@@ -172,13 +168,6 @@ internal class Task : ScriptableObject
             AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
             AssetDatabase.Refresh();
         }
-    }
-
-    /// <summary> Reset all objects based on their reset behaviour </summary>
-    private void ResetObjects()
-    {
-        foreach (ResetObjectLogic resetObject in resetObjects)
-            resetObject.ResetLogic();
     }
 
     #endregion

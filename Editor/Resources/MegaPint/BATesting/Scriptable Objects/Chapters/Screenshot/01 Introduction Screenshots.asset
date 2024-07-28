@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 01 Introduction Screenshots
   m_EditorClassIdentifier: 
+  _guid: eed4d8f1-12ed-442a-9a80-673de9574ca9
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
   taskName: Introduction Screenshots
   taskDescription: "The next chapter is about the <b>Screenshot</b> Tool of the MegaPint
@@ -31,14 +32,13 @@ MonoBehaviour:
     components to render when the F12 key is pressed. To configure the camera's you
     need to use the <b>Shortcut Capture</b> MenuItem."
   taskRequirements:
-  - {fileID: 11400000, guid: eae26fca70a872f48bdd45e8c95b9faa, type: 2}
-  - {fileID: 11400000, guid: c621276e473383545aff2702c5cda90f, type: 2}
-  - {fileID: 11400000, guid: 4657a898c10c1e545be99a8ed11b4785, type: 2}
+  - {fileID: 11400000, guid: 8b1c0e365b46f874184d67b52fec983e, type: 2}
+  - {fileID: 11400000, guid: 42397fe5f1591f84c988f11e3a561516, type: 2}
+  - {fileID: 11400000, guid: fe92c1b6c66fb624c9f9ec84c406ffc0, type: 2}
   hasDoableTask: 1
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

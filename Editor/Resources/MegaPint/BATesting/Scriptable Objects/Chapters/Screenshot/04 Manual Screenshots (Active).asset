@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 04 Manual Screenshots (Active)
   m_EditorClassIdentifier: 
+  _guid: 337c0814-8b48-41ff-8e86-b1ac1aa12a46
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
   taskName: Manual Screenshots (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 1
-  scene: {fileID: 102900000, guid: 143bc2556c355784b9d1fdd86e5a0cba, type: 3}
+  scene: {fileID: 102900000, guid: ec283f4431c634841b3753aada306b7e, type: 3}
   startInPlayMode: 0
   goals:
-  - {fileID: 11400000, guid: 088b4c5e415912f44a618e0485cc420a, type: 2}
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  - {fileID: 11400000, guid: 37dfaa45d20d66c43888992e11929400, type: 2}
+  resetSinglePrefab: 0
+  resetPrefabs: 0

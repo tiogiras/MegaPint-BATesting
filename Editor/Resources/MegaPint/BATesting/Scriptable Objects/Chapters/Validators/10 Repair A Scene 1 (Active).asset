@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 10 Repair A Scene 1 (Active)
   m_EditorClassIdentifier: 
+  _guid: be537a9a-2f82-46b0-b57d-4ad720545dbe
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Repair A Scene I (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
-  scene: {fileID: 102900000, guid: e01cfb0d6810bea40b5aa08310cf5515, type: 3}
+  scene: {fileID: 102900000, guid: 56c8017023ca868488de677fd9096903, type: 3}
   startInPlayMode: 0
   goals:
-  - {fileID: 11400000, guid: 33520d7e16ac79e45869a1b6902f565e, type: 2}
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  - {fileID: 11400000, guid: 2e77c205926fe674492282051861725a, type: 2}
+  resetSinglePrefab: 0
+  resetPrefabs: 0

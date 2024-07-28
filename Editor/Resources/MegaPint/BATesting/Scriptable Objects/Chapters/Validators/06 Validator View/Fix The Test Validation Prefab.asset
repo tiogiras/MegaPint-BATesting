@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Fix The Test Validation Prefab
   m_EditorClassIdentifier: 
+  _guid: 012362cb-508c-4539-ab58-8b8dee806f82
   title: Fix The Test Validation Prefab
   hint: '1. Switch to the Project tab
 
@@ -22,4 +23,3 @@ MonoBehaviour:
 
     4. Press FixAll or Fix for all issues'
   hasInitializationLogic: 1
-  _done: 0
