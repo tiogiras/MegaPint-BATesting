@@ -72,7 +72,7 @@ internal static partial class ContextMenu
             MenuItemSignature menuItemSignature,
             string title = "") where T : EditorWindowBase
         {
-            if (!MegaPintSettings.Exists())
+            if (!MegaPintMainSettings.Exists())
             {
                 EditorWindow.GetWindow <FirstSteps>(true, title).ShowWindow();
 
