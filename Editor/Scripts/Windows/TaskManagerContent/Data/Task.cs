@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
@@ -13,8 +15,6 @@ internal class Task : ScriptableObject
 {
     public static Action <Task> onTaskDoneChange;
 
-    private int _autoSaveCount;
-    
     public float NeededTime
     {
         get
@@ -33,15 +33,10 @@ internal class Task : ScriptableObject
             _neededTime = value;
 
             _autoSaveCount++;
-            
+
             if (_autoSaveCount > 30)
                 _autoSaveCount = 0;
         }
-    }
-    
-    public void SaveNeededTime()
-    {
-        SaveValues.TestData.SetValue(taskName, "1", NeededTime);
     }
 
     public bool Done
@@ -75,10 +70,12 @@ internal class Task : ScriptableObject
     public bool startInPlayMode;
     public List <Goal> goals;
     public List <ResetObjectLogic> resetObjects;
-    
+
+    private int _autoSaveCount;
+
     private bool _done;
     private bool _doneInitialized;
-    
+
     private float _neededTime;
     private bool _neededTimeInitialized;
 
@@ -90,19 +87,27 @@ internal class Task : ScriptableObject
         _neededTimeInitialized = false;
 
         _autoSaveCount = 0;
-        
+
         if (!string.IsNullOrEmpty(_guid))
             return;
-        
+
         _guid = Guid.NewGuid().ToString();
-        
+
         EditorUtility.SetDirty(this);
         AssetDatabase.SaveAssetIfDirty(this);
     }
 
     #endregion
-    
+
     #region Public Methods
+
+    /// <summary> Open the task scene </summary>
+    public void OpenScene()
+    {
+        GetSceneFromBackUp(false, out var path);
+
+        EditorSceneManager.OpenScene(path);
+    }
 
     /// <summary> Reset all values of the task </summary>
     public void ResetValues()
@@ -114,7 +119,7 @@ internal class Task : ScriptableObject
             goal.ResetValues();
 
         if (scene != null)
-            RecreateSceneFromBackup();
+            GetSceneFromBackUp(true, out var _);
 
         if (resetObjects.Count > 0)
             ResetObjects();
@@ -123,22 +128,50 @@ internal class Task : ScriptableObject
         Done = false;
     }
 
+    public void SaveNeededTime()
+    {
+        SaveValues.TestData.SetValue(taskName, "1", NeededTime);
+    }
+
     #endregion
 
     #region Private Methods
 
     /// <summary> Reset the scene based on the stored backup </summary>
-    private void RecreateSceneFromBackup()
+    private void GetSceneFromBackUp(bool resetScene, out string path)
     {
-        var path = AssetDatabase.GetAssetPath(scene);
-        var fileName = Path.GetFileName(path);
+        var directoryPath = Path.Join(Application.dataPath, "MegaPint Test Scenes");
 
-        var instanceFileName = fileName[2..];
-        var instancePath = path.Replace(fileName, instanceFileName);
+        Debug.Log(directoryPath);
 
-        AssetDatabase.DeleteAsset(instancePath);
-        AssetDatabase.CopyAsset(path, instancePath);
-        AssetDatabase.Refresh();
+        if (!Directory.Exists(directoryPath))
+        {
+            Debug.Log("Creating directory");
+            Directory.CreateDirectory(directoryPath);
+        }
+
+        var sceneName = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(scene));
+        Debug.Log($"Scene Name: {sceneName}");
+
+        path = Path.Join("Assets", "MegaPint Test Scenes", sceneName + ".unity");
+
+        Debug.Log("Editable Scene Path: " + path);
+
+        if (!AssetDatabase.LoadAssetAtPath <Object>(path))
+        {
+            AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
+            AssetDatabase.Refresh();
+        }
+        else
+        {
+            if (!resetScene)
+                return;
+
+            AssetDatabase.DeleteAsset(path);
+            
+            AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
+            AssetDatabase.Refresh();
+        }
     }
 
     /// <summary> Reset all objects based on their reset behaviour </summary>
