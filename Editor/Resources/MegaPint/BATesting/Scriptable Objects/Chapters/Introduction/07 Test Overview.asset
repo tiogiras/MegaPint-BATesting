@@ -39,5 +39,5 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 1
+  _done: 0
   _neededTime: 0

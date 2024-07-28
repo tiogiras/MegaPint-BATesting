@@ -16,4 +16,4 @@ MonoBehaviour:
   hint: "1. Select the exported ValidatorSettings \n2. Select the \"Requirements\"
     list in the inspector\n3. Add a new element to the list"
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

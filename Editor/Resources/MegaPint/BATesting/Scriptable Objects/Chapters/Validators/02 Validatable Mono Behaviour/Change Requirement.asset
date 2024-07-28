@@ -21,4 +21,4 @@ MonoBehaviour:
     3. Select an element of the "Requirements" list and
     change the requirement with the dropdown'
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

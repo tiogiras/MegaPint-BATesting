@@ -25,4 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c665a4dddde4c24fac195a5c05b493d, type: 2}
   resetObjects: []
   _done: 0
-  _neededTime: 2
+  _neededTime: 0

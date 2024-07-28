@@ -15,4 +15,4 @@ MonoBehaviour:
   title: Open Validator View
   hint: 1. MegaPint/Packages/Validator View
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

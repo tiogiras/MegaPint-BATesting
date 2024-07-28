@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 7596127324467106650}
   - component: {fileID: 642118611049405694}
   - component: {fileID: 5082061263723825947}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Test Validation Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3796813068498053282
 Transform:
   m_ObjectHideFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341296390023707410}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.31670624, y: -0.91875744, z: 0.2312491, w: 0.045889474}
+  m_LocalPosition: {x: 6, y: -2, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
