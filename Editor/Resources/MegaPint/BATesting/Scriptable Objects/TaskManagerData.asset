@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f3b408726844e58ef571ff50287fd0, type: 3}
   m_Name: TaskManagerData
   m_EditorClassIdentifier: 
+  _guid: b3fed74a-5fde-4c19-af90-4ba81d5894bd
   _tasks:
   - {fileID: 11400000, guid: fd3dace06ef10ee4ba8684b6c7096fac, type: 2}
   - {fileID: 11400000, guid: a2f38eb839ee44142a2a5c6ac616bc61, type: 2}
@@ -51,4 +52,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f2ffc86d5e2fc646956157d3a83ec85, type: 2}
   - {fileID: 11400000, guid: 3d8cab3e103d2cb41a7504d92f611f77, type: 2}
   - {fileID: 11400000, guid: 67c706958a88d604f8304032d0d30189, type: 2}
-  _currentTaskIndex: 0

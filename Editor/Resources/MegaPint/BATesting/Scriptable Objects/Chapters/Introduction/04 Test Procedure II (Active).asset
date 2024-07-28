@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 04 Test Procedure II (Active)
   m_EditorClassIdentifier: 
+  _guid: 99945db2-be50-4433-b3d0-15439545a9aa
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: Test Procedure II (Active)
   taskDescription: 
@@ -23,5 +24,3 @@ MonoBehaviour:
   goals:
   - {fileID: 11400000, guid: d717d19fe90f61e4db781230a0d1dce4, type: 2}
   resetObjects: []
-  _done: 0
-  _neededTime: 0

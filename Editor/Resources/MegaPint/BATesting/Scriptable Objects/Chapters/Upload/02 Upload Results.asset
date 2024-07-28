@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 02 Upload Results
   m_EditorClassIdentifier: 
+  _guid: c427313c-8295-4f0d-be91-88768bb6c292
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Upload Results
   taskDescription: "This is the final task of this evaluation. You should now be
@@ -28,5 +29,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0

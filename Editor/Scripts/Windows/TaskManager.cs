@@ -378,8 +378,6 @@ internal class TaskManager : EditorWindowBase
     {
         Task task = _data.CurrentTask();
 
-        AssetDatabase.SaveAssetIfDirty(task);
-
         TryInitializeGoals(task, false);
 
         _pauseTimer = true;
@@ -429,8 +427,7 @@ internal class TaskManager : EditorWindowBase
         }
 
         Task task = _data.CurrentTask();
-
-        AssetDatabase.SaveAssetIfDirty(task);
+        task.SaveNeededTime();
 
         TryInitializeGoals(task, false);
 

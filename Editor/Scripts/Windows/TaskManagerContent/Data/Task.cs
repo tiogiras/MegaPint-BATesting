@@ -13,29 +13,58 @@ internal class Task : ScriptableObject
 {
     public static Action <Task> onTaskDoneChange;
 
+    private int _autoSaveCount;
+    
     public float NeededTime
     {
-        get => _neededTime;
+        get
+        {
+            if (_neededTimeInitialized)
+                return _neededTime;
+
+            _neededTime = SaveValues.TestData.GetValue(taskName, "1", 0f);
+            _neededTimeInitialized = true;
+
+            return _neededTime;
+        }
         set
         {
+            SaveValues.TestData.SetValue(taskName, "1", value, _autoSaveCount < 30);
             _neededTime = value;
-            EditorUtility.SetDirty(this);
+
+            _autoSaveCount++;
+            
+            if (_autoSaveCount > 30)
+                _autoSaveCount = 0;
         }
+    }
+    
+    public void SaveNeededTime()
+    {
+        SaveValues.TestData.SetValue(taskName, "1", NeededTime);
     }
 
     public bool Done
     {
-        get => _done;
+        get
+        {
+            if (_doneInitialized)
+                return _done;
+
+            _done = SaveValues.TestData.GetValue(taskName, "0", false);
+            _doneInitialized = true;
+
+            return _done;
+        }
         set
         {
+            SaveValues.TestData.SetValue(taskName, "0", value);
             _done = value;
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssetIfDirty(this);
-
             onTaskDoneChange?.Invoke(this);
         }
     }
 
+    [SerializeField] private string _guid;
     public Chapter chapter;
     public string taskName;
     [TextArea] public string taskDescription;
@@ -46,10 +75,33 @@ internal class Task : ScriptableObject
     public bool startInPlayMode;
     public List <Goal> goals;
     public List <ResetObjectLogic> resetObjects;
+    
+    private bool _done;
+    private bool _doneInitialized;
+    
+    private float _neededTime;
+    private bool _neededTimeInitialized;
 
-    [SerializeField] private bool _done;
-    [SerializeField] private float _neededTime;
+    #region Unity Event Functions
 
+    private void OnValidate()
+    {
+        _doneInitialized = false;
+        _neededTimeInitialized = false;
+
+        _autoSaveCount = 0;
+        
+        if (!string.IsNullOrEmpty(_guid))
+            return;
+        
+        _guid = Guid.NewGuid().ToString();
+        
+        EditorUtility.SetDirty(this);
+        AssetDatabase.SaveAssetIfDirty(this);
+    }
+
+    #endregion
+    
     #region Public Methods
 
     /// <summary> Reset all values of the task </summary>

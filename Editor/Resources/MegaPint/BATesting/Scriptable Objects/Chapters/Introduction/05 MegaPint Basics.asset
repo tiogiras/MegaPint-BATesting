@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 05 MegaPint Basics
   m_EditorClassIdentifier: 
+  _guid: a7f3d486-443c-4b55-b85d-fd4aa1889848
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: MegaPint Basics
   taskDescription: Most of the functionality of the MegaPint packages is accessed
@@ -25,5 +26,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0
