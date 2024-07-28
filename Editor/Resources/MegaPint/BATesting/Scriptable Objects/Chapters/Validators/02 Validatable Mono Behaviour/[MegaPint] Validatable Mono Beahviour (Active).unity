@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 77966963}
   - component: {fileID: 77966962}
   - component: {fileID: 77966961}
-  - component: {fileID: 77966964}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -216,28 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 6.29, y: -178.417, z: 0.001}
---- !u!114 &77966964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77966960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df98e60138ef9e4fb1092aecdd7c238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 1920
-  height: 1080
-  depth: 32
-  backgroundType: 0
-  lastPath: Assets
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
-  backgroundImage: {fileID: 0}
-  imageType: Simple
-  pixelPerUnit: 1
-  listenToShortcut: 0
 --- !u!1 &628992862
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _requirements:
-  - rid: -2
+  - rid: 1543758860798656512
   defaultSettings: []
   _importedSettings: []
   importedSettingsFoldout: 0
@@ -371,8 +348,18 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 1543758860798656512
+      type: {class: RequireDefaultTransform, ns: MegaPint.ValidationRequirement.Requirements.TransformValidation, asm: tiogiras.megapint.validators.runtime}
+      data:
+        preventListHeaderIssues: 
+        initialized: 1
+        uniqueID: 5e5f66d9-84a4-4b53-9588-342e9a77ce6c
+        severityOverwrite: 0
+        targetGameObject: {fileID: 1035959826}
+        objectReference: {fileID: 1035959827}
+        _defaultPosition: 1
+        _defaultRotation: 1
+        _defaultScale: 0
 --- !u!114 &1035959828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,8 +380,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035959826}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.18846706, y: 0.4065781, z: -0.25864935, w: 0.8557307}
+  m_LocalPosition: {x: 1.5, y: 4.48, z: -8.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

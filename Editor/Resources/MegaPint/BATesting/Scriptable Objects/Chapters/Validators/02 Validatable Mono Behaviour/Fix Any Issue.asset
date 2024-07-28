@@ -21,4 +21,4 @@ MonoBehaviour:
     3.
     Press "Fix All" or "Fix" on the status component'
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

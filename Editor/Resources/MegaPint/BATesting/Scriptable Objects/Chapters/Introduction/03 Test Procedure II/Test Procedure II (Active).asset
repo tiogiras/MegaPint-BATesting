@@ -17,4 +17,4 @@ MonoBehaviour:
 
     2. Hold spacebar for the button to work.'
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

@@ -18,4 +18,4 @@ MonoBehaviour:
     2. Press the export button
     and chose a location'
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

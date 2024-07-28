@@ -27,5 +27,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c15f807f2ecb96249b3dfe296fbd86d3, type: 2}
   - {fileID: 11400000, guid: 11cd6735aa881b0429ff58ac9e81d0d1, type: 2}
   resetObjects: []
-  _done: 1
-  _neededTime: 98
+  _done: 0
+  _neededTime: 0

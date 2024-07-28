@@ -17,4 +17,4 @@ MonoBehaviour:
     Capture -> Enable your camera \n3. Take 4 Screenshots (F12)\n4. Press the Finish
     Task Button"
   hasInitializationLogic: 1
-  _done: 1
+  _done: 0

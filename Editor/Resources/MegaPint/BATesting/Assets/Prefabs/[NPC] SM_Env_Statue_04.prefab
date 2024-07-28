@@ -113,12 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _requirements: []
   defaultSettings: []
-  _importedSettings:
-  - {fileID: 11400000, guid: f7fbc35e91482e44391f5f24689cc058, type: 2}
+  _importedSettings: []
   importedSettingsFoldout: 1
-  settingPriorities:
-  - setting: {fileID: 11400000, guid: f7fbc35e91482e44391f5f24689cc058, type: 2}
-    priority: 1
+  settingPriorities: []
   _health: 0
   _name: 
   references:
