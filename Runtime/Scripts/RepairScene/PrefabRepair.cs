@@ -240,7 +240,7 @@ internal class PrefabRepair : MonoBehaviour
         var o = Resources.Load <GameObject>(Path.Join(s_prefabsPath, "[NPC] SM_Env_Statue_04"));
 
         GameObject instance = Instantiate(o);
-        instance.AddComponent <Item>();
+        instance.AddComponent <Npc>();
 
         PrefabUtility.SaveAsPrefabAsset(instance, Path.Join(directory, "[NPC] SM_Env_Statue_04.prefab"));
 
