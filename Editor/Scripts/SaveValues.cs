@@ -73,6 +73,52 @@ internal static partial class SaveValues
             }
         }
     }
+
+    public static class TestData
+    {
+        private static SettingsBase s_settings;
+
+        public static int GetValue(string key, string valueIdentifier, int defaultValue)
+        {
+            return _Settings.GetValue($"{key}_{valueIdentifier}", defaultValue);
+        }
+        
+        public static bool GetValue(string key, string valueIdentifier, bool defaultValue)
+        {
+            return _Settings.GetValue($"{key}_{valueIdentifier}", defaultValue);
+        }
+        
+        public static float GetValue(string key, string valueIdentifier, float defaultValue)
+        {
+            return _Settings.GetValue($"{key}_{valueIdentifier}", defaultValue);
+        }
+
+        public static void SetValue(string key, string valueIdentifier, int value)
+        {
+            _Settings.SetValue($"{key}_{valueIdentifier}", value);
+        }
+        
+        public static void SetValue(string key, string valueIdentifier, bool value)
+        {
+            _Settings.SetValue($"{key}_{valueIdentifier}", value);
+        }
+        
+        public static void SetValue(string key, string valueIdentifier, float value, bool suppressSaving = false)
+        {
+            _Settings.SetValue($"{key}_{valueIdentifier}", value, suppressSaving);
+        }
+        
+        private static SettingsBase _Settings
+        {
+            get
+            {
+                if (MegaPintMainSettings.Exists())
+                    return s_settings ??= MegaPintMainSettings.instance.GetSetting("TestData");
+
+                return null;
+            }
+        }
+    }
 }
 
 }

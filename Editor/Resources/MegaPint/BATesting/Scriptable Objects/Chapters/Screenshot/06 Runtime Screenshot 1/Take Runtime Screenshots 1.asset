@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Take Runtime Screenshots 1
   m_EditorClassIdentifier: 
+  _guid: 4a0c320f-9f7c-424a-8633-3b7124ae89f2
   title: Take Runtime Screenshots I
   hint: "1. Setup your camera to use the shortcut\n2. MegaPint/Packages/Screenshot/Shortcut
     Capture -> Enable your camera \n3. Take 4 Screenshots (F12)\n4. Press the Finish
     Task Button"
   hasInitializationLogic: 1
-  _done: 0

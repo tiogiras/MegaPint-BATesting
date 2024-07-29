@@ -12,19 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 07 Validator View (Active)
   m_EditorClassIdentifier: 
+  _guid: 4ad53ad7-9a12-4d29-a4ef-9e96d70df783
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Validator View (Active)
   taskDescription: 
   taskRequirements: []
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
-  scene: {fileID: 102900000, guid: c816b020d8e73cf42b44e24091e9be66, type: 3}
+  scene: {fileID: 102900000, guid: dd23c0bc0ab435a45898c0fafa15f6d2, type: 3}
   startInPlayMode: 0
   goals:
-  - {fileID: 11400000, guid: 2ee21f376931a9f468431a199d60e61a, type: 2}
-  - {fileID: 11400000, guid: 976283adb3134384ebef871d7a603ee7, type: 2}
-  - {fileID: 11400000, guid: b41a32b201c68d349b557c81119e6ca6, type: 2}
-  resetObjects:
-  - {fileID: 5082061263723825947, guid: cf9c9f576f42c0a47961fd019b1002f2, type: 3}
-  _done: 0
-  _neededTime: 0
+  - {fileID: 11400000, guid: 179a56d8bc3ab0f4e88410ae1e9e0ec7, type: 2}
+  - {fileID: 11400000, guid: 68777b454add9564b9586ffedaaae197, type: 2}
+  - {fileID: 11400000, guid: 609f1a635ba655f418a1530ee8059fcf, type: 2}
+  resetSinglePrefab: 1
+  resetPrefabs: 0

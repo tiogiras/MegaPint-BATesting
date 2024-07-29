@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using MegaPint.RepairScene;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
@@ -15,27 +18,49 @@ internal class Task : ScriptableObject
 
     public float NeededTime
     {
-        get => _neededTime;
+        get
+        {
+            if (_neededTimeInitialized)
+                return _neededTime;
+
+            _neededTime = SaveValues.TestData.GetValue(taskName, "1", 0f);
+            _neededTimeInitialized = true;
+
+            return _neededTime;
+        }
         set
         {
+            SaveValues.TestData.SetValue(taskName, "1", value, _autoSaveCount < 30);
             _neededTime = value;
-            EditorUtility.SetDirty(this);
+
+            _autoSaveCount++;
+
+            if (_autoSaveCount > 30)
+                _autoSaveCount = 0;
         }
     }
 
     public bool Done
     {
-        get => _done;
+        get
+        {
+            if (_doneInitialized)
+                return _done;
+
+            _done = SaveValues.TestData.GetValue(taskName, "0", false);
+            _doneInitialized = true;
+
+            return _done;
+        }
         set
         {
+            SaveValues.TestData.SetValue(taskName, "0", value);
             _done = value;
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssetIfDirty(this);
-
             onTaskDoneChange?.Invoke(this);
         }
     }
 
+    [SerializeField] private string _guid;
     public Chapter chapter;
     public string taskName;
     [TextArea] public string taskDescription;
@@ -45,12 +70,46 @@ internal class Task : ScriptableObject
     public SceneAsset scene;
     public bool startInPlayMode;
     public List <Goal> goals;
-    public List <ResetObjectLogic> resetObjects;
+    public bool resetSinglePrefab;
+    public bool resetPrefabs;
 
-    [SerializeField] private bool _done;
-    [SerializeField] private float _neededTime;
+    private int _autoSaveCount;
+
+    private bool _done;
+    private bool _doneInitialized;
+
+    private float _neededTime;
+    private bool _neededTimeInitialized;
+
+    #region Unity Event Functions
+
+    private void OnValidate()
+    {
+        _doneInitialized = false;
+        _neededTimeInitialized = false;
+
+        _autoSaveCount = 0;
+
+        if (!string.IsNullOrEmpty(_guid))
+            return;
+
+        _guid = Guid.NewGuid().ToString();
+
+        EditorUtility.SetDirty(this);
+        AssetDatabase.SaveAssetIfDirty(this);
+    }
+
+    #endregion
 
     #region Public Methods
+
+    /// <summary> Open the task scene </summary>
+    public void OpenScene()
+    {
+        GetSceneFromBackUp(false, out var path);
+
+        EditorSceneManager.OpenScene(path);
+    }
 
     /// <summary> Reset all values of the task </summary>
     public void ResetValues()
@@ -62,13 +121,22 @@ internal class Task : ScriptableObject
             goal.ResetValues();
 
         if (scene != null)
-            RecreateSceneFromBackup();
+            GetSceneFromBackUp(true, out var _);
 
-        if (resetObjects.Count > 0)
-            ResetObjects();
+        if (resetPrefabs)
+            PrefabRepair.ResetPrefabs();
+
+        if (resetSinglePrefab)
+            PrefabRepair.ResetSinglePrefab();
 
         NeededTime = 0;
         Done = false;
+    }
+
+    /// <summary> Force the needed time to save the settings </summary>
+    public void SaveNeededTime()
+    {
+        SaveValues.TestData.SetValue(taskName, "1", NeededTime);
     }
 
     #endregion
@@ -76,24 +144,33 @@ internal class Task : ScriptableObject
     #region Private Methods
 
     /// <summary> Reset the scene based on the stored backup </summary>
-    private void RecreateSceneFromBackup()
+    private void GetSceneFromBackUp(bool resetScene, out string path)
     {
-        var path = AssetDatabase.GetAssetPath(scene);
-        var fileName = Path.GetFileName(path);
+        var directoryPath = Path.Join(Application.dataPath, "MegaPint Test Scenes");
+        
+        if (!Directory.Exists(directoryPath))
+            Directory.CreateDirectory(directoryPath);
 
-        var instanceFileName = fileName[2..];
-        var instancePath = path.Replace(fileName, instanceFileName);
+        var sceneName = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(scene));
+        sceneName = sceneName.Replace("B_", "");
 
-        AssetDatabase.DeleteAsset(instancePath);
-        AssetDatabase.CopyAsset(path, instancePath);
-        AssetDatabase.Refresh();
-    }
+        path = Path.Join("Assets", "MegaPint Test Scenes", sceneName + ".unity");
+        
+        if (!AssetDatabase.LoadAssetAtPath <Object>(path))
+        {
+            AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
+            AssetDatabase.Refresh();
+        }
+        else
+        {
+            if (!resetScene)
+                return;
 
-    /// <summary> Reset all objects based on their reset behaviour </summary>
-    private void ResetObjects()
-    {
-        foreach (ResetObjectLogic resetObject in resetObjects)
-            resetObject.ResetLogic();
+            AssetDatabase.DeleteAsset(path);
+            
+            AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(scene), path);
+            AssetDatabase.Refresh();
+        }
     }
 
     #endregion

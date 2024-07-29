@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Take Screenshot Of Camera Capture Config 1
   m_EditorClassIdentifier: 
+  _guid: c871d95e-f005-4927-b6ba-eaa24ba5b868
   title: Take Screenshot Of Camera Capture Config I
   hint: '1. Select your camera in the inspector
 
@@ -27,4 +28,3 @@ MonoBehaviour:
 
     6. Press the Finish Task button'
   hasInitializationLogic: 1
-  _done: 0

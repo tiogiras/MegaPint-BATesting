@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
   m_Name: R Camera Rendering
   m_EditorClassIdentifier: 
+  _guid: 7797d99f-11ba-4aa0-86bb-f606927d0372
   requirementName: Camera Rendering
-  _done: 0

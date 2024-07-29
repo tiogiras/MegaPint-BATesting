@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 01 Welcome
   m_EditorClassIdentifier: 
+  _guid: b37e9496-ab45-4168-8ba8-eb4cdef5eb30
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: Welcome
   taskDescription: "Welcome to this evaluation of the MegaPint package collection.
@@ -25,5 +26,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0

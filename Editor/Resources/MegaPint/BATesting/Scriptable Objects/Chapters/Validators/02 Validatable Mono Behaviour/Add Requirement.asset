@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Add Requirement
   m_EditorClassIdentifier: 
+  _guid: 46c4f576-4dd5-49ad-8b15-efc008859a30
   title: Add Requirement
   hint: '1. Select the VMB Example in the hierarchy
 
@@ -20,4 +21,3 @@ MonoBehaviour:
 
     3. Add a new element to the list'
   hasInitializationLogic: 1
-  _done: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using MegaPint.RepairScene.NonValidatable;
 using UnityEngine;
 
 namespace MegaPint.RepairScene.Validatable

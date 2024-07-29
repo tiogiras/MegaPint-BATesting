@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 13 Repair A Scene 3
   m_EditorClassIdentifier: 
+  _guid: 6dd65190-15ae-4c16-8013-87f3a7303f19
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Repair A Scene III
   taskDescription: 'The following task requires you like the previous one to repair
@@ -41,6 +42,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

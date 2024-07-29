@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Custom Requirement Fixed
   m_EditorClassIdentifier: 
+  _guid: d6a0933f-a2ce-4e6c-9b0f-f1995a42c5d9
   title: Custom Requirement Fixed
   hint: '1. Enter the line [TestEvent.onFixed?.Invoke(gameObject)] at the end of
     your FixAction
@@ -21,4 +22,3 @@ MonoBehaviour:
     3. For further
     help consult the given pdf that includes the solution to this task'
   hasInitializationLogic: 1
-  _done: 0

@@ -15,19 +15,47 @@ internal class Requirement : ScriptableObject
 
     public bool Done
     {
-        get => _done;
+        get
+        {
+            if (_doneInitialized)
+                return _done;
+
+            _done = SaveValues.TestData.GetValue(requirementName, "0", false);
+            _doneInitialized = true;
+
+            return _done;
+        }
         set
         {
-            _done = value;
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssetIfDirty(this);
+            SaveValues.TestData.SetValue(requirementName, "0", value);
 
+            _done = value;
             onDoneChanged?.Invoke(requirementName, value);
         }
     }
 
+    [SerializeField] private string _guid;
     public string requirementName;
-    [SerializeField] private bool _done;
+
+    private bool _done;
+    private bool _doneInitialized;
+
+    #region Unity Event Functions
+
+    private void OnValidate()
+    {
+        _doneInitialized = false;
+        
+        if (!string.IsNullOrEmpty(_guid))
+            return;
+        
+        _guid = Guid.NewGuid().ToString();
+        
+        EditorUtility.SetDirty(this);
+        AssetDatabase.SaveAssetIfDirty(this);
+    }
+
+    #endregion
 
     #region Public Methods
 

@@ -244,17 +244,6 @@ internal class TaskManager : EditorWindowBase
 
     #region Private Methods
 
-    /// <summary> Open a scene </summary>
-    /// <param name="scene"> Targeted scene </param>
-    private static void OpenScene(Object scene)
-    {
-        var path = AssetDatabase.GetAssetPath(scene);
-        var fileName = Path.GetFileName(path);
-        var newFileName = fileName[2..];
-
-        EditorSceneManager.OpenScene(path.Replace(fileName, newFileName));
-    }
-
     /// <summary> Try to set initialization of all goals with initialization logic of the task </summary>
     /// <param name="task"> Targeted task </param>
     /// <param name="initialize"> If they should be initialized or de initialized </param>
@@ -322,7 +311,7 @@ internal class TaskManager : EditorWindowBase
         SceneAsset scene = currentTask.scene;
 
         if (scene != null)
-            OpenScene(currentTask.scene);
+            currentTask.OpenScene();
 
         if (currentTask.startInPlayMode && !currentTask.Done)
             EditorApplication.EnterPlaymode();
@@ -362,7 +351,7 @@ internal class TaskManager : EditorWindowBase
 
         if (scene != null)
         {
-            OpenScene(scene);
+            nextTask.OpenScene();
 
             if (nextTask.startInPlayMode && !nextTask.Done)
                 EditorApplication.EnterPlaymode();
@@ -377,8 +366,6 @@ internal class TaskManager : EditorWindowBase
     private void PauseTimer()
     {
         Task task = _data.CurrentTask();
-
-        AssetDatabase.SaveAssetIfDirty(task);
 
         TryInitializeGoals(task, false);
 
@@ -429,8 +416,7 @@ internal class TaskManager : EditorWindowBase
         }
 
         Task task = _data.CurrentTask();
-
-        AssetDatabase.SaveAssetIfDirty(task);
+        task.SaveNeededTime();
 
         TryInitializeGoals(task, false);
 

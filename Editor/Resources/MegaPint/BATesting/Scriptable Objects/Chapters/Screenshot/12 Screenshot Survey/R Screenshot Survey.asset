@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
   m_Name: R Screenshot Survey
   m_EditorClassIdentifier: 
+  _guid: 6b0fe0eb-cd00-48c1-85a1-6664f3f7882a
   requirementName: Screenshot Survey
-  _done: 0

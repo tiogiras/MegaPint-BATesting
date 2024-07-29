@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Change Requirement
   m_EditorClassIdentifier: 
+  _guid: 3d535042-6bf0-41af-a0cc-293633c86753
   title: Change Requirement
   hint: '1. Select the VMB Example in the hierarchy
 
@@ -21,4 +22,3 @@ MonoBehaviour:
     3. Select an element of the "Requirements" list and
     change the requirement with the dropdown'
   hasInitializationLogic: 1
-  _done: 0

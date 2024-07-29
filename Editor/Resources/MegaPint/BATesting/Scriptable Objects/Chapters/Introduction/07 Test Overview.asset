@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 07 Test Overview
   m_EditorClassIdentifier: 
+  _guid: 46fdb08c-e3c6-43f8-b2a8-0d8035b7eeb2
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: Test Overview
   taskDescription: 'If you encounter any issues that would require you to redo a
@@ -39,5 +40,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0

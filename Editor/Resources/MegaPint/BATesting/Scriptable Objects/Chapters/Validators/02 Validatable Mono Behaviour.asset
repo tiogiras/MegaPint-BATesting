@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 02 Validatable Mono Behaviour
   m_EditorClassIdentifier: 
+  _guid: 48fb8051-dd63-49d0-bf7d-69168856184b
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: ValidatableMonoBehaviour
   taskDescription: 'The core of the Validators package are ValidatableMonoBehaviours
@@ -37,6 +38,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

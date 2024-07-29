@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
   m_Name: R Shortcuts
   m_EditorClassIdentifier: 
+  _guid: 20aef4c4-a849-49b7-8384-75e075e3b8fb
   requirementName: Shortcuts
-  _done: 0

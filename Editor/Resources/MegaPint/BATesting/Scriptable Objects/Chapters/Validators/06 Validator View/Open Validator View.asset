@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Open Validator View
   m_EditorClassIdentifier: 
+  _guid: b7667be1-60a3-49f3-9d45-023810e4f268
   title: Open Validator View
   hint: 1. MegaPint/Packages/Validator View
   hasInitializationLogic: 1
-  _done: 0

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Export Requirements
   m_EditorClassIdentifier: 
+  _guid: 3bae9feb-9095-47b1-97d1-3fa4e0dec1e9
   title: Export Requirements
   hint: '1. Select the VMB Example in the hierarchy
 
     2. Press the export button
     and chose a location'
   hasInitializationLogic: 1
-  _done: 0
