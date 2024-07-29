@@ -126,6 +126,9 @@ internal class Task : ScriptableObject
         if (resetPrefabs)
             PrefabRepair.ResetPrefabs();
 
+        if (resetSinglePrefab)
+            PrefabRepair.ResetSinglePrefab();
+
         NeededTime = 0;
         Done = false;
     }
