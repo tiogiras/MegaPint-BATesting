@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Validator Settings Change Requirement
   m_EditorClassIdentifier: 
+  _guid: 5b8fc1ff-b5d9-43eb-b404-f9ce9cf912be
   title: Validator Settings Change Requirement
   hint: '1. Select the exported ValidatorSettings
 
@@ -21,4 +22,3 @@ MonoBehaviour:
     3. Select an element of the "Requirements" list and
     change the requirement with the dropdown'
   hasInitializationLogic: 1
-  _done: 0

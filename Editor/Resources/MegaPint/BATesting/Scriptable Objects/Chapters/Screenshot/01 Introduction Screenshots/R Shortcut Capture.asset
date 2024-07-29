@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8776b2299f284b3ca6fa02f8d19f56fc, type: 3}
   m_Name: R Shortcut Capture
   m_EditorClassIdentifier: 
+  _guid: f5447c30-ab59-4346-86fd-e3b8b39b927e
   requirementName: Shortcut Capture
-  _done: 0

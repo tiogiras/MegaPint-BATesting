@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Window Capture Export
   m_EditorClassIdentifier: 
+  _guid: 713c9ef0-0aef-4d6d-a14d-6861217e85cf
   title: Window Capture Export
   hint: '1. Open the WindowCapture (MegaPint/Packages/Screenshot/Window Capture)
 
@@ -23,4 +24,3 @@ MonoBehaviour:
     4. Press the Export
     button'
   hasInitializationLogic: 1
-  _done: 0

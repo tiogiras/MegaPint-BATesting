@@ -9,11 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4920717568369206866}
-  - component: {fileID: 5319736021424923715}
   - component: {fileID: 4972319923085909439}
   - component: {fileID: 8754067035718279233}
-  - component: {fileID: 7212253839267574081}
-  - component: {fileID: -6661309150733457635}
   m_Layer: 0
   m_Name: '[GR] SM_Env_Tiles_04'
   m_TagString: Untagged
@@ -36,18 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5319736021424923715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115894038215403094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e204cf03b664f168d9efa980bf6409f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!33 &4972319923085909439
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98,35 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7212253839267574081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115894038215403094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04400666f6394bd7b6e399ed2be9148e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _requirements: []
-  defaultSettings: []
-  _importedSettings: []
-  importedSettingsFoldout: 1
-  settingPriorities: []
-  references:
-    version: 2
-    RefIds: []
---- !u!114 &-6661309150733457635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115894038215403094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4603d6f86944d24bcfac15e0ddece1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

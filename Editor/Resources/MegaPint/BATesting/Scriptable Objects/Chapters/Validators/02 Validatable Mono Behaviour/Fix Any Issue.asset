@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Fix Any Issue
   m_EditorClassIdentifier: 
+  _guid: 118364c5-6327-4b95-bdf9-3ee0b0797df2
   title: Fix Any Issue
   hint: '1. Select the VMB Example in the hierarchy
 
@@ -21,4 +22,3 @@ MonoBehaviour:
     3.
     Press "Fix All" or "Fix" on the status component'
   hasInitializationLogic: 1
-  _done: 0

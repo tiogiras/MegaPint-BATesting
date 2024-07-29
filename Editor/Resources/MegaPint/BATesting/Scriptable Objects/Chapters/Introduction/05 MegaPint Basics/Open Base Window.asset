@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Open Base Window
   m_EditorClassIdentifier: 
+  _guid: c165d9a0-1c1d-4650-96a4-5d804e029f99
   title: Open BaseWindow
   hint: '1. Use the Menu Items at the top of unity
 
     2. MegaPint => Open'
   hasInitializationLogic: 1
-  _done: 0

@@ -16,20 +16,48 @@ internal class Goal : ScriptableObject
 
     public bool Done
     {
-        get => _done;
+        get
+        {
+            if (_doneInitialized)
+                return _done;
+
+            _done = SaveValues.TestData.GetValue(title, "0", false);
+            _doneInitialized = true;
+
+            return _done;
+        }
         private set
         {
+            SaveValues.TestData.SetValue(title, "0", value);
             _done = value;
-            EditorUtility.SetDirty(this);
-            AssetDatabase.SaveAssetIfDirty(this);
         }
     }
+
+    [SerializeField] private string _guid;
 
     public string title;
     [TextArea] public string hint;
     public bool hasInitializationLogic;
 
-    [SerializeField] private bool _done;
+    private bool _done;
+    private bool _doneInitialized;
+
+    #region Unity Event Functions
+
+    private void OnValidate()
+    {
+        _doneInitialized = false;
+        
+        if (!string.IsNullOrEmpty(_guid))
+            return;
+        
+        _guid = Guid.NewGuid().ToString();
+        
+        EditorUtility.SetDirty(this);
+        AssetDatabase.SaveAssetIfDirty(this);
+    }
+
+    #endregion
 
     #region Public Methods
 

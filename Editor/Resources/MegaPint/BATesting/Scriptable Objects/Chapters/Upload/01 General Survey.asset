@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 01 General Survey
   m_EditorClassIdentifier: 
+  _guid: f223d138-06fa-487b-808c-0d1c501901f8
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: General Survey
   taskDescription: Thank you again for participating in this evaluation. As your
@@ -25,5 +26,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0

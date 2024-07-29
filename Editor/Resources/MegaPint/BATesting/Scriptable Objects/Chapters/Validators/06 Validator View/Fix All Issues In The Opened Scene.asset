@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Fix All Issues In The Opened Scene
   m_EditorClassIdentifier: 
+  _guid: 51c2d058-adfe-415b-a7ff-942189db7fac
   title: Fix All Issues In The Opened Scene
   hint: '1. Switch to the Scene tab
 
@@ -23,4 +24,3 @@ MonoBehaviour:
     4. Select the remaining objects and fix their
     issues manually'
   hasInitializationLogic: 1
-  _done: 0

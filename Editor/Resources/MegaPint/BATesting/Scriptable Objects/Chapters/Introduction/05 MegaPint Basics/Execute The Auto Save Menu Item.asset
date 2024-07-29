@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Execute The Auto Save Menu Item
   m_EditorClassIdentifier: 
+  _guid: 75458aad-0e46-4573-ad28-b6f26f0f70d3
   title: Execute The AutoSave MenuItem
   hint: '1. Use the Menu Items at the top of unity
 
@@ -20,4 +21,3 @@ MonoBehaviour:
 
     3. MegaPint => Packages => AutoSave'
   hasInitializationLogic: 1
-  _done: 0

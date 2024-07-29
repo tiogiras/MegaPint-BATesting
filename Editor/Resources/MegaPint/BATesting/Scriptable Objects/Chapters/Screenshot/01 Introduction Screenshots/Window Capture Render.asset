@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Window Capture Render
   m_EditorClassIdentifier: 
+  _guid: e36311e2-8ba0-4c14-a898-1a2c3249dbe5
   title: Window Capture Render
   hint: '1. Open the WindowCapture (MegaPint/Packages/Screenshot/Window Capture)
 
@@ -20,4 +21,3 @@ MonoBehaviour:
 
     3. Press the Render button'
   hasInitializationLogic: 1
-  _done: 0

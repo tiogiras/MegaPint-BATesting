@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Custom Requirement Validated
   m_EditorClassIdentifier: 
+  _guid: 25cff263-b3c0-4c04-b3c1-c9406b13d347
   title: Custom Requirement Validated
   hint: '1. Enter the line [TestEvent.onValidate?.Invoke(gameObject)] as the first
     line of your Validate method
@@ -21,4 +22,3 @@ MonoBehaviour:
     3. For
     further help consult the given pdf that includes the solution to this task'
   hasInitializationLogic: 1
-  _done: 0

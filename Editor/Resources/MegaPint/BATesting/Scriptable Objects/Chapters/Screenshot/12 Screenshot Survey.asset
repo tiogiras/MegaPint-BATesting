@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 12 Screenshot Survey
   m_EditorClassIdentifier: 
+  _guid: 107edeea-6cce-4915-9806-fa35ce3bad22
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
   taskName: Screenshot Survey
   taskDescription: 'You finished the Screenshot chapter!
@@ -21,12 +22,11 @@ MonoBehaviour:
     the evaluation of the screenshot tool, please fill out the survey about the screenshot
     tool before continuing. You can find the link to the survey in the attached requirement.'
   taskRequirements:
-  - {fileID: 11400000, guid: 605ef1e16319e6a41b2d0fa9d2471361, type: 2}
+  - {fileID: 11400000, guid: d14bd6928ab2aad459cd2debd24637b7, type: 2}
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 02 Test Procedure I
   m_EditorClassIdentifier: 
+  _guid: eed60188-e9ea-4bba-9ea2-ab549cc5ddbb
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: Test Procedure I
   taskDescription: 'Some tasks may have requirements you need to know before you
@@ -35,5 +36,3 @@ MonoBehaviour:
   startInPlayMode: 0
   goals: []
   resetObjects: []
-  _done: 0
-  _neededTime: 0

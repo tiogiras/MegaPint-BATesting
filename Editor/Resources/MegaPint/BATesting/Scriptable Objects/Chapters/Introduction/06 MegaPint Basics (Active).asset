@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 06 MegaPint Basics (Active)
   m_EditorClassIdentifier: 
+  _guid: b8791b44-9afa-4d66-a1e5-9d910d1d8182
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
   taskName: MegaPint Basics (Active)
   taskDescription: 
@@ -24,5 +25,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 704089278cbe6354ea6123edb6fd2e07, type: 2}
   - {fileID: 11400000, guid: 920067ce98af3354da64a4facb32174c, type: 2}
   resetObjects: []
-  _done: 0
-  _neededTime: 0

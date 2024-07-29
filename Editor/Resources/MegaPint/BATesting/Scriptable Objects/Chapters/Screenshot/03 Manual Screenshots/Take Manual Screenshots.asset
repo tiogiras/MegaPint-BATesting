@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Take Manual Screenshots
   m_EditorClassIdentifier: 
+  _guid: 8d5147be-4cfd-411d-9bab-3be4681bd107
   title: Take Manual Screenshots
   hint: '1. Take 4 Screenshots
 
     2. Press the Finish Task Button'
   hasInitializationLogic: 1
-  _done: 0

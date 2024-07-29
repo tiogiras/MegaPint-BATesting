@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Repair A Scene 3
   m_EditorClassIdentifier: 
+  _guid: b8ebe24d-47b0-496a-9184-f3eb1a39f380
   title: Repair A Scene III
   hint: 1. Use the given pdf and the console logs to determine what needs to be fixed.
   hasInitializationLogic: 1
-  _done: 0

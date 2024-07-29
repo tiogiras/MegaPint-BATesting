@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 01 Introduction Validators
   m_EditorClassIdentifier: 
+  _guid: 6f0a2c8b-3d16-4950-8310-ea8544565d66
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Introduction Validators
   taskDescription: 'The last chapter is about the <b>Validators</b> Tool of the MegaPint
@@ -40,6 +41,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 06 Validator View
   m_EditorClassIdentifier: 
+  _guid: 89957b5e-2c6a-473a-9436-e89ac0e52f32
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Validator View
   taskDescription: 'The Validator View is an essential part of the Validators package.
@@ -35,6 +36,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

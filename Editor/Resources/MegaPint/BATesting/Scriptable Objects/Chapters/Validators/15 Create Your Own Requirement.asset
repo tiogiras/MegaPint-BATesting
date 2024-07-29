@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 15 Create Your Own Requirement
   m_EditorClassIdentifier: 
+  _guid: 7a3b50e3-4989-4ccf-95f3-ac3fa34a128c
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Create Your Own Requirement
   taskDescription: 'Your last task is to create your own custom requirement. For
@@ -56,12 +57,11 @@ MonoBehaviour:
     starting your task read about creating your own requirement. Information on this
     topic can be found with the attatched requirement. (Sections marked as [Code])'
   taskRequirements:
-  - {fileID: 11400000, guid: 07e2e3ba638aead4a999f501c9e10caa, type: 2}
+  - {fileID: 11400000, guid: e1f164f7e5d59104d9dccc0dd6c5c3f2, type: 2}
   hasDoableTask: 1
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

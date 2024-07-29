@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Test Procedure II (Active)
   m_EditorClassIdentifier: 
+  _guid: e829c355-abc9-4f81-a147-2505e7d808f8
   title: Click Me
   hint: '1. Enter PlayMode
 
     2. Hold spacebar for the button to work.'
   hasInitializationLogic: 1
-  _done: 0

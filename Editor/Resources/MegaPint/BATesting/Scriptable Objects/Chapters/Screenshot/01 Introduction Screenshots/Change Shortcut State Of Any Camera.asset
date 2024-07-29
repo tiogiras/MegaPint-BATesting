@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
   m_Name: Change Shortcut State Of Any Camera
   m_EditorClassIdentifier: 
+  _guid: 2e42477a-e4a5-478f-a8b7-77995a1c6e37
   title: Change Shortcut State Of Any Camera
   hint: '1. Open the ShortcutCapture (MegaPint/Packages/Screenshot/Shortcut Capture)
 
@@ -20,4 +21,3 @@ MonoBehaviour:
 
     3. Change the toggle state of the camera'
   hasInitializationLogic: 1
-  _done: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 11 Upload Screenshots 3
   m_EditorClassIdentifier: 
+  _guid: c2d2c866-ef3f-4d37-b130-fd3e492d0fa3
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
   taskName: Upload Screenshots 3
   taskDescription: 'Please upload all 20 screenshots with the upload link. The link
@@ -21,12 +22,11 @@ MonoBehaviour:
     <b>Only upload your files to
     the folder with your tester token!</b>'
   taskRequirements:
-  - {fileID: 11400000, guid: 2149226ab2a61924cae4c4047cfb8b03, type: 2}
+  - {fileID: 11400000, guid: 9aa72896d37d68747b8513a132c10393, type: 2}
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
   m_Name: 17 Validators Survey
   m_EditorClassIdentifier: 
+  _guid: 816c5a9d-5937-4814-b3a1-f7dd8750d080
   chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
   taskName: Validators Survey
   taskDescription: 'Thank you for finishing your last task. The evaluation of the
@@ -23,12 +24,11 @@ MonoBehaviour:
     coding part did not require much effort of you please feel free to experiment
     with the creation of custom requirements before filling out the survey.'
   taskRequirements:
-  - {fileID: 11400000, guid: 6d4b9c1da1475ae4fb49aa6898c9684c, type: 2}
+  - {fileID: 11400000, guid: dd026c5bff605e14c993e1bcbe0c6f89, type: 2}
   hasDoableTask: 0
   cannotBeFinishedAutomatically: 0
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
-  _done: 0
-  _neededTime: 0
+  resetSinglePrefab: 0
+  resetPrefabs: 0
