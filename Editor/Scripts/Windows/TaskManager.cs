@@ -1,6 +1,5 @@
 #if UNITY_EDITOR
 using System;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaPint.Editor.Scripts.GUI;
@@ -8,11 +7,9 @@ using MegaPint.Editor.Scripts.GUI.Utility;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent;
 using MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 using GUIUtility = MegaPint.Editor.Scripts.GUI.Utility.GUIUtility;
-using Object = UnityEngine.Object;
 using Task = MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data.Task;
 
 namespace MegaPint.Editor.Scripts.Windows
