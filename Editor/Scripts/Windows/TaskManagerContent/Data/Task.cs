@@ -12,7 +12,6 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
 /// <summary> Holds data about a task </summary>
-[Serializable]
 public class Task : ScriptableObject
 {
     public static Action <Task> onTaskDoneChange;
