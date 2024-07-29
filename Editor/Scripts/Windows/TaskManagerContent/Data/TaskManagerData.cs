@@ -8,7 +8,7 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
 /// <summary> Stores all tasks and the current progress </summary>
-internal class TaskManagerData : ScriptableObject
+public class TaskManagerData : ScriptableObject
 {
     public int TasksCount => _tasks.Count;
 

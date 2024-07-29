@@ -8,7 +8,7 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
 /// <summary> Holds data about a requirement </summary>
-internal class Requirement : ScriptableObject
+public class Requirement : ScriptableObject
 {
     public static Action <string, bool> onDoneChanged;
     public static Action <string> onExecute;

@@ -8,7 +8,7 @@ namespace MegaPint.Editor.Scripts.Windows.TaskManagerContent.Data
 {
 
 /// <summary> Holds data about a goal </summary>
-internal class Goal : ScriptableObject
+public class Goal : ScriptableObject
 {
     public static readonly List <Goal> ActiveGoals = new();
 
