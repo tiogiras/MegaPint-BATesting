@@ -570,7 +570,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -866,7 +865,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -1192,7 +1190,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -1680,7 +1677,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -1986,7 +1982,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -2282,7 +2277,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -3108,7 +3102,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -3414,7 +3407,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -3710,7 +3702,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -4118,7 +4109,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -4414,7 +4404,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -4740,7 +4729,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -5641,7 +5629,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -5937,7 +5924,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -6243,7 +6229,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -6896,7 +6881,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -7192,7 +7176,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -7518,7 +7501,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -8275,7 +8257,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -8571,7 +8552,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -8897,7 +8877,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -9508,7 +9487,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -9804,7 +9782,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -10130,7 +10107,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -10715,7 +10691,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -11021,7 +10996,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -11317,7 +11291,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -12803,7 +12776,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -13109,7 +13081,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -13405,7 +13376,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -14454,7 +14424,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -14760,7 +14729,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -15056,7 +15024,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -15704,7 +15671,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -16000,7 +15966,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -16326,7 +16291,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -16841,7 +16805,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -17147,7 +17110,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -17443,7 +17405,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -17946,7 +17907,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -18242,7 +18202,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -18568,7 +18527,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -19142,7 +19100,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -19438,7 +19395,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -19764,7 +19720,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -20813,7 +20768,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -21109,7 +21063,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -21435,7 +21388,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -22306,7 +22258,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -22602,7 +22553,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -22928,7 +22878,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -23498,7 +23447,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -23794,7 +23742,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -24120,7 +24067,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -24907,7 +24853,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -25213,7 +25158,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -25509,7 +25453,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -26052,7 +25995,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -26348,7 +26290,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -26674,7 +26615,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -27205,7 +27145,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -27501,7 +27440,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -27827,7 +27765,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -28670,7 +28607,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -28976,7 +28912,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -29272,7 +29207,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -29889,7 +29823,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -30185,7 +30118,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -30511,7 +30443,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -31108,7 +31039,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -31404,7 +31334,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -31730,7 +31659,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -32405,7 +32333,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -32701,7 +32628,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -33027,7 +32953,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -33830,7 +33755,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -34126,7 +34050,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -34452,7 +34375,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -34923,7 +34845,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -35219,7 +35140,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -35545,7 +35465,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -36241,7 +36160,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -36537,7 +36455,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -36863,7 +36780,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -37333,7 +37249,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -37629,7 +37544,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -37955,7 +37869,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -38443,7 +38356,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -38749,7 +38661,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -39045,7 +38956,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -39485,7 +39395,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -39781,7 +39690,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -40107,7 +40015,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -40877,7 +40784,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -41173,7 +41079,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -41499,7 +41404,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -42249,7 +42153,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -42545,7 +42448,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -42871,7 +42773,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -43372,7 +43273,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -43668,7 +43568,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -43994,7 +43893,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -44611,7 +44509,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -44917,7 +44814,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -45213,7 +45109,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -45655,7 +45550,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -45951,7 +45845,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -46277,7 +46170,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -48038,7 +47930,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -48334,7 +48225,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -48660,7 +48550,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -49098,7 +48987,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -49394,7 +49282,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -49720,7 +49607,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -50208,7 +50094,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -50514,7 +50399,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -50810,7 +50694,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -51410,7 +51293,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -51706,7 +51588,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -52032,7 +51913,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -52470,7 +52350,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -52766,7 +52645,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -53072,7 +52950,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -53480,7 +53357,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -53776,7 +53652,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -54102,7 +53977,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -55315,7 +55189,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -55621,7 +55494,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -55917,7 +55789,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -56585,7 +56456,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -56881,7 +56751,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -57207,7 +57076,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -57953,7 +57821,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -58249,7 +58116,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -58575,7 +58441,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -59177,7 +59042,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -59483,7 +59347,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -59779,7 +59642,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -60164,7 +60026,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8862745, g: 0.44313726, b: 0.16470589, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -60209,7 +60071,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 3786
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -60478,7 +60340,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -60774,7 +60635,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -61100,7 +60960,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -61961,7 +61820,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -62267,7 +62125,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -62563,7 +62420,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -63131,7 +62987,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -63437,7 +63292,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -63733,7 +63587,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -64446,7 +64299,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -64752,7 +64604,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -65048,7 +64899,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -65538,7 +65388,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -65834,7 +65683,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -66140,7 +65988,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -66548,7 +66395,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -66844,7 +66690,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -67170,7 +67015,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -67756,7 +67600,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -68062,7 +67905,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -68358,7 +68200,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -68830,7 +68671,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -69126,7 +68966,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -69452,7 +69291,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -69984,7 +69822,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -70280,7 +70117,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -70606,7 +70442,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -71172,7 +71007,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -71468,7 +71302,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -71794,7 +71627,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -72470,7 +72302,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -72776,7 +72607,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -73072,7 +72902,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -73707,7 +73536,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -74013,7 +73841,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -74309,7 +74136,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -75188,7 +75014,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -75484,7 +75309,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -75810,7 +75634,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -76298,7 +76121,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -76604,7 +76426,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -76900,7 +76721,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -78725,7 +78545,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -79031,7 +78850,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -79327,7 +79145,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -79708,7 +79525,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -80014,7 +79830,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
@@ -80310,7 +80125,6 @@ MonoBehaviour:
           types:
           - MegaPint.RepairScene.Validatable.Item
           - MegaPint.SceneManagerTestProcedure
-          - MegaPint.ObjectReset.TestValidationPrefab
           - MegaPint.RepairScene.Validatable.SceneManager
           - MegaPint.FadeGraphic
           - MegaPint.RepairScene.NonValidatable.StrongEnemy
