@@ -41,6 +41,8 @@ internal class SceneManager : MonoBehaviour
 
         var valid = ValidateScene();
 
+        Debug.Log($"VALID: {valid}");
+
         if (valid)
             onWin?.Invoke();
 
