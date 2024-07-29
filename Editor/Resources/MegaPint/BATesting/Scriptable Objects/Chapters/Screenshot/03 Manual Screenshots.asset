@@ -15,9 +15,9 @@ MonoBehaviour:
   _guid: 5668c373-a866-4b74-91c3-ca892e2d476c
   chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
   taskName: Manual Screenshots
-  taskDescription: 'In the following task you need to take screenshots hile in playmode
+  taskDescription: 'In the following task you need to take screenshots while in playmode
     using your own screenshot method. You can for example use the snipping tool or
-    the windows command if awailable. Use the tool you are most familliar with.
+    the windows command if available. Use the tool you are most familliar with.
 
 
     While

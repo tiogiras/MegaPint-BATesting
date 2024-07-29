@@ -20,7 +20,7 @@ MonoBehaviour:
 
 
     This tool adds a type derrived from MonoBehaviour that allows
-    the developer to set requirements a certain object or behaviour must fulfill
+    the developer to set requirements, a certain object or behaviour must fulfill
     in order for it to be marked valid. These requirements can be premade requirements
     or custom written ones.
 
