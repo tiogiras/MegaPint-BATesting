@@ -143,7 +143,7 @@ internal class PrefabRepair : MonoBehaviour
     {
         yield return null;
 
-        ClearConsole();
+        var clearingConsole = false;
 
         GameObject[] objects = FindObjectsByType <GameObject>(FindObjectsSortMode.None);
 
@@ -154,10 +154,15 @@ internal class PrefabRepair : MonoBehaviour
             if (!o.name.Contains("Missing Prefab"))
                 continue;
 
+            clearingConsole = true;
+            
 #if UNITY_EDITOR
             RepairPrefab(o);
 #endif
         }
+        
+        if (clearingConsole)
+            ClearConsole();
     }
 
     #endregion

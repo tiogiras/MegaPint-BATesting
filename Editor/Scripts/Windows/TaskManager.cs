@@ -320,6 +320,9 @@ internal class TaskManager : EditorWindowBase
         if (_data.CurrentTaskIndex >= _data.TasksCount - 1)
             return;
 
+        if (EditorApplication.isPlaying)
+            EditorApplication.ExitPlaymode();
+        
         Task task = _data.CurrentTask();
 
         _data.CurrentTaskIndex++;

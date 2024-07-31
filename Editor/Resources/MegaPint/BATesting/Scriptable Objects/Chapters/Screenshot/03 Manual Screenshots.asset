@@ -21,7 +21,7 @@ MonoBehaviour:
 
 
     While
-    in playmode the camera is rotating contantly your task is to take a screenshot
+    in playmode the camera is rotating constantly your task is to take a screenshot
     of each asset group. Try to align the asset group to the center of your screen.
     After taking screenshots of all 4 asset groups you are asked to upload them to
     a cloud so make sure to <b>save them</b>.
