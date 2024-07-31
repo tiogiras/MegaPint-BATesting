@@ -34,7 +34,7 @@ internal static partial class ContextMenu
 
         #region Public Methods
 
-        [MenuItem(MenuItemPackages + "/BA Testing" + "/Test Overview &o", false, 100)]
+        [MenuItem(MenuItemPackages + "/BA Testing" + "/Task Overview &o", false, 100)]
         public static void OpenOverview()
         {
             TryToOpenWithValidToken <Overview>(false, s_overviewSignature);

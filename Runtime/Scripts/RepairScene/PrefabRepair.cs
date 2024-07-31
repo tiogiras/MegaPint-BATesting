@@ -143,7 +143,7 @@ internal class PrefabRepair : MonoBehaviour
     {
         yield return null;
 
-        ClearConsole();
+        var clearingConsole = false;
 
         GameObject[] objects = FindObjectsByType <GameObject>(FindObjectsSortMode.None);
 
@@ -154,10 +154,15 @@ internal class PrefabRepair : MonoBehaviour
             if (!o.name.Contains("Missing Prefab"))
                 continue;
 
+            clearingConsole = true;
+            
 #if UNITY_EDITOR
             RepairPrefab(o);
 #endif
         }
+        
+        if (clearingConsole)
+            ClearConsole();
     }
 
     #endregion
@@ -240,7 +245,7 @@ internal class PrefabRepair : MonoBehaviour
         var o = Resources.Load <GameObject>(Path.Join(s_prefabsPath, "[NPC] SM_Env_Statue_04"));
 
         GameObject instance = Instantiate(o);
-        instance.AddComponent <Item>();
+        instance.AddComponent <Npc>();
 
         PrefabUtility.SaveAsPrefabAsset(instance, Path.Join(directory, "[NPC] SM_Env_Statue_04.prefab"));
 

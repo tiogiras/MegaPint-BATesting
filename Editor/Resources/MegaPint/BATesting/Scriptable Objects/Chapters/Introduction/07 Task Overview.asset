@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
-  m_Name: 07 Test Overview
+  m_Name: 07 Task Overview
   m_EditorClassIdentifier: 
   _guid: 46fdb08c-e3c6-43f8-b2a8-0d8035b7eeb2
   chapter: {fileID: 11400000, guid: 5b337f5793bd78544b0077949b24d839, type: 2}
-  taskName: Test Overview
+  taskName: Task Overview
   taskDescription: 'If you encounter any issues that would require you to redo a
     task, like leaving the timer running for an unnormal amount of time while you
     where away from the keyboard you can use the <b>Task Overview</b> window to reset
@@ -39,4 +39,5 @@ MonoBehaviour:
   scene: {fileID: 0}
   startInPlayMode: 0
   goals: []
-  resetObjects: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

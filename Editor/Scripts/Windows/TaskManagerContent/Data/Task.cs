@@ -23,14 +23,14 @@ public class Task : ScriptableObject
             if (_neededTimeInitialized)
                 return _neededTime;
 
-            _neededTime = SaveValues.TestData.GetValue(taskName, "1", 0f);
+            _neededTime = SaveValues.TestData.GetValue(_guid, "1", 0f);
             _neededTimeInitialized = true;
 
             return _neededTime;
         }
         set
         {
-            SaveValues.TestData.SetValue(taskName, "1", value, _autoSaveCount < 30);
+            SaveValues.TestData.SetValue(_guid, "1", value, _autoSaveCount < 30);
             _neededTime = value;
 
             _autoSaveCount++;

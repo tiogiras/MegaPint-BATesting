@@ -20,14 +20,14 @@ public class Requirement : ScriptableObject
             if (_doneInitialized)
                 return _done;
 
-            _done = SaveValues.TestData.GetValue(requirementName, "0", false);
+            _done = SaveValues.TestData.GetValue(_guid, "0", false);
             _doneInitialized = true;
 
             return _done;
         }
         set
         {
-            SaveValues.TestData.SetValue(requirementName, "0", value);
+            SaveValues.TestData.SetValue(_guid, "0", value);
 
             _done = value;
             onDoneChanged?.Invoke(requirementName, value);
