@@ -14,7 +14,7 @@ internal static partial class Constants
             private static readonly string s_baTestingItems =
                 Utility.CombineMenuItemPath(ContextMenu.MenuItemPackages, "BA Testing");
 
-            public static readonly string Overview = Utility.CombineMenuItemPath(s_baTestingItems, "Test Overview");
+            public static readonly string Overview = Utility.CombineMenuItemPath(s_baTestingItems, "Task Overview");
             public static readonly string TaskManager = Utility.CombineMenuItemPath(s_baTestingItems, "Task Manager");
         }
 
