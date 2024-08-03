@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 01 Introduction Screenshots
+  m_EditorClassIdentifier: 
+  _guid: eed4d8f1-12ed-442a-9a80-673de9574ca9
+  chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
+  taskName: Introduction Screenshots
+  taskDescription: "The next chapter is about the <b>Screenshot</b> Tool of the MegaPint
+    collection.\n\nThe package is used to take Screenshots inside of unity by either
+    directly rendering any camera component or an opened editor window. \n\nIn the
+    follwing task you will be required to use all of the functionality at least once.\n\n<b>Screenshots
+    of Camera's</b>\nYou can add the CameraCapture component to any GameObject that
+    contains a camera component. This component allows you to directly render what
+    the camera is seeing. The advantage of this over a simple screenshot is, that
+    you can manipulate the resolution, background and postprocessing of your screenshot
+    directly on the camera GameObject.\n\n<b>Rendering an EditorWindow</b>\nYou can
+    render a selected editor window with the <b>Window Capture</b> MenuItem. This
+    window allows you to select an opened editor window, render it and export the
+    rendered image.\n\n<b>Setting up camera's to render with the shortcut</b>\nIf
+    your scene contains multiple camera's, for example if you want to take screenshots
+    of your character from multiple angles while playing, you can configure the cameraCapture
+    components to render when the F12 key is pressed. To configure the camera's you
+    need to use the <b>Shortcut Capture</b> MenuItem."
+  taskRequirements:
+  - {fileID: 11400000, guid: 8b1c0e365b46f874184d67b52fec983e, type: 2}
+  - {fileID: 11400000, guid: 42397fe5f1591f84c988f11e3a561516, type: 2}
+  - {fileID: 11400000, guid: fe92c1b6c66fb624c9f9ec84c406ffc0, type: 2}
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

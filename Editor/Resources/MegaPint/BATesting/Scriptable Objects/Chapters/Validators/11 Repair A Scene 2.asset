@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 11 Repair A Scene 2
+  m_EditorClassIdentifier: 
+  _guid: 1711eea0-58fa-4f8e-9c93-8de2d37387ea
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Repair A Scene II
+  taskDescription: '<b>Before starting the task recall all functionality if needed
+    using the attatched requirement</b>
+
+
+    The following task requires you like
+    the previous one to repair the scene. This time you have a fully prepared scene,
+    where all VMBs are already set up for you.
+
+
+    Scene modifications:
+
+    -
+    2x Size
+
+    - VMBs are already fully prepared
+
+
+    The scene is considered
+    repaired when you can enter the playmode and the UI displays the win screen.
+
+
+    To
+    achieve this every gameObject needs to fulfill certain requirements stated in
+    the pdf that was given to you.'
+  taskRequirements:
+  - {fileID: 11400000, guid: 56c0180fe01654d4b84c913664bc48cc, type: 2}
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

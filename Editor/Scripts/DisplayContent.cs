@@ -1,7 +1,5 @@
 ﻿#if UNITY_EDITOR
 using MegaPint.Editor.Scripts.GUI.Utility;
-using MegaPint.Editor.Scripts.PackageManager.Packages;
-using UnityEditor;
 
 namespace MegaPint.Editor.Scripts
 {
@@ -13,11 +11,11 @@ internal static partial class DisplayContent
 
     // Called by reflection
     // ReSharper disable once UnusedMember.Local
-    private static void AlphaButton(DisplayContentReferences refs)
+    private static void BATesting(DisplayContentReferences refs)
     {
         InitializeDisplayContent(
             refs,
-            new TabSettings {info = true, help = true},
+            new TabSettings {info = true},
             new TabActions
             {
                 info = root =>
@@ -27,22 +25,13 @@ internal static partial class DisplayContent
                         {
                             switch (evt.linkID)
                             {
-                                case "integration":
-                                    Windows.PackageManager.OpenPerLink(PackageKey.AlphaButton);
+                                case "taskManager":
+                                    ContextMenu.BATesting.OpenTaskManager();
 
                                     break;
-                            }
-                        });
-                },
-                help = root =>
-                {
-                    root.ActivateLinks(
-                        evt =>
-                        {
-                            switch (evt.linkID)
-                            {
-                                case "packageManager":
-                                    EditorApplication.ExecuteMenuItem(Constants.BasePackage.Links.PackageManager);
+
+                                case "taskOverview":
+                                    ContextMenu.BATesting.OpenOverview();
 
                                     break;
                             }

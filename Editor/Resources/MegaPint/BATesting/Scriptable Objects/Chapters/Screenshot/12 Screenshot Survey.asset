@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 12 Screenshot Survey
+  m_EditorClassIdentifier: 
+  _guid: 107edeea-6cce-4915-9806-fa35ce3bad22
+  chapter: {fileID: 11400000, guid: bebaaa43a72ee904cb7ba302bc2c8b15, type: 2}
+  taskName: Screenshot Survey
+  taskDescription: 'You finished the Screenshot chapter!
+
+
+    <b>Thank you</b> for
+    the evaluation of the screenshot tool, please fill out the survey about the screenshot
+    tool before continuing. You can find the link to the survey in the attached requirement.'
+  taskRequirements:
+  - {fileID: 11400000, guid: d14bd6928ab2aad459cd2debd24637b7, type: 2}
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

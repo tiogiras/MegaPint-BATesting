@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 06 Validator View
+  m_EditorClassIdentifier: 
+  _guid: 89957b5e-2c6a-473a-9436-e89ac0e52f32
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Validator View
+  taskDescription: 'The Validator View is an essential part of the Validators package.
+    This window acts as an overview over all validations in the whole project. The
+    editor window contains two tabs, one to display all VMBs in the currently opened
+    scenes and one to display all prefabs containing a VMB in the whole project.
+    You may also specify folder locations to narrow down your search.
+
+
+    In the
+    following task you have to fix all issues in the currently opened scene and fix
+    all issues on the <b>Test Validation Prefab</b> that lies in the project.
+
+
+    If
+    the Validator View displays a ! symbol and has no option to auto fix the issue
+    your manual work is required.'
+  taskRequirements: []
+  hasDoableTask: 1
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

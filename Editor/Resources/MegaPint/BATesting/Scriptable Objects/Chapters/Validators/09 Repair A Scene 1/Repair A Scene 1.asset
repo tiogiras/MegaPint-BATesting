@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Repair A Scene 1
+  m_EditorClassIdentifier: 
+  _guid: c29c1498-f49d-46b5-9609-95a685924fd2
+  title: Repair A Scene I
+  hint: 1. Use the given pdf and the console logs to determine what needs to be fixed.
+  hasInitializationLogic: 1

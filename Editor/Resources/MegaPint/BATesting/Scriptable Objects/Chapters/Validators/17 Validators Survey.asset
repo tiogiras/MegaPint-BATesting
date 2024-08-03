@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc2a39f932640cbae63c0d6cedac53b, type: 3}
+  m_Name: 17 Validators Survey
+  m_EditorClassIdentifier: 
+  _guid: 816c5a9d-5937-4814-b3a1-f7dd8750d080
+  chapter: {fileID: 11400000, guid: e815ad6f26a961642bea1bdaffb3777a, type: 2}
+  taskName: Validators Survey
+  taskDescription: 'Thank you for finishing your last task. The evaluation of the
+    Validators package is now finished. Please fill out the survey regarding the
+    Validators package before continuing.
+
+
+    If you still have some time and the
+    coding part did not require much effort of you please feel free to experiment
+    with the creation of custom requirements before filling out the survey.'
+  taskRequirements:
+  - {fileID: 11400000, guid: dd026c5bff605e14c993e1bcbe0c6f89, type: 2}
+  hasDoableTask: 0
+  cannotBeFinishedAutomatically: 0
+  scene: {fileID: 0}
+  startInPlayMode: 0
+  goals: []
+  resetSinglePrefab: 0
+  resetPrefabs: 0

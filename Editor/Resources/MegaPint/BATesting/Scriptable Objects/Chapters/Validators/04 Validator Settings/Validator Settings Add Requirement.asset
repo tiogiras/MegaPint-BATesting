@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Validator Settings Add Requirement
+  m_EditorClassIdentifier: 
+  _guid: 48071f83-1a98-4fc3-b3bc-c6273c5cc7b4
+  title: Validator Settings Add Requirement
+  hint: "1. Select the exported ValidatorSettings \n2. Select the \"Requirements\"
+    list in the inspector\n3. Add a new element to the list"
+  hasInitializationLogic: 1

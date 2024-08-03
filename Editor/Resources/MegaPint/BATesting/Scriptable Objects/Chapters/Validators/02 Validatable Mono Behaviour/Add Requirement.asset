@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Add Requirement
+  m_EditorClassIdentifier: 
+  _guid: 46c4f576-4dd5-49ad-8b15-efc008859a30
+  title: Add Requirement
+  hint: '1. Select the VMB Example in the hierarchy
+
+    2. Select the "Requirements"
+    list in the inspector
+
+    3. Add a new element to the list'
+  hasInitializationLogic: 1

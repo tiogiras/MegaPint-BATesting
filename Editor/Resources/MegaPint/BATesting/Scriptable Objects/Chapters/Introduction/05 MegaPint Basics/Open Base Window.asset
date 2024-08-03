@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610a92eaa64c4910b691f987f6cbdedb, type: 3}
+  m_Name: Open Base Window
+  m_EditorClassIdentifier: 
+  _guid: c165d9a0-1c1d-4650-96a4-5d804e029f99
+  title: Open BaseWindow
+  hint: '1. Use the Menu Items at the top of unity
+
+    2. MegaPint => Open'
+  hasInitializationLogic: 1
