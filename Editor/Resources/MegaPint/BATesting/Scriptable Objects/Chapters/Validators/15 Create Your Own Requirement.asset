@@ -44,7 +44,7 @@ MonoBehaviour:
     At
     the start of the Validate(gameObject) method:
 
-    <b>TestEvent.onBeginValidate?.Invoke(gameObject)</b>
+    <b>TestEvent.onValidate?.Invoke(gameObject)</b>
 
 
     At
