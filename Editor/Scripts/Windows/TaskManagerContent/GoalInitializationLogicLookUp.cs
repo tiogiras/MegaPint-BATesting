@@ -88,8 +88,8 @@ internal static class GoalInitializationLogicLookUp
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated += OnFixTestValidationPrefab;}},
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin += OnFixAllIssuesInScene;}},
         {RepairAScene1, () => {SceneManager.onWin += OnRepairScene1;}},
-        {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene2;}},
-        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin += OnRepairScene3;}},
+        {RepairAScene2, () => {RepairScene.Validatable.ValidatableSceneManager.onWin += OnRepairScene2;}},
+        {RepairAScene3, () => {RepairScene.Validatable.ValidatableSceneManager.onWin += OnRepairScene3;}},
         {CustomRequirementValidated, () => {TestEvent.onValidate += OnRequirementValidated;}},
         {CustomRequirementFixed, () => {TestEvent.onFixed += OnRequirementFixed;}}
     };
@@ -137,8 +137,8 @@ internal static class GoalInitializationLogicLookUp
         {FixTestValidationPrefab, () => {ValidatableMonoBehaviour.onValidated -= OnFixTestValidationPrefab;}},
         {FixAllIssuesInScene, () => {SceneManagerValidatorView.onWin -= OnFixAllIssuesInScene;}},
         {RepairAScene1, () => {SceneManager.onWin -= OnRepairScene1;}},
-        {RepairAScene2, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene2;}},
-        {RepairAScene3, () => {RepairScene.Validatable.SceneManager.onWin -= OnRepairScene3;}},
+        {RepairAScene2, () => {RepairScene.Validatable.ValidatableSceneManager.onWin -= OnRepairScene2;}},
+        {RepairAScene3, () => {RepairScene.Validatable.ValidatableSceneManager.onWin -= OnRepairScene3;}},
         {CustomRequirementValidated, () => {TestEvent.onValidate -= OnRequirementValidated;}},
         {CustomRequirementFixed, () => {TestEvent.onFixed -= OnRequirementFixed;}}
     };

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using MegaPint.RepairScene.NonValidatable;
 using UnityEngine;
 
 namespace MegaPint.RepairScene.Validatable
@@ -9,7 +8,7 @@ namespace MegaPint.RepairScene.Validatable
 
 /// <summary> Used in the repair a scene 2 and 3 task </summary>
 [AddComponentMenu("")]
-internal class SceneManager : MonoBehaviour
+internal class ValidatableSceneManager : MonoBehaviour
 {
     public static Action onWin;
 
