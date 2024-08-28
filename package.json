@@ -2,7 +2,7 @@
   "name": "com.tiogiras.megapint-batesting",
   "displayName": "MegaPint - BA Testing",
   "author": "Tiogiras",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2022.3",
   "category": "Tools",
   "description": "This package is required to perform the guided part of the ba testing tasks.",
